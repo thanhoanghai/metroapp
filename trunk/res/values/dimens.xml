@@ -1,0 +1,6 @@
+<resources>
+
+    <dimen name="dangnhap_item_w">250dp</dimen>
+    <dimen name="dangnhap_title_font_size">15sp</dimen>
+
+</resources>

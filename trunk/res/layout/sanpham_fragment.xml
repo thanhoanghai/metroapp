@@ -1,0 +1,28 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/sanpham_fragment_tv_description"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:gravity="center_vertical"
+        android:singleLine="true"
+        android:text="@string/ex_anphu"
+        android:textColor="@color/bg_blue"
+        android:textSize="13sp" />
+
+    <com.app.customui.LoadMoreListView
+        android:id="@+id/sanpham_fragment_listview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/grey_bg_sp"
+        android:cacheColorHint="#00000000"
+        android:clickable="true"
+        android:divider="@android:color/transparent"
+        android:dividerHeight="0dp" />
+
+</LinearLayout>

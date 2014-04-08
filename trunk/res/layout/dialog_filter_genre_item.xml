@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/white"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="48.0dip"
+        android:background="@drawable/bg_txt_categroy_select"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingLeft="5dp" >
+
+        <TextView
+            android:id="@+id/dialog_filter_genre_item_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:text="@string/app_name"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/dialog_filter_genre_item_des"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:text="@string/chongtrungtammetro"
+            android:textColor="@color/black"
+            android:textSize="15sp" />
+    </LinearLayout>
+
+    <View
+        android:id="@+id/bottom_line"
+        android:layout_width="fill_parent"
+        android:layout_height="1.0px"
+        android:background="@color/color_dividing_line_grey" />
+
+</LinearLayout>

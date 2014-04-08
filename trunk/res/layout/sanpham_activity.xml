@@ -1,0 +1,66 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:context=".SplashActivity" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:orientation="horizontal" >
+
+        <Button
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/bnt_menu" />
+
+        <com.app.customui.SegmentedRadioGroup
+            android:id="@+id/sanpham_activity_segment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:checkedButton="@+id/button_one"
+            android:orientation="horizontal" >
+
+            <RadioButton
+                android:id="@+id/sanpham_activity_segment_bnt_metro"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:button="@null"
+                android:gravity="center"
+                android:text="@string/metro"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="@color/radio_colors"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <RadioButton
+                android:id="@+id/sanpham_activity_segment_bnt_healthy"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:button="@null"
+                android:gravity="center"
+                android:text="@string/healthy"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="@color/radio_colors"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+        </com.app.customui.SegmentedRadioGroup>
+    </LinearLayout>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="4.0dip"
+        android:background="@drawable/shadow_online_tab" />
+
+    <LinearLayout
+        android:id="@+id/sanpham_activity_fragment_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" />
+    
+    
+</LinearLayout>
