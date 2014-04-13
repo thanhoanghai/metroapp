@@ -4,21 +4,23 @@
     android:layout_height="match_parent"
     android:background="@color/white"
     android:orientation="vertical" >
-    
-     <View
+
+    <View
         android:layout_width="fill_parent"
         android:layout_height="4.0dip"
         android:background="@drawable/shadow_online_tab" />
 
-    <TextView
+    <com.app.customui.AlwaysMarqueeTextView
         android:id="@+id/sanpham_fragment_tv_description"
-        android:layout_width="match_parent"
+        android:layout_width="fill_parent"
         android:layout_height="30dp"
+        android:ellipsize="marquee"
         android:gravity="center_vertical"
+        android:marqueeRepeatLimit="marquee_forever"
         android:singleLine="true"
         android:text="@string/ex_anphu"
         android:textColor="@color/bg_blue"
-        android:textSize="13sp" />
+        android:textSize="13.0dip" />
 
     <com.app.customui.LoadMoreListView
         android:id="@+id/sanpham_fragment_listview"
