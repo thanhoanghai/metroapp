@@ -14,6 +14,10 @@
     <string name="metro">METRO</string>
     <string name="healthy">HEALTHY</string>
     
+    <string name="gioithieu">GIỚI THIỆU</string>
+    <string name="taitro">TÀI TRỢ</string>
+    <string name="tailieu">TÀI LIỆU</string>
+    <string name="lienhe">LIÊN HỆ</string>
     
     <string name="metrocash">Metro Cash</string>
     <string name="taphoa">Tạp hoá</string>

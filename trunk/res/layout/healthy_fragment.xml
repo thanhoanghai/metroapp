@@ -4,8 +4,13 @@
     android:layout_height="match_parent"
     android:background="@color/white"
     android:orientation="vertical" >
+    
+     <View
+        android:layout_width="fill_parent"
+        android:layout_height="4.0dip"
+        android:background="@drawable/shadow_online_tab" />
 
-    <com.app.customui.SegmentedRadioGroup
+    <com.app.customui.SegmentedRadioGroupLine
         android:id="@+id/sanpham_activity_segment"
         android:layout_width="match_parent"
         android:layout_height="30dp"
@@ -13,31 +18,58 @@
         android:orientation="horizontal" >
 
         <RadioButton
-            android:id="@+id/sanpham_activity_segment_bnt_metro"
+            android:id="@+id/sanpham_activity_segment_bnt_gioithieu"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:button="@null"
             android:gravity="center"
-            android:text="@string/metro"
+            android:text="@string/gioithieu"
             android:textAppearance="?android:attr/textAppearanceSmall"
-            android:textColor="@color/radio_colors"
+            android:textColor="@color/black"
             android:textSize="12sp"
             android:textStyle="bold" />
 
         <RadioButton
-            android:id="@+id/sanpham_activity_segment_bnt_healthy"
+            android:id="@+id/sanpham_activity_segment_bnt_taitro"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:button="@null"
             android:gravity="center"
-            android:text="@string/healthy"
+            android:text="@string/taitro"
             android:textAppearance="?android:attr/textAppearanceSmall"
-            android:textColor="@color/radio_colors"
+            android:textColor="@color/black"
             android:textSize="12sp"
             android:textStyle="bold" />
-    </com.app.customui.SegmentedRadioGroup>
+        
+        <RadioButton
+            android:id="@+id/sanpham_activity_segment_bnt_tailieu"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:button="@null"
+            android:gravity="center"
+            android:text="@string/tailieu"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+        <RadioButton
+            android:id="@+id/sanpham_activity_segment_bnt_lienhe"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:button="@null"
+            android:gravity="center"
+            android:text="@string/lienhe"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+        
+    </com.app.customui.SegmentedRadioGroupLine>
+    
 
     <WebView
         android:id="@+id/healthy_fragment_webview"

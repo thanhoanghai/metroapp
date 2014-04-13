@@ -51,10 +51,10 @@
         </com.app.customui.SegmentedRadioGroup>
     </LinearLayout>
 
-    <View
+  <!--   <View
         android:layout_width="fill_parent"
         android:layout_height="4.0dip"
-        android:background="@drawable/shadow_online_tab" />
+        android:background="@drawable/shadow_online_tab" /> -->
 
     <LinearLayout
         android:id="@+id/sanpham_activity_fragment_content"
