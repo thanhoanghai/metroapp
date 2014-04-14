@@ -72,12 +72,13 @@
 
         <Button
             android:id="@+id/dangnhap_bnt_dangnhap"
-            android:layout_width="@dimen/dangnhap_item_w"
+            android:layout_width="150dp"
             android:layout_height="30dp"
+            android:layout_gravity="center_horizontal"
             android:layout_marginTop="30dp"
-            android:background="@drawable/bt_button"
+            android:background="@color/yellow"
             android:gravity="center"
-            android:text="@string/dangnhap"
+            android:text="@string/chon"
             android:textColor="@color/bg_blue"
             android:textStyle="bold" />
     </LinearLayout>

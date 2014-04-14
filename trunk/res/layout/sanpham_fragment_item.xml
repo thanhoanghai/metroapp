@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:orientation="vertical"
+    android:orientation="horizontal"
     android:paddingBottom="5dp"
     android:paddingLeft="10dp"
     android:paddingRight="10dp"
@@ -12,51 +12,74 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/bg_playlist"
-        android:orientation="vertical"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
         android:paddingBottom="3dp"
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
         android:paddingTop="10dp" >
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/mitomcuacay"
-            android:textColor="@color/black"
-            android:textSize="15sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/dieukien"
-            android:textColor="@color/black"
-            android:textSize="14sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:text="@string/giamgia"
-            android:textColor="@color/bg_blue"
-            android:textSize="18sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:text="@string/gia19"
-            android:textColor="@color/red"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-
         <ImageView
-            android:layout_width="match_parent"
+            android:layout_width="100dp"
             android:layout_height="100dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginRight="10dp"
             android:background="@drawable/img_sanpham"
             android:contentDescription="@string/app_name" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical" >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="@string/mitomcuacay"
+                android:textColor="@color/black"
+                android:textSize="14sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="@string/dieukien"
+                android:textColor="@color/black"
+                android:textSize="14sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:gravity="center_horizontal"
+                android:text="@string/giamgia"
+                android:textColor="@color/bg_blue"
+                android:textSize="13sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="3dp"
+                android:layout_marginTop="3dp"
+                android:gravity="center_horizontal"
+                android:text="@string/gia19"
+                android:textColor="@color/red"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:gravity="center_horizontal"
+                android:text="@string/gtgt"
+                android:textColor="@color/bg_blue"
+                android:textSize="13sp"
+                android:textStyle="bold" />
+        </LinearLayout>
     </LinearLayout>
 
 </LinearLayout>
