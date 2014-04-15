@@ -4,17 +4,17 @@ import com.google.gson.annotations.SerializedName;
 
 public class GenreObject {
 
-	@SerializedName("Id")
-	public String Id;
-	@SerializedName("Name")
-	public String Name;
-	@SerializedName("Description")
-	public String Description;
+	@SerializedName("id")
+	public String id;
+	@SerializedName("name")
+	public String name;
+	@SerializedName("address")
+	public String address;
 
-	public GenreObject(String id, String name, String des) {
-		Id = id;
-		Name = name;
-		Description = des;
+	public GenreObject(String ID, String Name, String des) {
+		id = ID;
+		name = Name;
+		address = des;
 	}
 
 }

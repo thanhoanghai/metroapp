@@ -49,19 +49,15 @@ public class DialogFilterGenre extends Dialog implements
 		gridview.setOnItemClickListener(new OnItemClickListener() {
 			public void onItemClick(AdapterView<?> parent, View v,
 					int position, long id) {
-				adapter.setIndexCurrent(position);
-				mListener.onFinishEditDialog(adapter.getItem(position).Id,
-						adapter.getItem(position).Name);
+				mListener.onFinishEditDialog(adapter.getItem(position).id,
+						adapter.getItem(position).name);
+				exitDialog();
 			}
 		});
 
 		bntCancel = (Button) findViewById(R.id.dialog_filter_genre_bnt_cancel);
 		bntCancel.setOnClickListener(this);
 
-	}
-
-	public void setIndexCurrent(int i) {
-		adapter.setIndexCurrent(i);
 	}
 
 	public void exitDialog() {
