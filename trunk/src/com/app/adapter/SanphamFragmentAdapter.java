@@ -16,19 +16,17 @@ import com.app.model.SanphamObject;
 public class SanphamFragmentAdapter extends BaseAdapter implements ListAdapter {
 
 	private LayoutInflater mInflater;
-	private ArrayList<SanphamObject> listObject = new ArrayList<SanphamObject>();
-
-	// private int indexCurrent = 0;
-	// private Context mContext;
+	private ArrayList<SanphamObject> listObject;
 
 	public SanphamFragmentAdapter(Context context) {
 		super();
 		if (mInflater == null)
 			mInflater = LayoutInflater.from(context);
-		// mContext = context;
 	}
 
 	public void addItem(SanphamObject item) {
+		if (listObject == null)
+			listObject = new ArrayList<SanphamObject>();
 		listObject.add(item);
 	}
 
@@ -50,20 +48,14 @@ public class SanphamFragmentAdapter extends BaseAdapter implements ListAdapter {
 			holder = (ViewHolder) view.getTag();
 		}
 
-		// SanphamObject item = listObject.get(position);
-		// holder.title.setText(item.Name);
-		// if (indexCurrent == position) {
-		// holder.title.setSelected(true);
-		// } else {
-		// holder.title.setSelected(false);
-		// }
-
 		return view;
 	}
 
 	@Override
 	public int getCount() {
-		return 10;
+		if (listObject != null)
+			return listObject.size();
+		return 0;
 	}
 
 	@Override

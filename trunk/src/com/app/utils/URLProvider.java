@@ -6,6 +6,21 @@ public class URLProvider {
 
 	public static String PROVIDER_SERVER = "http://metro.qptek.com/api/v1/";
 
+	public static String getListProduct(int page, int per_page, String branch) {
+		String client = PROVIDER_SERVER + "products?";
+		if (client != null) {
+			try {
+				client += "page=" + page;
+				client += "&per_page=" + per_page;
+				client += "&branch=" + branch;
+				return client;
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		return null;
+	}
+
 	public static String getBranchMetro() {
 		String client = PROVIDER_SERVER + "branches";
 		if (client != null) {
@@ -29,6 +44,7 @@ public class URLProvider {
 		}
 		return null;
 	}
+
 	public static RequestParams getParamsSignIn(String maBranch) {
 		RequestParams params = new RequestParams();
 		params.put("customer_name", maBranch);

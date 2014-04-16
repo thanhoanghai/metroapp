@@ -21,6 +21,8 @@ import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.AsyncHttpResponseHandler;
 
 public class DangnhapActivity extends Activity {
+	
+	//X-Authorization-Token: <token>
 
 	private TextView txtBranch;
 	private TextView listNganh;
