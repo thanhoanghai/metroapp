@@ -4,76 +4,101 @@
     android:layout_height="match_parent"
     android:background="@color/white"
     android:orientation="vertical" >
-    
-     <View
+
+    <View
         android:layout_width="fill_parent"
         android:layout_height="4.0dip"
         android:background="@drawable/shadow_online_tab" />
 
-    <com.app.customui.SegmentedRadioGroupLine
-        android:id="@+id/sanpham_activity_segment"
+    <HorizontalScrollView
         android:layout_width="match_parent"
-        android:layout_height="30dp"
-        android:checkedButton="@+id/button_one"
-        android:orientation="horizontal" >
+        android:layout_height="wrap_content"
+        android:scrollbars="none" >
 
-        <RadioButton
-            android:id="@+id/sanpham_activity_segment_bnt_gioithieu"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:button="@null"
-            android:gravity="center"
-            android:text="@string/gioithieu"
-            android:textAppearance="?android:attr/textAppearanceSmall"
-            android:textColor="@color/black"
-            android:textSize="12sp"
-            android:textStyle="bold" />
+        <com.app.customui.SegmentedRadioGroupLine
+            android:id="@+id/sanpham_activity_segment"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:checkedButton="@+id/button_one"
+            android:orientation="horizontal" >
 
-        <RadioButton
-            android:id="@+id/sanpham_activity_segment_bnt_taitro"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:button="@null"
-            android:gravity="center"
-            android:text="@string/taitro"
-            android:textAppearance="?android:attr/textAppearanceSmall"
-            android:textColor="@color/black"
-            android:textSize="12sp"
-            android:textStyle="bold" />
-        
-        <RadioButton
-            android:id="@+id/sanpham_activity_segment_bnt_tailieu"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:button="@null"
-            android:gravity="center"
-            android:text="@string/tailieu"
-            android:textAppearance="?android:attr/textAppearanceSmall"
-            android:textColor="@color/black"
-            android:textSize="12sp"
-            android:textStyle="bold" />
-        <RadioButton
-            android:id="@+id/sanpham_activity_segment_bnt_lienhe"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:button="@null"
-            android:gravity="center"
-            android:text="@string/lienhe"
-            android:textAppearance="?android:attr/textAppearanceSmall"
-            android:textColor="@color/black"
-            android:textSize="12sp"
-            android:textStyle="bold" />
-        
-    </com.app.customui.SegmentedRadioGroupLine>
-    
+            <RadioButton
+                android:id="@+id/sanpham_activity_segment_bnt_thongtinduan"
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:button="@null"
+                android:gravity="center"
+                android:text="@string/thongtinduan"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="@color/black"
+                android:textSize="12sp"
+                android:textStyle="bold" />
 
-    <WebView
-        android:id="@+id/healthy_fragment_webview"
+            <RadioButton
+                android:id="@+id/sanpham_activity_segment_bnt_doitac"
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:button="@null"
+                android:gravity="center"
+                android:text="@string/doitacthuchien"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="@color/black"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+            <RadioButton
+                android:id="@+id/sanpham_activity_segment_bnt_hoatdong"
+                android:layout_width="70dp"
+                android:layout_height="match_parent"
+                android:button="@null"
+                android:gravity="center"
+                android:text="@string/hoatdong"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="@color/black"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+            <RadioButton
+                android:id="@+id/sanpham_activity_segment_bnt_tailieu"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:button="@null"
+                android:gravity="center"
+                android:text="@string/tailieu"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="@color/black"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+            <RadioButton
+                android:id="@+id/sanpham_activity_segment_bnt_lienhe"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:button="@null"
+                android:gravity="center"
+                android:text="@string/lienhe"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="@color/black"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+        </com.app.customui.SegmentedRadioGroupLine>
+    </HorizontalScrollView>
+
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent" >
+
+        <WebView
+            android:id="@+id/healthy_fragment_webview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <com.app.customui.CustomLoading
+            android:id="@+id/healthy_loading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:src="@anim/sapi_loading_blue" />
+    </RelativeLayout>
 
 </LinearLayout>

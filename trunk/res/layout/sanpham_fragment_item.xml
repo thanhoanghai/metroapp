@@ -34,6 +34,7 @@
             android:orientation="vertical" >
 
             <TextView
+                android:id="@+id/sanpham_fragment_item_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
@@ -42,6 +43,7 @@
                 android:textSize="14sp" />
 
             <TextView
+                android:id="@+id/sanpham_fragment_item_description"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
@@ -50,6 +52,7 @@
                 android:textSize="14sp" />
 
             <TextView
+                android:id="@+id/sanpham_fragment_item_price1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
@@ -60,6 +63,7 @@
                 android:textStyle="bold" />
 
             <TextView
+                android:id="@+id/sanpham_fragment_item_price2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="3dp"
@@ -71,6 +75,7 @@
                 android:textStyle="bold" />
 
             <TextView
+                android:id="@+id/sanpham_fragment_item_price_vat"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="5dp"

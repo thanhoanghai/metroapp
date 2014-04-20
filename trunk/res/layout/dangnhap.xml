@@ -6,13 +6,13 @@
     tools:context=".SplashActivity" >
 
     <ImageView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="30dp"
         android:contentDescription="@string/app_name"
-        android:src="@drawable/logo_metro" />
+        android:src="@drawable/logo_metro_new" />
 
     <ImageView
         android:layout_width="wrap_content"
@@ -25,11 +25,11 @@
 
     <LinearLayout
         android:id="@+id/dangnhap_linear_content"
-        android:visibility="invisible"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:orientation="vertical" >
+        android:orientation="vertical"
+        android:visibility="visible" >
 
         <TextView
             android:layout_width="wrap_content"
@@ -60,13 +60,13 @@
             android:textSize="@dimen/dangnhap_title_font_size"
             android:textStyle="bold" />
 
-        <TextView
+        <EditText
             android:id="@+id/dangnhap_tx_list_nganh"
             android:layout_width="@dimen/dangnhap_item_w"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:background="@color/white"
-            android:drawableRight="@drawable/arrow_down"
+            android:hint="@string/hintmanganh"
             android:padding="3dp"
             android:text="@string/taphoa"
             android:textColor="@color/black"
@@ -81,6 +81,18 @@
             android:background="@color/yellow"
             android:gravity="center"
             android:text="@string/chon"
+            android:textColor="@color/bg_blue"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/dangnhap_bnt_skip"
+            android:layout_width="100dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="30dp"
+            android:background="@color/yellow"
+            android:gravity="center"
+            android:text="@string/boqua"
             android:textColor="@color/bg_blue"
             android:textStyle="bold" />
     </LinearLayout>

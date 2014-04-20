@@ -52,7 +52,7 @@
             android:background="@drawable/bt_button"
             android:gravity="center"
             android:padding="5dp"
-            android:text="@string/close"
+            android:text="@string/donglai"
             android:textColor="@color/bg_blue"
             android:textSize="14.0dip" />
     </LinearLayout>
