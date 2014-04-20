@@ -31,7 +31,10 @@ public class SanphamFragmentAdapter extends BaseAdapter implements ListAdapter {
 	}
 
 	private class ViewHolder {
-		public TextView title;
+		public TextView name;
+		public TextView description;
+		public TextView price1;
+		public TextView price2;
 	}
 
 	@Override
@@ -42,11 +45,25 @@ public class SanphamFragmentAdapter extends BaseAdapter implements ListAdapter {
 		if (convertView == null) {
 			view = mInflater.inflate(R.layout.sanpham_fragment_item, null);
 			holder = new ViewHolder();
+			holder.name = (TextView) view
+					.findViewById(R.id.sanpham_fragment_item_name);
+			holder.description = (TextView) view
+					.findViewById(R.id.sanpham_fragment_item_description);
+			holder.price1 = (TextView) view
+					.findViewById(R.id.sanpham_fragment_item_price1);
+			holder.price2 = (TextView) view
+					.findViewById(R.id.sanpham_fragment_item_price2);
 
 			view.setTag(holder);
 		} else {
 			holder = (ViewHolder) view.getTag();
 		}
+
+		SanphamObject item = listObject.get(position);
+		holder.name.setText(item.name);
+		holder.description.setText(item.description);
+		holder.price1.setText(item.price_1);
+		holder.price2.setText(item.price_2);
 
 		return view;
 	}

@@ -5,6 +5,8 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.app.adapter.SanphamFragmentAdapter;
 import com.app.constantmetro.GlobalSingleton;
@@ -23,6 +25,8 @@ public class SanphamFragment extends Fragment {
 	private int page = 1;
 	private int per_page = 10;
 	private String branch = "1";
+	private ImageView imgLoading;
+	private TextView textTitle;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -37,13 +41,20 @@ public class SanphamFragment extends Fragment {
 		View view = inflater.inflate(R.layout.sanpham_fragment, container,
 				false);
 
+		imgLoading = (ImageView) view.findViewById(R.id.sanpham_loading);
+		textTitle = (TextView) view
+				.findViewById(R.id.sanpham_fragment_tv_title);
+		textTitle.setText(getActivity().getResources().getString(
+				R.string.ex_anphu));
 		listview = (LoadMoreListView) view
 				.findViewById(R.id.sanpham_fragment_listview);
-		adapter = new SanphamFragmentAdapter(getActivity());
+		if (adapter == null) {
+			adapter = new SanphamFragmentAdapter(getActivity());
+			loadProduct();
+		} else {
+			imgLoading.setVisibility(View.INVISIBLE);
+		}
 		listview.setAdapter(adapter);
-
-		loadProduct();
-
 		return view;
 	}
 
@@ -63,9 +74,12 @@ public class SanphamFragment extends Fragment {
 						adapter.addItem(object.data.product[i]);
 					}
 					adapter.notifyDataSetChanged();
+					if (page == 1)
+						imgLoading.setVisibility(View.INVISIBLE);
 				} catch (Exception ex) {
 				}
 			}
+
 			@Override
 			public void onFailure(Throwable error, String content) {
 				super.onFailure(error, content);

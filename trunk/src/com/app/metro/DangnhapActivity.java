@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -14,6 +15,7 @@ import com.app.customui.DialogFilterGenre;
 import com.app.customui.DialogFilterGenre.FinishDialogListener;
 import com.app.model.BranchListObject;
 import com.app.model.SignInObject;
+import com.app.utils.Debug;
 import com.app.utils.URLProvider;
 import com.app.utils.Utils;
 import com.google.gson.Gson;
@@ -21,15 +23,14 @@ import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.AsyncHttpResponseHandler;
 
 public class DangnhapActivity extends Activity {
-	
-	//X-Authorization-Token: <token>
 
 	private TextView txtBranch;
-	private TextView listNganh;
+	private EditText listNganh;
 
 	private DialogFilterGenre dialogBranch;
 	private BranchListObject branchListObject;
 	private Button bntDangnhap;
+	private Button bntSkip;
 
 	private LinearLayout linearContent;
 	private ImageView imgLoading;
@@ -41,9 +42,18 @@ public class DangnhapActivity extends Activity {
 
 		imgLoading = (ImageView) findViewById(R.id.dangnhap_loading);
 		linearContent = (LinearLayout) findViewById(R.id.dangnhap_linear_content);
+		linearContent.setVisibility(View.INVISIBLE);
 
 		txtBranch = (TextView) findViewById(R.id.dangnhap_tx_list_trungtam);
-		listNganh = (TextView) findViewById(R.id.dangnhap_tx_list_nganh);
+		listNganh = (EditText) findViewById(R.id.dangnhap_tx_list_nganh);
+
+		bntSkip = (Button) findViewById(R.id.dangnhap_bnt_skip);
+		bntSkip.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				gotoNextScreen();
+			}
+		});
 		bntDangnhap = (Button) findViewById(R.id.dangnhap_bnt_dangnhap);
 		bntDangnhap.setOnClickListener(new OnClickListener() {
 			@Override
@@ -108,7 +118,8 @@ public class DangnhapActivity extends Activity {
 		setInvisibleContent();
 		String link = URLProvider.getLinkSignIn();
 		AsyncHttpClient client = new AsyncHttpClient();
-		client.post(link, URLProvider.getParamsSignIn("Nganh Hang 1"),
+		client.post(link,
+				URLProvider.getParamsSignIn(listNganh.getText().toString()),
 				new AsyncHttpResponseHandler() {
 					@Override
 					public void onSuccess(String response) {
@@ -116,17 +127,19 @@ public class DangnhapActivity extends Activity {
 							Gson gson = new Gson();
 							SignInObject object = gson.fromJson(response,
 									SignInObject.class);
-							if (object.code == 200)
-							{	
+							if (object.code == 200) {
 								GlobalSingleton.getSingleton().token = object.data.token;
-								Utils.gotoSanpham(DangnhapActivity.this);
-							}
-							else
+								gotoNextScreen();
+							} else {
 								setVisibleContent();
+								Debug.toast(DangnhapActivity.this,
+										object.message);
+							}
 						} catch (Exception ex) {
 							setVisibleContent();
 						}
 					}
+
 					@Override
 					public void onFailure(Throwable error, String content) {
 						super.onFailure(error, content);
@@ -143,5 +156,10 @@ public class DangnhapActivity extends Activity {
 	private void setInvisibleContent() {
 		linearContent.setVisibility(View.INVISIBLE);
 		imgLoading.setVisibility(View.VISIBLE);
+	}
+
+	private void gotoNextScreen() {
+		Utils.gotoSanpham(DangnhapActivity.this);
+		finish();
 	}
 }

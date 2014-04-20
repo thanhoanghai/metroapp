@@ -7,10 +7,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.widget.ImageView;
 
 import com.app.metro.R;
 
 public class HealthyFragment extends Fragment {
+
+	private WebView webView;
+	private ImageView loading;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -18,14 +22,14 @@ public class HealthyFragment extends Fragment {
 		super.onCreate(savedInstanceState);
 	}
 
-	private WebView webView;
-
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
 		// Inflate the layout for this fragment
 		View view = inflater.inflate(R.layout.healthy_fragment, container,
 				false);
+
+		loading = (ImageView) view.findViewById(R.id.healthy_loading);
 
 		webView = (WebView) view.findViewById(R.id.healthy_fragment_webview);
 		webView.getSettings().setJavaScriptEnabled(true);
@@ -40,6 +44,11 @@ public class HealthyFragment extends Fragment {
 		public boolean shouldOverrideUrlLoading(WebView view, String url) {
 			view.loadUrl(url);
 			return true;
+		}
+
+		public void onPageFinished(WebView view, String url) {
+			// do your stuff here
+			loading.setVisibility(View.INVISIBLE);
 		}
 	}
 }
