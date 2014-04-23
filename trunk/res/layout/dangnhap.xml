@@ -83,18 +83,6 @@
             android:text="@string/chon"
             android:textColor="@color/bg_blue"
             android:textStyle="bold" />
-
-        <Button
-            android:id="@+id/dangnhap_bnt_skip"
-            android:layout_width="100dp"
-            android:layout_height="30dp"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="30dp"
-            android:background="@color/yellow"
-            android:gravity="center"
-            android:text="@string/boqua"
-            android:textColor="@color/bg_blue"
-            android:textStyle="bold" />
     </LinearLayout>
 
     <com.app.customui.CustomLoading

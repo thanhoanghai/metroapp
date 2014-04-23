@@ -16,14 +16,14 @@
         android:scrollbars="none" >
 
         <com.app.customui.SegmentedRadioGroupLine
-            android:id="@+id/sanpham_activity_segment"
+            android:id="@+id/healthy_segment"
             android:layout_width="wrap_content"
             android:layout_height="30dp"
             android:checkedButton="@+id/button_one"
             android:orientation="horizontal" >
 
             <RadioButton
-                android:id="@+id/sanpham_activity_segment_bnt_thongtinduan"
+                android:id="@+id/healthy_seagment_segment_bnt_thongtinduan"
                 android:layout_width="100dp"
                 android:layout_height="match_parent"
                 android:button="@null"
@@ -35,7 +35,7 @@
                 android:textStyle="bold" />
 
             <RadioButton
-                android:id="@+id/sanpham_activity_segment_bnt_doitac"
+                android:id="@+id/healthy_seagment_segment_bnt_doitac"
                 android:layout_width="100dp"
                 android:layout_height="match_parent"
                 android:button="@null"
@@ -47,7 +47,7 @@
                 android:textStyle="bold" />
 
             <RadioButton
-                android:id="@+id/sanpham_activity_segment_bnt_hoatdong"
+                android:id="@+id/healthy_seagment_segment_bnt_hoatdong"
                 android:layout_width="70dp"
                 android:layout_height="match_parent"
                 android:button="@null"
@@ -59,7 +59,7 @@
                 android:textStyle="bold" />
 
             <RadioButton
-                android:id="@+id/sanpham_activity_segment_bnt_tailieu"
+                android:id="@+id/healthy_seagment_segment_bnt_tailieu"
                 android:layout_width="50dp"
                 android:layout_height="match_parent"
                 android:button="@null"
@@ -71,7 +71,7 @@
                 android:textStyle="bold" />
 
             <RadioButton
-                android:id="@+id/sanpham_activity_segment_bnt_lienhe"
+                android:id="@+id/healthy_seagment_segment_bnt_lienhe"
                 android:layout_width="50dp"
                 android:layout_height="match_parent"
                 android:button="@null"

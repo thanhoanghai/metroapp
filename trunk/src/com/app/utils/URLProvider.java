@@ -33,6 +33,18 @@ public class URLProvider {
 		return null;
 	}
 
+	public static String getNganhMetro() {
+		String client = PROVIDER_SERVER + "customers";
+		if (client != null) {
+			try {
+				return client;
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		return null;
+	}
+
 	public static String getLinkSignIn() {
 		String client = PROVIDER_SERVER + "auth/sign_in";
 		if (client != null) {

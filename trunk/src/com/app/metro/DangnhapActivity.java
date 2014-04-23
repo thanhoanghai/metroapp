@@ -30,7 +30,6 @@ public class DangnhapActivity extends Activity {
 	private DialogFilterGenre dialogBranch;
 	private BranchListObject branchListObject;
 	private Button bntDangnhap;
-	private Button bntSkip;
 
 	private LinearLayout linearContent;
 	private ImageView imgLoading;
@@ -47,13 +46,6 @@ public class DangnhapActivity extends Activity {
 		txtBranch = (TextView) findViewById(R.id.dangnhap_tx_list_trungtam);
 		listNganh = (EditText) findViewById(R.id.dangnhap_tx_list_nganh);
 
-		bntSkip = (Button) findViewById(R.id.dangnhap_bnt_skip);
-		bntSkip.setOnClickListener(new OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				gotoNextScreen();
-			}
-		});
 		bntDangnhap = (Button) findViewById(R.id.dangnhap_bnt_dangnhap);
 		bntDangnhap.setOnClickListener(new OnClickListener() {
 			@Override
@@ -75,6 +67,7 @@ public class DangnhapActivity extends Activity {
 			}
 		});
 
+		getListNganh();
 		getListBranchMetro();
 	}
 
@@ -103,6 +96,26 @@ public class DangnhapActivity extends Activity {
 					txtBranch.setText(branchListObject.data[0].name);
 					initDialog();
 					setVisibleContent();
+				} catch (Exception ex) {
+				}
+			}
+
+			@Override
+			public void onFailure(Throwable error, String content) {
+				super.onFailure(error, content);
+			}
+		});
+	}
+	private void getListNganh() {
+		String link = URLProvider.getNganhMetro();
+		AsyncHttpClient client = new AsyncHttpClient();
+		client.get(link, new AsyncHttpResponseHandler() {
+			@Override
+			public void onSuccess(String response) {
+				try {
+					Gson gson = new Gson();
+					//branchListObject = gson.fromJson(response,
+						//	BranchListObject.class);
 				} catch (Exception ex) {
 				}
 			}

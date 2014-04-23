@@ -8,13 +8,24 @@ import android.view.ViewGroup;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.ImageView;
+import android.widget.RadioGroup;
+import android.widget.RadioGroup.OnCheckedChangeListener;
 
+import com.app.customui.SegmentedRadioGroupLine;
 import com.app.metro.R;
 
 public class HealthyFragment extends Fragment {
 
+	private SegmentedRadioGroupLine segment;
+
 	private WebView webView;
 	private ImageView loading;
+	private String[] listLink = { "http://metro.qptek.com/healthy/info" // thongtinduan
+			, "http://metro.qptek.com/healthy/partners" // doi tac thuc hien
+			, "http://metro.qptek.com/healthy/documents" // hoat dong
+			, "http://metro.qptek.com/healthy/documents" // tai lieu
+			, "http://metro.qptek.com/healthy/documents" // lien he
+	};
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -34,7 +45,27 @@ public class HealthyFragment extends Fragment {
 		webView = (WebView) view.findViewById(R.id.healthy_fragment_webview);
 		webView.getSettings().setJavaScriptEnabled(true);
 		webView.setWebViewClient(new MyWebViewClient());
-		webView.loadUrl("http://www.google.com");
+		webView.loadUrl(listLink[0]);
+
+		segment = (SegmentedRadioGroupLine) view.findViewById(R.id.healthy_segment);
+		segment.check(R.id.healthy_seagment_segment_bnt_thongtinduan);
+		segment.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+			@Override
+			public void onCheckedChanged(RadioGroup group, int checkedId) {
+				loading.setVisibility(View.VISIBLE);
+				if (checkedId == R.id.healthy_seagment_segment_bnt_thongtinduan) {
+					webView.loadUrl(listLink[0]);
+				} else if (checkedId == R.id.healthy_seagment_segment_bnt_doitac) {
+					webView.loadUrl(listLink[1]);
+				} else if (checkedId == R.id.healthy_seagment_segment_bnt_hoatdong) {
+					webView.loadUrl(listLink[2]);
+				} else if (checkedId == R.id.healthy_seagment_segment_bnt_tailieu) {
+					webView.loadUrl(listLink[3]);
+				} else if (checkedId == R.id.healthy_seagment_segment_bnt_lienhe) {
+					webView.loadUrl(listLink[4]);
+				}
+			}
+		});
 
 		return view;
 	}
