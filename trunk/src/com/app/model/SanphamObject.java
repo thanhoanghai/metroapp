@@ -21,6 +21,9 @@ public class SanphamObject {
 
 	@SerializedName("sale_off")
 	public String sale_off;
+	
+	@SerializedName("price_vat")
+	public String price_vat;
 
 	@SerializedName("photo")
 	public String photo;

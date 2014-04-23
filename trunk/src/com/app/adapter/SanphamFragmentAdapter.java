@@ -35,6 +35,7 @@ public class SanphamFragmentAdapter extends BaseAdapter implements ListAdapter {
 		public TextView description;
 		public TextView price1;
 		public TextView price2;
+		public TextView priceVat;
 	}
 
 	@Override
@@ -53,6 +54,8 @@ public class SanphamFragmentAdapter extends BaseAdapter implements ListAdapter {
 					.findViewById(R.id.sanpham_fragment_item_price1);
 			holder.price2 = (TextView) view
 					.findViewById(R.id.sanpham_fragment_item_price2);
+			holder.priceVat = (TextView) view
+					.findViewById(R.id.sanpham_fragment_item_price_vat);
 
 			view.setTag(holder);
 		} else {
@@ -64,6 +67,7 @@ public class SanphamFragmentAdapter extends BaseAdapter implements ListAdapter {
 		holder.description.setText(item.description);
 		holder.price1.setText(item.price_1);
 		holder.price2.setText(item.price_2);
+		holder.priceVat.setText("-GTGT " + item.price_vat);
 
 		return view;
 	}
