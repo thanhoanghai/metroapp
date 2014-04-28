@@ -25,6 +25,7 @@ public class SanphamFragment extends Fragment {
 	private int page = 1;
 	private int per_page = 10;
 	private String branch = "1";
+	private String customer = GlobalSingleton.getSingleton().idNganh;
 	private ImageView imgLoading;
 	private TextView textTitle;
 
@@ -59,10 +60,8 @@ public class SanphamFragment extends Fragment {
 	}
 
 	private void loadProduct() {
-		String link = URLProvider.getListProduct(page, per_page, branch);
+		String link = URLProvider.getListProduct(page, per_page, branch,customer);
 		AsyncHttpClient client = new AsyncHttpClient();
-		client.addHeader("X-Authorization-Token",
-				GlobalSingleton.getSingleton().token);
 		client.get(link, new AsyncHttpResponseHandler() {
 			@Override
 			public void onSuccess(String response) {

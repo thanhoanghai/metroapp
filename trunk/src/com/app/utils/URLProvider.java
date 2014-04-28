@@ -6,13 +6,14 @@ public class URLProvider {
 
 	public static String PROVIDER_SERVER = "http://metro.qptek.com/api/v1/";
 
-	public static String getListProduct(int page, int per_page, String branch) {
+	public static String getListProduct(int page, int per_page, String branch,String customer) {
 		String client = PROVIDER_SERVER + "products?";
 		if (client != null) {
 			try {
 				client += "page=" + page;
 				client += "&per_page=" + per_page;
 				client += "&branch=" + branch;
+				client += "&customer=" + customer;
 				return client;
 			} catch (Exception e) {
 				e.printStackTrace();
