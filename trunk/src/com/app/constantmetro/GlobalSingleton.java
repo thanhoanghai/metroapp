@@ -4,8 +4,10 @@ public class GlobalSingleton {
 	private static GlobalSingleton mInstance;
 
 	public String token = "";
-	public String idNganh="";
-	public String idMetro="";
+	public String idNganh = "";
+	public String nameNganh = "";
+	public String idMetro = "";
+	public String nameMetro = "";
 
 	public static GlobalSingleton getSingleton() {
 

@@ -4,15 +4,25 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.app.adapter.SanphamFragmentAdapter;
+import com.app.constantmetro.Constants;
 import com.app.constantmetro.GlobalSingleton;
+import com.app.customui.DialogFilterGenre;
+import com.app.customui.DialogFilterGenre.FinishDialogListener;
+import com.app.customui.DialogListNganh;
+import com.app.customui.DialogListNganh.FinishDialogNganhListener;
 import com.app.customui.LoadMoreListView;
 import com.app.metro.R;
+import com.app.model.BranchListObject;
+import com.app.model.NganhListObject;
 import com.app.model.SanphamListObject;
+import com.app.utils.Debug;
+import com.app.utils.Pref;
 import com.app.utils.URLProvider;
 import com.google.gson.Gson;
 import com.loopj.android.http.AsyncHttpClient;
@@ -24,10 +34,18 @@ public class SanphamFragment extends Fragment {
 	private SanphamFragmentAdapter adapter;
 	private int page = 1;
 	private int per_page = 10;
-	private String branch = "1";
-	private String customer = GlobalSingleton.getSingleton().idNganh;
+	private String idMetro = "1";
+	private String idNganh = GlobalSingleton.getSingleton().idNganh;
 	private ImageView imgLoading;
 	private TextView textTitle;
+
+	private TextView tvMetro;
+	private TextView tvNganh;
+
+	private DialogFilterGenre dialogBranch;
+	private BranchListObject branchListObject;
+	private DialogListNganh dialogNganh;
+	private NganhListObject nganhListObject;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -49,6 +67,27 @@ public class SanphamFragment extends Fragment {
 				R.string.ex_anphu));
 		listview = (LoadMoreListView) view
 				.findViewById(R.id.sanpham_fragment_listview);
+		View header = inflater.inflate(R.layout.sanpham_fragment_top, null);
+		listview.addHeaderView(header);
+
+		tvMetro = (TextView) header
+				.findViewById(R.id.sanpham_fragment_top_tv_metro);
+		tvMetro.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				if (dialogBranch != null)
+					dialogBranch.show();
+			}
+		});
+		tvNganh = (TextView) header
+				.findViewById(R.id.sanpham_fragment_top_tv_nganh);
+		tvNganh.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				if (dialogNganh != null)
+					dialogNganh.show();
+			}
+		});
 		if (adapter == null) {
 			adapter = new SanphamFragmentAdapter(getActivity());
 			loadProduct();
@@ -56,11 +95,18 @@ public class SanphamFragment extends Fragment {
 			imgLoading.setVisibility(View.INVISIBLE);
 		}
 		listview.setAdapter(adapter);
+
+		initDialogMetro();
+		initDialogNganh();
+
 		return view;
 	}
 
 	private void loadProduct() {
-		String link = URLProvider.getListProduct(page, per_page, branch,customer);
+		imgLoading.setVisibility(View.VISIBLE);
+		String link = URLProvider.getListProduct(page, per_page, idMetro,
+				idNganh);
+		Debug.logError(link);
 		AsyncHttpClient client = new AsyncHttpClient();
 		client.get(link, new AsyncHttpResponseHandler() {
 			@Override
@@ -84,5 +130,58 @@ public class SanphamFragment extends Fragment {
 				super.onFailure(error, content);
 			}
 		});
+	}
+
+	private void initDialogMetro() {
+		try {
+			tvMetro.setText(GlobalSingleton.getSingleton().nameMetro);
+			String response = Pref.getStringObject(Constants.DATA_METRO,
+					getActivity());
+			Gson gson = new Gson();
+			branchListObject = gson.fromJson(response, BranchListObject.class);
+			dialogBranch = new DialogFilterGenre(getActivity(),
+					branchListObject.data);
+			dialogBranch.setListenerFinishedDialog(new FinishDialogListener() {
+				@Override
+				public void onFinishEditDialog(String idGenre, String title) {
+					// TODO Auto-generated method stub
+					tvMetro.setText(title);
+					idMetro = idGenre;
+					resetLoadcontent();
+				}
+			});
+		} catch (Exception ex) {
+		}
+	}
+
+	private void initDialogNganh() {
+		try {
+			tvNganh.setText(GlobalSingleton.getSingleton().nameNganh);
+			String response = Pref.getStringObject(Constants.DATA_NGANH,
+					getActivity());
+			Gson gson = new Gson();
+			nganhListObject = gson.fromJson(response, NganhListObject.class);
+
+			dialogNganh = new DialogListNganh(getActivity(),
+					nganhListObject.data);
+			dialogNganh
+					.setListenerFinishedDialog(new FinishDialogNganhListener() {
+						@Override
+						public void onFinishNganhDialog(String idGenre,
+								String title) {
+							tvNganh.setText(title);
+							idNganh = idGenre;
+							resetLoadcontent();
+						}
+					});
+		} catch (Exception ex) {
+		}
+	}
+	
+	private void resetLoadcontent()
+	{
+		page = 1;
+		adapter.clearData();
+		loadProduct();
 	}
 }

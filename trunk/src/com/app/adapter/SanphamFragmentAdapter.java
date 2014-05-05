@@ -7,27 +7,40 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
 import android.widget.ListAdapter;
 import android.widget.TextView;
 
+import com.app.metro.MetroApplication;
 import com.app.metro.R;
 import com.app.model.SanphamObject;
+import com.nostra13.universalimageloader.core.ImageLoader;
 
 public class SanphamFragmentAdapter extends BaseAdapter implements ListAdapter {
 
 	private LayoutInflater mInflater;
 	private ArrayList<SanphamObject> listObject;
 
+	private ImageLoader mImageLoader;
+
 	public SanphamFragmentAdapter(Context context) {
 		super();
 		if (mInflater == null)
 			mInflater = LayoutInflater.from(context);
+
+		mImageLoader = MetroApplication.getInstance().getImageLoader();
 	}
 
 	public void addItem(SanphamObject item) {
 		if (listObject == null)
 			listObject = new ArrayList<SanphamObject>();
 		listObject.add(item);
+	}
+	
+	public void clearData()
+	{
+		listObject.clear();
+		notifyDataSetChanged();
 	}
 
 	private class ViewHolder {
@@ -36,6 +49,7 @@ public class SanphamFragmentAdapter extends BaseAdapter implements ListAdapter {
 		public TextView price1;
 		public TextView price2;
 		public TextView priceVat;
+		public ImageView img;
 	}
 
 	@Override
@@ -56,6 +70,9 @@ public class SanphamFragmentAdapter extends BaseAdapter implements ListAdapter {
 					.findViewById(R.id.sanpham_fragment_item_price2);
 			holder.priceVat = (TextView) view
 					.findViewById(R.id.sanpham_fragment_item_price_vat);
+			
+			holder.img = (ImageView) view
+					.findViewById(R.id.sanpham_fragment_item_img);
 
 			view.setTag(holder);
 		} else {
@@ -68,6 +85,7 @@ public class SanphamFragmentAdapter extends BaseAdapter implements ListAdapter {
 		holder.price1.setText(item.price_1);
 		holder.price2.setText(item.price_2);
 		holder.priceVat.setText("-GTGT " + item.price_vat);
+		mImageLoader.displayImage(item.photo, holder.img);
 
 		return view;
 	}

@@ -22,9 +22,9 @@ public class HealthyFragment extends Fragment {
 	private ImageView loading;
 	private String[] listLink = { "http://metro.qptek.com/healthy/info" // thongtinduan
 			, "http://metro.qptek.com/healthy/partners" // doi tac thuc hien
-			, "http://metro.qptek.com/healthy/documents" // hoat dong
+			, "http://metro.qptek.com/healthy/activity" // hoat dong
 			, "http://metro.qptek.com/healthy/documents" // tai lieu
-			, "http://metro.qptek.com/healthy/documents" // lien he
+			, "http://metro.qptek.com/healthy/contact" // lien he
 	};
 
 	@Override
@@ -52,16 +52,20 @@ public class HealthyFragment extends Fragment {
 		segment.setOnCheckedChangeListener(new OnCheckedChangeListener() {
 			@Override
 			public void onCheckedChanged(RadioGroup group, int checkedId) {
-				loading.setVisibility(View.VISIBLE);
 				if (checkedId == R.id.healthy_seagment_segment_bnt_thongtinduan) {
+					loading.setVisibility(View.VISIBLE);
 					webView.loadUrl(listLink[0]);
 				} else if (checkedId == R.id.healthy_seagment_segment_bnt_doitac) {
+					loading.setVisibility(View.VISIBLE);
 					webView.loadUrl(listLink[1]);
 				} else if (checkedId == R.id.healthy_seagment_segment_bnt_hoatdong) {
+					loading.setVisibility(View.VISIBLE);
 					webView.loadUrl(listLink[2]);
 				} else if (checkedId == R.id.healthy_seagment_segment_bnt_tailieu) {
+					loading.setVisibility(View.VISIBLE);
 					webView.loadUrl(listLink[3]);
 				} else if (checkedId == R.id.healthy_seagment_segment_bnt_lienhe) {
+					loading.setVisibility(View.VISIBLE);
 					webView.loadUrl(listLink[4]);
 				}
 			}

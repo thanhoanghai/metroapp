@@ -13,7 +13,6 @@
     <HorizontalScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/bg_segment_line"
         android:scrollbars="none" >
 
         <com.app.customui.SegmentedRadioGroupLine
@@ -49,7 +48,7 @@
 
             <RadioButton
                 android:id="@+id/healthy_seagment_segment_bnt_hoatdong"
-                android:layout_width="70dp"
+                android:layout_width="100dp"
                 android:layout_height="match_parent"
                 android:button="@null"
                 android:gravity="center"
@@ -61,7 +60,7 @@
 
             <RadioButton
                 android:id="@+id/healthy_seagment_segment_bnt_tailieu"
-                android:layout_width="50dp"
+                android:layout_width="100dp"
                 android:layout_height="match_parent"
                 android:button="@null"
                 android:gravity="center"
@@ -73,7 +72,7 @@
 
             <RadioButton
                 android:id="@+id/healthy_seagment_segment_bnt_lienhe"
-                android:layout_width="50dp"
+                android:layout_width="100dp"
                 android:layout_height="match_parent"
                 android:button="@null"
                 android:gravity="center"
@@ -82,6 +81,7 @@
                 android:textColor="@color/black"
                 android:textSize="12sp"
                 android:textStyle="bold" />
+
         </com.app.customui.SegmentedRadioGroupLine>
     </HorizontalScrollView>
 
