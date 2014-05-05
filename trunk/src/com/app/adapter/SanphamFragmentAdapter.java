@@ -3,6 +3,7 @@ package com.app.adapter;
 import java.util.ArrayList;
 
 import android.content.Context;
+import android.graphics.Paint;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,12 +23,15 @@ public class SanphamFragmentAdapter extends BaseAdapter implements ListAdapter {
 	private ArrayList<SanphamObject> listObject;
 
 	private ImageLoader mImageLoader;
+	private Context mContext;
 
 	public SanphamFragmentAdapter(Context context) {
 		super();
 		if (mInflater == null)
 			mInflater = LayoutInflater.from(context);
 
+		mContext = context;
+		
 		mImageLoader = MetroApplication.getInstance().getImageLoader();
 	}
 
@@ -46,10 +50,12 @@ public class SanphamFragmentAdapter extends BaseAdapter implements ListAdapter {
 	private class ViewHolder {
 		public TextView name;
 		public TextView description;
+		public TextView giamphantram;
 		public TextView price1;
 		public TextView price2;
 		public TextView priceVat;
 		public ImageView img;
+		public ImageView icon_giamgia;
 	}
 
 	@Override
@@ -64,6 +70,8 @@ public class SanphamFragmentAdapter extends BaseAdapter implements ListAdapter {
 					.findViewById(R.id.sanpham_fragment_item_name);
 			holder.description = (TextView) view
 					.findViewById(R.id.sanpham_fragment_item_description);
+			holder.giamphantram = (TextView) view
+					.findViewById(R.id.sanpham_fragment_item_giamphantram);
 			holder.price1 = (TextView) view
 					.findViewById(R.id.sanpham_fragment_item_price1);
 			holder.price2 = (TextView) view
@@ -73,6 +81,8 @@ public class SanphamFragmentAdapter extends BaseAdapter implements ListAdapter {
 			
 			holder.img = (ImageView) view
 					.findViewById(R.id.sanpham_fragment_item_img);
+			holder.icon_giamgia = (ImageView) view
+					.findViewById(R.id.sanpham_fragment_item_icon_giamgia);
 
 			view.setTag(holder);
 		} else {
@@ -82,8 +92,20 @@ public class SanphamFragmentAdapter extends BaseAdapter implements ListAdapter {
 		SanphamObject item = listObject.get(position);
 		holder.name.setText(item.name);
 		holder.description.setText(item.description);
-		holder.price1.setText(item.price_1);
-		holder.price2.setText(item.price_2);
+		if(item.price_1!=null && item.price_1.length() > 2)
+		{
+			holder.giamphantram.setText(mContext.getResources().getString(R.string.textgiamgia) + " " + item.sale_off);
+			holder.price1.setText(item.price_1 );
+			holder.price1.setPaintFlags(holder.price1.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
+			holder.icon_giamgia.setVisibility(View.VISIBLE);
+		}else
+		{
+			holder.giamphantram.setText("");
+			holder.price1.setText("");
+			holder.icon_giamgia.setVisibility(View.INVISIBLE);
+		}
+		
+		holder.price2.setText(item.price_2 );
 		holder.priceVat.setText("-GTGT " + item.price_vat);
 		mImageLoader.displayImage(item.photo, holder.img);
 

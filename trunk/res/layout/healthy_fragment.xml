@@ -24,7 +24,7 @@
 
             <RadioButton
                 android:id="@+id/healthy_seagment_segment_bnt_thongtinduan"
-                android:layout_width="100dp"
+                android:layout_width="@dimen/menu_child_w"
                 android:layout_height="match_parent"
                 android:button="@null"
                 android:gravity="center"
@@ -36,7 +36,7 @@
 
             <RadioButton
                 android:id="@+id/healthy_seagment_segment_bnt_doitac"
-                android:layout_width="100dp"
+                android:layout_width="@dimen/menu_child_w"
                 android:layout_height="match_parent"
                 android:button="@null"
                 android:gravity="center"
@@ -48,7 +48,7 @@
 
             <RadioButton
                 android:id="@+id/healthy_seagment_segment_bnt_hoatdong"
-                android:layout_width="100dp"
+                android:layout_width="@dimen/menu_child_w"
                 android:layout_height="match_parent"
                 android:button="@null"
                 android:gravity="center"
@@ -60,7 +60,7 @@
 
             <RadioButton
                 android:id="@+id/healthy_seagment_segment_bnt_tailieu"
-                android:layout_width="100dp"
+                android:layout_width="@dimen/menu_child_w"
                 android:layout_height="match_parent"
                 android:button="@null"
                 android:gravity="center"
@@ -72,7 +72,7 @@
 
             <RadioButton
                 android:id="@+id/healthy_seagment_segment_bnt_lienhe"
-                android:layout_width="100dp"
+                android:layout_width="@dimen/menu_child_w"
                 android:layout_height="match_parent"
                 android:button="@null"
                 android:gravity="center"
@@ -81,7 +81,6 @@
                 android:textColor="@color/black"
                 android:textSize="12sp"
                 android:textStyle="bold" />
-
         </com.app.customui.SegmentedRadioGroupLine>
     </HorizontalScrollView>
 

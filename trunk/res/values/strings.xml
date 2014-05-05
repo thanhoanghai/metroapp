@@ -32,8 +32,11 @@
     <string name="ex_anphu">AN PHÚ (TỪ 23/9/2013 ĐẾN 29/4/2014)  GIÁ BÁN (VND) GỒM THUẾ</string>
     <string name="mitomcuacay">Mì tôm chua cay 75g</string>
     <string name="dieukien">(Điều kiện KH mua 2 lốc)</string>
-    <string name="giamgia">17.776Đ   GIẢM 20%</string>
+    
+    <string name="textgiamgia">GIẢM</string>
+    <string name="giamgia">17.776Đ</string>
     <string name="gia19">14.900Đ</string>
     <string name="gtgt">-GTGT   13.500 Đ/Lốc</string>
+    <string name="donvidong">Đ</string>
 
 </resources>

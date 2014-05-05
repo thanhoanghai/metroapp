@@ -1,5 +1,7 @@
 <resources>
 
+    
+    <dimen name="menu_child_w">105dp</dimen>
     <dimen name="dangnhap_item_w">250dp</dimen>
     <dimen name="dangnhap_title_font_size">15sp</dimen>
 

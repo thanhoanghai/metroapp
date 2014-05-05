@@ -12,17 +12,28 @@
         android:background="@drawable/bg_playlist"
         android:gravity="center_vertical"
         android:orientation="horizontal"
-        android:paddingBottom="3dp"
-        android:paddingTop="10dp" >
+        android:paddingBottom="3dp" >
 
-        <ImageView
-            android:id="@+id/sanpham_fragment_item_img"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_marginBottom="5dp"
-            android:layout_marginRight="10dp"
-            android:background="@drawable/img_sanpham"
-            android:contentDescription="@string/app_name" />
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" >
+
+            <ImageView
+                android:id="@+id/sanpham_fragment_item_img"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_centerVertical="true"
+                android:layout_marginBottom="5dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/img_sanpham"
+                android:contentDescription="@string/app_name" />
+
+            <ImageView
+                android:id="@+id/sanpham_fragment_item_icon_giamgia"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/icon_giam" />
+        </RelativeLayout>
 
         <LinearLayout
             android:layout_width="0dp"
@@ -34,6 +45,7 @@
                 android:id="@+id/sanpham_fragment_item_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
                 android:text="@string/mitomcuacay"
                 android:textColor="@color/black"
                 android:textSize="14sp" />
@@ -47,10 +59,19 @@
                 android:textSize="14sp" />
 
             <TextView
-                android:id="@+id/sanpham_fragment_item_price1"
+                android:id="@+id/sanpham_fragment_item_giamphantram"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
+                android:text="@string/textgiamgia"
+                android:textColor="@color/bg_blue"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/sanpham_fragment_item_price1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:text="@string/giamgia"
                 android:textColor="@color/bg_blue"
                 android:textSize="15sp"
