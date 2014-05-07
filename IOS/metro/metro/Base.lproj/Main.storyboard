@@ -21,12 +21,8 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="copywright.png" translatesAutoresizingMaskIntoConstraints="NO" id="EUN-eI-nyQ">
-                                <rect key="frame" x="59" y="544" width="203" height="13"/>
+                                <rect key="frame" x="59" y="535" width="203" height="13"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="copyright.png" translatesAutoresizingMaskIntoConstraints="NO" id="5RU-hV-IMA">
-                                <rect key="frame" x="11" y="543" width="295" height="15"/>
-                                <autoresizingMask key="autoresizingMask"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.23921570181846619" blue="0.4901961088180542" alpha="1" colorSpace="deviceRGB"/>
@@ -38,7 +34,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="copyright.png" width="295" height="15"/>
         <image name="copywright.png" width="203" height="13"/>
         <image name="logo_splash.png" width="243" height="37"/>
     </resources>

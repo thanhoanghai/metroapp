@@ -25,6 +25,8 @@
 		EBA30F1E191A9E1C00D8A6FF /* logo_splash@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EBA30F1C191A9E1C00D8A6FF /* logo_splash@2x.png */; };
 		EBA30F25191AA1CD00D8A6FF /* copyright.png in Resources */ = {isa = PBXBuildFile; fileRef = EBA30F23191AA1CD00D8A6FF /* copyright.png */; };
 		EBA30F26191AA1CD00D8A6FF /* copyright@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EBA30F24191AA1CD00D8A6FF /* copyright@2x.png */; };
+		EBA30F29191AA28100D8A6FF /* copywright.png in Resources */ = {isa = PBXBuildFile; fileRef = EBA30F27191AA28100D8A6FF /* copywright.png */; };
+		EBA30F2A191AA28100D8A6FF /* copywright@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EBA30F28191AA28100D8A6FF /* copywright@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +63,8 @@
 		EBA30F1C191A9E1C00D8A6FF /* logo_splash@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo_splash@2x.png"; sourceTree = "<group>"; };
 		EBA30F23191AA1CD00D8A6FF /* copyright.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = copyright.png; sourceTree = "<group>"; };
 		EBA30F24191AA1CD00D8A6FF /* copyright@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "copyright@2x.png"; sourceTree = "<group>"; };
+		EBA30F27191AA28100D8A6FF /* copywright.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = copywright.png; sourceTree = "<group>"; };
+		EBA30F28191AA28100D8A6FF /* copywright@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "copywright@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,6 +176,8 @@
 		EBA30F1A191A9BD900D8A6FF /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				EBA30F27191AA28100D8A6FF /* copywright.png */,
+				EBA30F28191AA28100D8A6FF /* copywright@2x.png */,
 				EBA30F23191AA1CD00D8A6FF /* copyright.png */,
 				EBA30F24191AA1CD00D8A6FF /* copyright@2x.png */,
 				EBA30F1B191A9E1C00D8A6FF /* logo_splash.png */,
@@ -258,8 +264,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				EBA30F26191AA1CD00D8A6FF /* copyright@2x.png in Resources */,
+				EBA30F29191AA28100D8A6FF /* copywright.png in Resources */,
 				EBA30EFB191A9ACA00D8A6FF /* Images.xcassets in Resources */,
 				EBA30F25191AA1CD00D8A6FF /* copyright.png in Resources */,
+				EBA30F2A191AA28100D8A6FF /* copywright@2x.png in Resources */,
 				EBA30F1E191A9E1C00D8A6FF /* logo_splash@2x.png in Resources */,
 				EBA30F1D191A9E1C00D8A6FF /* logo_splash.png in Resources */,
 				EBA30EED191A9ACA00D8A6FF /* InfoPlist.strings in Resources */,
