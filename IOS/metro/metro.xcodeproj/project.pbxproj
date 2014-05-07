@@ -21,6 +21,10 @@
 		EBA30F04191A9ACA00D8A6FF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBA30EE6191A9ACA00D8A6FF /* UIKit.framework */; };
 		EBA30F0C191A9ACA00D8A6FF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EBA30F0A191A9ACA00D8A6FF /* InfoPlist.strings */; };
 		EBA30F0E191A9ACA00D8A6FF /* metroTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EBA30F0D191A9ACA00D8A6FF /* metroTests.m */; };
+		EBA30F1D191A9E1C00D8A6FF /* logo_splash.png in Resources */ = {isa = PBXBuildFile; fileRef = EBA30F1B191A9E1C00D8A6FF /* logo_splash.png */; };
+		EBA30F1E191A9E1C00D8A6FF /* logo_splash@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EBA30F1C191A9E1C00D8A6FF /* logo_splash@2x.png */; };
+		EBA30F25191AA1CD00D8A6FF /* copyright.png in Resources */ = {isa = PBXBuildFile; fileRef = EBA30F23191AA1CD00D8A6FF /* copyright.png */; };
+		EBA30F26191AA1CD00D8A6FF /* copyright@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EBA30F24191AA1CD00D8A6FF /* copyright@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,14 +49,18 @@
 		EBA30EF1191A9ACA00D8A6FF /* MTAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTAppDelegate.h; sourceTree = "<group>"; };
 		EBA30EF2191A9ACA00D8A6FF /* MTAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MTAppDelegate.m; sourceTree = "<group>"; };
 		EBA30EF5191A9ACA00D8A6FF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		EBA30EF7191A9ACA00D8A6FF /* MTViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTViewController.h; sourceTree = "<group>"; };
-		EBA30EF8191A9ACA00D8A6FF /* MTViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MTViewController.m; sourceTree = "<group>"; };
+		EBA30EF7191A9ACA00D8A6FF /* MTViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MTViewController.h; path = ../MTViewController.h; sourceTree = "<group>"; };
+		EBA30EF8191A9ACA00D8A6FF /* MTViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = MTViewController.m; path = ../MTViewController.m; sourceTree = "<group>"; };
 		EBA30EFA191A9ACA00D8A6FF /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		EBA30F00191A9ACA00D8A6FF /* metroTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = metroTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBA30F01191A9ACA00D8A6FF /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		EBA30F09191A9ACA00D8A6FF /* metroTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "metroTests-Info.plist"; sourceTree = "<group>"; };
 		EBA30F0B191A9ACA00D8A6FF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		EBA30F0D191A9ACA00D8A6FF /* metroTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = metroTests.m; sourceTree = "<group>"; };
+		EBA30F1B191A9E1C00D8A6FF /* logo_splash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_splash.png; sourceTree = "<group>"; };
+		EBA30F1C191A9E1C00D8A6FF /* logo_splash@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo_splash@2x.png"; sourceTree = "<group>"; };
+		EBA30F23191AA1CD00D8A6FF /* copyright.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = copyright.png; sourceTree = "<group>"; };
+		EBA30F24191AA1CD00D8A6FF /* copyright@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "copyright@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,11 +120,11 @@
 		EBA30EE8191A9ACA00D8A6FF /* metro */ = {
 			isa = PBXGroup;
 			children = (
+				EBA30F19191A9BD900D8A6FF /* Controller */,
+				EBA30F1A191A9BD900D8A6FF /* Resource */,
+				EBA30EF4191A9ACA00D8A6FF /* Main.storyboard */,
 				EBA30EF1191A9ACA00D8A6FF /* MTAppDelegate.h */,
 				EBA30EF2191A9ACA00D8A6FF /* MTAppDelegate.m */,
-				EBA30EF4191A9ACA00D8A6FF /* Main.storyboard */,
-				EBA30EF7191A9ACA00D8A6FF /* MTViewController.h */,
-				EBA30EF8191A9ACA00D8A6FF /* MTViewController.m */,
 				EBA30EFA191A9ACA00D8A6FF /* Images.xcassets */,
 				EBA30EE9191A9ACA00D8A6FF /* Supporting Files */,
 			);
@@ -150,6 +158,26 @@
 				EBA30F0A191A9ACA00D8A6FF /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		EBA30F19191A9BD900D8A6FF /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				EBA30EF7191A9ACA00D8A6FF /* MTViewController.h */,
+				EBA30EF8191A9ACA00D8A6FF /* MTViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		EBA30F1A191A9BD900D8A6FF /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				EBA30F23191AA1CD00D8A6FF /* copyright.png */,
+				EBA30F24191AA1CD00D8A6FF /* copyright@2x.png */,
+				EBA30F1B191A9E1C00D8A6FF /* logo_splash.png */,
+				EBA30F1C191A9E1C00D8A6FF /* logo_splash@2x.png */,
+			);
+			path = Resource;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -229,7 +257,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EBA30F26191AA1CD00D8A6FF /* copyright@2x.png in Resources */,
 				EBA30EFB191A9ACA00D8A6FF /* Images.xcassets in Resources */,
+				EBA30F25191AA1CD00D8A6FF /* copyright.png in Resources */,
+				EBA30F1E191A9E1C00D8A6FF /* logo_splash@2x.png in Resources */,
+				EBA30F1D191A9E1C00D8A6FF /* logo_splash.png in Resources */,
 				EBA30EED191A9ACA00D8A6FF /* InfoPlist.strings in Resources */,
 				EBA30EF6191A9ACA00D8A6FF /* Main.storyboard in Resources */,
 			);
@@ -461,6 +493,7 @@
 				EBA30F13191A9ACA00D8A6FF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EBA30F14191A9ACA00D8A6FF /* Build configuration list for PBXNativeTarget "metroTests" */ = {
 			isa = XCConfigurationList;
@@ -469,6 +502,7 @@
 				EBA30F16191A9ACA00D8A6FF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
