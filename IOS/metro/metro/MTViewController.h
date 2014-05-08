@@ -9,5 +9,13 @@
 #import <UIKit/UIKit.h>
 
 @interface MTViewController : UIViewController
+{
+    NSTimer *nsTimerUp;
+    int countTime;
+}
+
+
+@property (weak, nonatomic) IBOutlet UIImageView *imgLogo;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *loading;
 
 @end
