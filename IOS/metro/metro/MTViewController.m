@@ -59,7 +59,7 @@
         nsTimerUp = nil;
         [UIView animateWithDuration:0.35
                               delay:0.0
-                            options: UIViewAnimationCurveEaseOut
+                            options: UIViewAnimationOptionCurveEaseInOut
                          animations:^{
                              [imgLogo setFrame:CGRectMake(imgLogo.frame.origin.x, 30, imgLogo.frame.size.width, imgLogo.frame.size.height)];
                          }
