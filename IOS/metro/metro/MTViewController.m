@@ -15,6 +15,7 @@
 #import "NganhObject.h"
 #import "NganhListObject.h"
 #import "BranchObject.h"
+#import "MenuCell.h"
 
 @interface MTViewController ()
 
@@ -30,14 +31,21 @@
 @synthesize viewDisconect;
 @synthesize bntChon;
 @synthesize viewTable;
+@synthesize tableView;
 @synthesize lbTitleListTable;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    
+    //Dialog Branch Metro
+    indexDialog = 0;
+    
     viewContent.hidden = YES;
     [self getDataBranchMetro];
+    [self getDataNganh];
+    
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -99,6 +107,7 @@
 
 -(void)showViewTable:(int)index
 {
+    indexDialog = index;
     [self.view addSubview:viewTable];
     CGRect r = [viewTable frame];
     r.origin.y = self.view.frame.size.height - r.size.height;
@@ -108,6 +117,7 @@
         [lbTitleListTable setText:TRUNG_TAM_METRO];
     }else
         [lbTitleListTable setText:NGANH_HANG_KINH_DOANH];
+    [tableView reloadData];
 }
 
 -(void)showDisconectView
@@ -131,7 +141,7 @@
         [config addArrayMapper:mapper];
         
         DCKeyValueObjectMapping *parser = [DCKeyValueObjectMapping mapperForClass:[NganhListObject class] andConfiguration:config];
-        NganhListObject *nganhListObject = [parser parseDictionary:result];
+         metroListObject = [parser parseDictionary:result];
     } failure:^(NSString *err){
      
     }];
@@ -147,7 +157,7 @@
          [config addArrayMapper:mapper];
          
          DCKeyValueObjectMapping *parser = [DCKeyValueObjectMapping mapperForClass:[NganhListObject class] andConfiguration:config];
-         NganhListObject *nganhListObject = [parser parseDictionary:result];
+         nganhListObject = [parser parseDictionary:result];
      } failure:^(NSString *err){
         
      }];
@@ -184,6 +194,59 @@
 
 - (IBAction)doActionBntNganh:(id)sender {
     [self showViewTable:1];
+}
+
+#pragma mark TABLE_VIEW_LIST_METRO
+#pragma mark TABBLE_VIEW
+- (NSInteger)tableView:(UITableView *)tableviewDialog numberOfRowsInSection:(NSInteger)sectionIndex
+{
+    if(indexDialog == 1)
+    {
+        if(nganhListObject!=NULL)
+        { return [nganhListObject.data count];}
+        else {return 0;}
+    }else
+    {
+        if(metroListObject!=NULL)
+        {   return [metroListObject.data count];}
+        else{ return 0;}
+    }
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableviewDialog cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    //CUSTOME CELL
+    static NSString *CellIdentifier = @"MenuCell";
+    MenuCell *cell = (MenuCell*)[tableviewDialog dequeueReusableCellWithIdentifier:CellIdentifier];
+    if(cell==nil){
+        cell = [[MenuCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:@"MenuCell"];
+    }
+    
+    if(indexDialog == 0)
+    {
+        BranchObject *item = [metroListObject.data objectAtIndex:indexPath.row];
+        [cell.contentLabel setText:item.name];
+    }else
+    {
+        NganhObject *item = [nganhListObject.data objectAtIndex:indexPath.row];
+        [cell.contentLabel setText:item.name];
+    }
+    
+    return cell;
+}
+
+- (void)tableView:(UITableView *)tableviewDialog didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if(indexDialog == 0)
+    {
+        BranchObject *item = [metroListObject.data objectAtIndex:indexPath.row];
+        [lbBranchMetro setTitle:item.name forState:UIControlStateNormal];
+    }else
+    {
+        NganhObject *item = [nganhListObject.data objectAtIndex:indexPath.row];
+        [lbNganh setTitle:item.name forState:UIControlStateNormal];
+    }
+    [viewTable removeFromSuperview];
 }
 
 

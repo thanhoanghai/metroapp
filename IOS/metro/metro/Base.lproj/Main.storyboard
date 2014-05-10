@@ -93,6 +93,7 @@
                         <outlet property="lbNganh" destination="TeX-XZ-U96" id="BgE-OG-OGO"/>
                         <outlet property="lbTitleListTable" destination="fc2-BX-YJq" id="bdb-3X-dtG"/>
                         <outlet property="loading" destination="IoC-6e-05G" id="Lh9-Ww-Vsn"/>
+                        <outlet property="tableView" destination="1aZ-u3-zgr" id="0do-9F-DDu"/>
                         <outlet property="viewContent" destination="Vfa-2g-Rao" id="Wam-1c-uav"/>
                         <outlet property="viewDisconect" destination="2BS-xW-paa" id="MSa-wM-bOh"/>
                         <outlet property="viewTable" destination="jTl-2f-Uhx" id="KfT-Uq-LLt"/>
@@ -134,6 +135,10 @@
                             <rect key="frame" x="0.0" y="31" width="320" height="263"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <outlet property="dataSource" destination="vXZ-lx-hvc" id="0Fd-hp-HR2"/>
+                                <outlet property="delegate" destination="vXZ-lx-hvc" id="ymQ-IP-NTq"/>
+                            </connections>
                         </tableView>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Cuk-xI-ElS">
                             <rect key="frame" x="0.0" y="294" width="320" height="31"/>

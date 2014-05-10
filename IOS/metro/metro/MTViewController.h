@@ -7,15 +7,22 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "NganhListObject.h"
 
-@interface MTViewController : UIViewController
+@interface MTViewController : UIViewController<UITableViewDataSource, UITabBarControllerDelegate>
 {
     NSTimer *nsTimerUp;
     int countTime;
+    NganhListObject *nganhListObject;
+    NganhListObject *metroListObject;
+    int indexDialog;
 }
+
+
 
 @property (weak, nonatomic) IBOutlet UIButton *bntChon;
 @property (weak, nonatomic) IBOutlet UIView *viewTable;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UILabel *lbTitleListTable;
 
 @property (weak, nonatomic) IBOutlet UIView *viewDisconect;
