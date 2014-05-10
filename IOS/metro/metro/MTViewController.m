@@ -24,16 +24,18 @@
 
 @synthesize imgLogo;
 @synthesize viewContent;
+@synthesize lbBranchMetro;
+@synthesize lbNganh;
 @synthesize loading;
 @synthesize viewDisconect;
 @synthesize bntChon;
+@synthesize viewTable;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     viewContent.hidden = YES;
-    viewDisconect.hidden = YES;
     [self getDataBranchMetro];
 }
 
@@ -81,7 +83,7 @@
                          completion:^(BOOL finished){
                              [loading stopAnimating];
                              [self showContent];
-                             //[self showDisconect];
+                             //[self showDisconectView];
                          }];
     }
 }
@@ -93,10 +95,21 @@
     loading.hidden = YES;
     viewContent.hidden = NO;
 }
--(void)showDisconect
+
+-(void)showViewTable
+{
+    [self.view addSubview:viewTable];
+    CGRect r = [viewTable frame];
+    r.origin.y = self.view.frame.size.height - r.size.height;
+    [viewTable setFrame:r];
+    
+}
+
+-(void)showDisconectView
 {
     loading.hidden = YES;
-    viewDisconect.hidden = NO;
+    [self.view addSubview:viewDisconect];
+    viewDisconect.center = self.view.center;
 }
 
 
@@ -155,6 +168,20 @@
 - (IBAction)doActionBntChon:(id)sender {
     [self gotoMainController];
 }
+
+- (IBAction)doActionBntCloseTable:(id)sender {
+    [viewTable removeFromSuperview];
+}
+
+- (IBAction)doActionBntBranchMetro:(id)sender {
+    [self showViewTable];
+}
+
+- (IBAction)doActionBntNganh:(id)sender {
+    [self showViewTable];
+}
+
+
 
 
 
