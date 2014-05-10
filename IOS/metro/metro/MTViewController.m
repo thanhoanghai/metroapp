@@ -8,6 +8,12 @@
 
 #import "MTViewController.h"
 #import "MTMainController.h"
+#import "AFClient.h"
+#import "DCKeyValueObjectMapping.h"
+#import "DCParserConfiguration.h"
+#import "DCArrayMapping.h"
+#import "NganhObject.h"
+#import "NganhListObject.h"
 
 @interface MTViewController ()
 
@@ -27,6 +33,7 @@
 	// Do any additional setup after loading the view, typically from a nib.
     viewContent.hidden = YES;
     viewDisconect.hidden = YES;
+    [self getDataNganh];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -91,6 +98,36 @@
     viewDisconect.hidden = NO;
 }
 
+
+#pragma mark GET_API_LOAD_DATA_FROM_SERVER
+-(void)getDataBranchMetro
+{
+    NSString *link = [AFClient getLinkBranchMetro];
+    [AFClient getLink:link success:^(id result)
+    {
+        NSLog(@"%@",result);
+    } failure:^(NSString *err){
+     
+    }];
+}
+-(void)getDataNganh
+{
+    NSString *link = [AFClient getLinkNganh];
+    [AFClient getLink:link success:^(id result)
+     {
+        DCArrayMapping *mapper = [DCArrayMapping mapperForClassElements:[NganhObject class] forAttribute:@"data" onClass:[NganhListObject class]] ;
+         
+         DCParserConfiguration *config = [DCParserConfiguration configuration];
+         [config addArrayMapper:mapper];
+         
+         DCKeyValueObjectMapping *parser = [DCKeyValueObjectMapping mapperForClass:[NganhListObject class] andConfiguration:config];
+         NganhListObject *nganhListObject = [parser parseDictionary:result];
+     } failure:^(NSString *err){
+        
+     }];
+}
+
+
 #pragma mark PUSH_TO_NEW_CONTROLLER
 -(void)gotoMainController
 {
@@ -110,4 +147,7 @@
 - (IBAction)doActionBntChon:(id)sender {
     [self gotoMainController];
 }
+
+
+
 @end

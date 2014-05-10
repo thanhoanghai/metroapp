@@ -14,3 +14,7 @@
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
 #endif
+
+#define PROVIDER "http://metro.qptek.com/api/v1/"
+#define BRANCH "branches"
+#define NGANH "customers"

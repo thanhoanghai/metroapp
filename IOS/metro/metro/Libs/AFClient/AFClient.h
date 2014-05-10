@@ -10,6 +10,11 @@
 
 @interface AFClient : NSObject
 
+
++(NSString*)getLinkBranchMetro;
++(NSString*)getLinkNganh;
+
+
 +(void)getLink:(NSString *)link
         success:(void (^)(id))successBlock
         failure:(void (^)(NSString *))failureBlock;

@@ -11,10 +11,22 @@
 
 @implementation AFClient
 
++(NSString*)getLinkBranchMetro
+{
+    return [NSString stringWithFormat:@"%s%s", PROVIDER, BRANCH];
+}
++(NSString*)getLinkNganh
+{
+    return [NSString stringWithFormat:@"%s%s", PROVIDER, NGANH];
+}
+
+
+
 +(void)getLink:(NSString *)link
         success:(void (^)(id))successBlock
         failure:(void (^)(NSString *))failureBlock{
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    manager.responseSerializer.acceptableContentTypes = [manager.responseSerializer.acceptableContentTypes setByAddingObject:@"text/html"];
     [manager GET:link parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         if(successBlock){
             successBlock(responseObject);
