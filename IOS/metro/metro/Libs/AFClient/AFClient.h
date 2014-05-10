@@ -10,4 +10,8 @@
 
 @interface AFClient : NSObject
 
++(void)getLink:(NSString *)link
+        success:(void (^)(id))successBlock
+        failure:(void (^)(NSString *))failureBlock;
+
 @end

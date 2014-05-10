@@ -26,6 +26,7 @@
 		EB3C1BE9191E0AB300252AF1 /* UIProgressView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = EB3C1BD6191E0AB300252AF1 /* UIProgressView+AFNetworking.m */; };
 		EB3C1BEA191E0AB300252AF1 /* UIRefreshControl+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = EB3C1BD8191E0AB300252AF1 /* UIRefreshControl+AFNetworking.m */; };
 		EB3C1BEB191E0AB300252AF1 /* UIWebView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = EB3C1BDA191E0AB300252AF1 /* UIWebView+AFNetworking.m */; };
+		EB3C1BEF191E19F600252AF1 /* AFClient.m in Sources */ = {isa = PBXBuildFile; fileRef = EB3C1BEE191E19F600252AF1 /* AFClient.m */; };
 		EBA30EE3191A9ACA00D8A6FF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBA30EE2191A9ACA00D8A6FF /* Foundation.framework */; };
 		EBA30EE5191A9ACA00D8A6FF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBA30EE4191A9ACA00D8A6FF /* CoreGraphics.framework */; };
 		EBA30EE7191A9ACA00D8A6FF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBA30EE6191A9ACA00D8A6FF /* UIKit.framework */; };
@@ -99,6 +100,8 @@
 		EB3C1BD8191E0AB300252AF1 /* UIRefreshControl+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIRefreshControl+AFNetworking.m"; sourceTree = "<group>"; };
 		EB3C1BD9191E0AB300252AF1 /* UIWebView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWebView+AFNetworking.h"; sourceTree = "<group>"; };
 		EB3C1BDA191E0AB300252AF1 /* UIWebView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWebView+AFNetworking.m"; sourceTree = "<group>"; };
+		EB3C1BED191E19F600252AF1 /* AFClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFClient.h; sourceTree = "<group>"; };
+		EB3C1BEE191E19F600252AF1 /* AFClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFClient.m; sourceTree = "<group>"; };
 		EBA30EDF191A9ACA00D8A6FF /* metro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = metro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBA30EE2191A9ACA00D8A6FF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		EBA30EE4191A9ACA00D8A6FF /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -214,6 +217,8 @@
 		EB3C1BEC191E19DD00252AF1 /* AFClient */ = {
 			isa = PBXGroup;
 			children = (
+				EB3C1BED191E19F600252AF1 /* AFClient.h */,
+				EB3C1BEE191E19F600252AF1 /* AFClient.m */,
 			);
 			path = AFClient;
 			sourceTree = "<group>";
@@ -435,6 +440,7 @@
 				EB3C1BE0191E0AB300252AF1 /* AFURLConnectionOperation.m in Sources */,
 				EB3C1BE8191E0AB300252AF1 /* UIImageView+AFNetworking.m in Sources */,
 				EB3C1BDB191E0AB300252AF1 /* AFHTTPRequestOperation.m in Sources */,
+				EB3C1BEF191E19F600252AF1 /* AFClient.m in Sources */,
 				EB3C1BE5191E0AB300252AF1 /* UIActivityIndicatorView+AFNetworking.m in Sources */,
 				EBA30EF3191A9ACA00D8A6FF /* MTAppDelegate.m in Sources */,
 				EB3C1BE1191E0AB300252AF1 /* AFURLRequestSerialization.m in Sources */,
