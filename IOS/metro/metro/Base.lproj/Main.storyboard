@@ -97,7 +97,7 @@
                         <outlet property="viewContent" destination="Vfa-2g-Rao" id="Wam-1c-uav"/>
                         <outlet property="viewDisconect" destination="2BS-xW-paa" id="MSa-wM-bOh"/>
                         <outlet property="viewTable" destination="jTl-2f-Uhx" id="KfT-Uq-LLt"/>
-                        <segue destination="KIH-ed-FD8" kind="modal" identifier="goto-main-controller" modalTransitionStyle="crossDissolve" id="Jj4-uo-Gpd"/>
+                        <segue destination="BTm-sS-239" kind="modal" identifier="goto-main-controller" modalTransitionStyle="crossDissolve" id="xag-JN-nUC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
@@ -170,22 +170,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HVf-Bq-YLa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="854" y="36"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="Nie-8I-BVH">
-            <objects>
-                <navigationController definesPresentationContext="YES" id="KIH-ed-FD8" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="thc-pL-p4h">
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="BTm-sS-239" kind="relationship" relationship="rootViewController" id="Lo2-Y5-jWb"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="C9x-QG-MCr" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="493" y="36"/>
+            <point key="canvasLocation" x="559" y="-32"/>
         </scene>
     </scenes>
     <resources>
