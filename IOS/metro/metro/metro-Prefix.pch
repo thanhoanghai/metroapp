@@ -18,3 +18,6 @@
 #define PROVIDER "http://metro.qptek.com/api/v1/"
 #define BRANCH "branches"
 #define NGANH "customers"
+
+#define TRUNG_TAM_METRO @"Trung tâm Metro"
+#define NGANH_HANG_KINH_DOANH @"Ngành hàng kinh doanh"

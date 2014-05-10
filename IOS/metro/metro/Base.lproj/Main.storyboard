@@ -91,6 +91,7 @@
                         <outlet property="imgLogo" destination="Hzh-Bz-eO0" id="a1x-gJ-ub5"/>
                         <outlet property="lbBranchMetro" destination="UMY-zk-Cg7" id="qCr-ge-6Rk"/>
                         <outlet property="lbNganh" destination="TeX-XZ-U96" id="BgE-OG-OGO"/>
+                        <outlet property="lbTitleListTable" destination="fc2-BX-YJq" id="bdb-3X-dtG"/>
                         <outlet property="loading" destination="IoC-6e-05G" id="Lh9-Ww-Vsn"/>
                         <outlet property="viewContent" destination="Vfa-2g-Rao" id="Wam-1c-uav"/>
                         <outlet property="viewDisconect" destination="2BS-xW-paa" id="MSa-wM-bOh"/>

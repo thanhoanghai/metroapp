@@ -16,6 +16,8 @@
 
 @property (weak, nonatomic) IBOutlet UIButton *bntChon;
 @property (weak, nonatomic) IBOutlet UIView *viewTable;
+@property (weak, nonatomic) IBOutlet UILabel *lbTitleListTable;
+
 @property (weak, nonatomic) IBOutlet UIView *viewDisconect;
 @property (weak, nonatomic) IBOutlet UIView *viewContent;
 @property (weak, nonatomic) IBOutlet UIButton *lbBranchMetro;

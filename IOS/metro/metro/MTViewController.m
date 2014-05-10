@@ -30,6 +30,7 @@
 @synthesize viewDisconect;
 @synthesize bntChon;
 @synthesize viewTable;
+@synthesize lbTitleListTable;
 
 - (void)viewDidLoad
 {
@@ -96,13 +97,17 @@
     viewContent.hidden = NO;
 }
 
--(void)showViewTable
+-(void)showViewTable:(int)index
 {
     [self.view addSubview:viewTable];
     CGRect r = [viewTable frame];
     r.origin.y = self.view.frame.size.height - r.size.height;
     [viewTable setFrame:r];
-    
+    if(index == 0)
+    {
+        [lbTitleListTable setText:TRUNG_TAM_METRO];
+    }else
+        [lbTitleListTable setText:NGANH_HANG_KINH_DOANH];
 }
 
 -(void)showDisconectView
@@ -174,11 +179,11 @@
 }
 
 - (IBAction)doActionBntBranchMetro:(id)sender {
-    [self showViewTable];
+    [self showViewTable:0];
 }
 
 - (IBAction)doActionBntNganh:(id)sender {
-    [self showViewTable];
+    [self showViewTable:1];
 }
 
 
