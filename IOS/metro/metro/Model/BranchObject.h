@@ -10,4 +10,8 @@
 
 @interface BranchObject : NSObject
 
+@property(nonatomic, strong) NSString *id;
+@property(nonatomic, strong) NSString *name;
+@property(nonatomic, strong) NSString *address;
+
 @end

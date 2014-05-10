@@ -14,6 +14,7 @@
 #import "DCArrayMapping.h"
 #import "NganhObject.h"
 #import "NganhListObject.h"
+#import "BranchObject.h"
 
 @interface MTViewController ()
 
@@ -33,7 +34,7 @@
 	// Do any additional setup after loading the view, typically from a nib.
     viewContent.hidden = YES;
     viewDisconect.hidden = YES;
-    [self getDataNganh];
+    [self getDataBranchMetro];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -106,6 +107,13 @@
     [AFClient getLink:link success:^(id result)
     {
         NSLog(@"%@",result);
+        DCArrayMapping *mapper = [DCArrayMapping mapperForClassElements:[BranchObject class] forAttribute:@"data" onClass:[NganhListObject class]] ;
+        
+        DCParserConfiguration *config = [DCParserConfiguration configuration];
+        [config addArrayMapper:mapper];
+        
+        DCKeyValueObjectMapping *parser = [DCKeyValueObjectMapping mapperForClass:[NganhListObject class] andConfiguration:config];
+        NganhListObject *nganhListObject = [parser parseDictionary:result];
     } failure:^(NSString *err){
      
     }];
