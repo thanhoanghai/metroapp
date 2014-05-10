@@ -67,10 +67,10 @@ public class SanphamFragment extends Fragment {
 				R.string.ex_anphu));
 		listview = (LoadMoreListView) view
 				.findViewById(R.id.sanpham_fragment_listview);
-		//View header = inflater.inflate(R.layout.sanpham_fragment_top, null);
-		//listview.addHeaderView(header);
+		View header = inflater.inflate(R.layout.sanpham_fragment_top, null);
+		listview.addHeaderView(header);
 
-		tvMetro = (TextView) view
+		tvMetro = (TextView) header
 				.findViewById(R.id.sanpham_fragment_top_tv_metro);
 		tvMetro.setOnClickListener(new OnClickListener() {
 			@Override
@@ -79,7 +79,7 @@ public class SanphamFragment extends Fragment {
 					dialogBranch.show();
 			}
 		});
-		tvNganh = (TextView) view
+		tvNganh = (TextView) header
 				.findViewById(R.id.sanpham_fragment_top_tv_nganh);
 		tvNganh.setOnClickListener(new OnClickListener() {
 			@Override

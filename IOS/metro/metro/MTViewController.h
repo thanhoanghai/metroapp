@@ -14,8 +14,11 @@
     int countTime;
 }
 
-
+@property (weak, nonatomic) IBOutlet UIButton *bntChon;
+@property (weak, nonatomic) IBOutlet UIView *viewDisconect;
+@property (weak, nonatomic) IBOutlet UIView *viewContent;
 @property (weak, nonatomic) IBOutlet UIImageView *imgLogo;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *loading;
+- (IBAction)doActionBntChon:(id)sender;
 
 @end

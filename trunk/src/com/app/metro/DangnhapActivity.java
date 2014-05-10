@@ -45,24 +45,11 @@ public class DangnhapActivity extends Activity {
 	private String nameNganh;
 	private String id_Metro;
 	private String nameMetro;
-	
-	private LinearLayout linearDisconnect;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.dangnhap);
-		
-		linearDisconnect = (LinearLayout) findViewById(R.id.lostConnectionContainer);
-		linearDisconnect.setOnClickListener(new OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				linearDisconnect.setVisibility(View.INVISIBLE);
-				imgLoading.setVisibility(View.VISIBLE);
-				getListNganh();
-				getListBranchMetro();
-			}
-		});
 
 		imgLoading = (ImageView) findViewById(R.id.dangnhap_loading);
 		linearContent = (LinearLayout) findViewById(R.id.dangnhap_linear_content);
@@ -150,8 +137,6 @@ public class DangnhapActivity extends Activity {
 			@Override
 			public void onFailure(Throwable error, String content) {
 				super.onFailure(error, content);
-				linearDisconnect.setVisibility(View.VISIBLE);
-				imgLoading.setVisibility(View.INVISIBLE);
 			}
 		});
 	}

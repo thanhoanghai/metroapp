@@ -92,33 +92,4 @@
         android:layout_centerInParent="true"
         android:src="@anim/sapi_loading_blue" />
 
-    <LinearLayout
-        android:id="@+id/lostConnectionContainer"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:orientation="vertical"
-        android:visibility="gone" >
-
-        <ImageView
-            android:id="@+id/lostConnection"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:background="@drawable/ic_blank_networkproblem"
-            android:contentDescription="@string/app_name"
-            android:focusable="false"
-            android:focusableInTouchMode="false" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_gravity="bottom"
-            android:focusable="false"
-            android:layout_marginTop="5dp"
-            android:textColor="@color/white"
-            android:focusableInTouchMode="false"
-            android:text="@string/matketnoi" />
-    </LinearLayout>
-
 </RelativeLayout>

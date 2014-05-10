@@ -7,6 +7,7 @@
 //
 
 #import "MTViewController.h"
+#import "MTMainController.h"
 
 @interface MTViewController ()
 
@@ -15,12 +16,17 @@
 @implementation MTViewController
 
 @synthesize imgLogo;
+@synthesize viewContent;
 @synthesize loading;
+@synthesize viewDisconect;
+@synthesize bntChon;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    viewContent.hidden = YES;
+    viewDisconect.hidden = YES;
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -38,6 +44,7 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark COUNT_TIME_RUN_LOGO
 -(void)runAnimation
 {
     if(nsTimerUp == nil){
@@ -65,9 +72,42 @@
                          }
                          completion:^(BOOL finished){
                              [loading stopAnimating];
-                             loading.hidden = YES;
+                             [self showContent];
+                             //[self showDisconect];
                          }];
     }
 }
 
+#pragma mark SHOW_HIDE_CONTENT
+
+-(void)showContent
+{
+    loading.hidden = YES;
+    viewContent.hidden = NO;
+}
+-(void)showDisconect
+{
+    loading.hidden = YES;
+    viewDisconect.hidden = NO;
+}
+
+#pragma mark PUSH_TO_NEW_CONTROLLER
+-(void)gotoMainController
+{
+    [self performSegueWithIdentifier:@"goto-main-controller" sender:self.bntChon];
+}
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([[segue identifier] isEqualToString:@"goto-main-controller"])
+    {
+        // Get reference to the destination view controller
+        //MTMainController *vc = [segue destinationViewController];
+        //vc.itemMovie = [arrayListMovie objectAtIndex:indexClickItem];
+        // Pass any objects to the view controller here, like...
+    }
+}
+
+- (IBAction)doActionBntChon:(id)sender {
+    [self gotoMainController];
+}
 @end
