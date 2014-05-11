@@ -16,6 +16,8 @@
     NganhListObject *nganhListObject;
     NganhListObject *metroListObject;
     int indexDialog;
+    int indexBranchMetro;
+    int indexNganh;
 }
 
 

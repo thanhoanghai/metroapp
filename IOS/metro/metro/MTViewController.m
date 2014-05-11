@@ -42,6 +42,8 @@
     
     //Dialog Branch Metro
     indexDialog = 0;
+    indexBranchMetro = 0;
+    indexNganh = 0;
     
     viewContent.hidden = YES;
 }
@@ -139,6 +141,8 @@
         
         DCKeyValueObjectMapping *parser = [DCKeyValueObjectMapping mapperForClass:[NganhListObject class] andConfiguration:config];
          metroListObject = [parser parseDictionary:result];
+        
+        [self setNameLabelBranchMetro];
         ///continous get data nganh
         [self getDataNganh];
     } failure:^(NSString *err){
@@ -146,6 +150,16 @@
         [LogDebug logError:@"Debug data Branch Metro load = " withContent:@"faith"];
     }];
 }
+
+-(void)setNameLabelBranchMetro
+{
+    if(metroListObject!=NULL && [metroListObject.data count] > indexBranchMetro)
+    {
+        BranchObject *item = [metroListObject.data objectAtIndex:indexBranchMetro];
+        [lbBranchMetro setTitle:item.name forState:UIControlStateNormal];
+    }
+}
+
 -(void)getDataNganh
 {
     NSString *link = [AFClient getLinkNganh];
@@ -160,11 +174,21 @@
          DCKeyValueObjectMapping *parser = [DCKeyValueObjectMapping mapperForClass:[NganhListObject class] andConfiguration:config];
          nganhListObject = [parser parseDictionary:result];
          
+         [self setNameLabelNganh];
+         
          [self showContent];
      } failure:^(NSString *err){
          [self showDisconectView];
          [LogDebug logError:@"Debug data Nganh Metro load = " withContent:@"faith"];
      }];
+}
+-(void)setNameLabelNganh
+{
+    if(nganhListObject!=NULL && [nganhListObject.data count] > indexNganh)
+    {
+        NganhObject *item = [nganhListObject.data objectAtIndex:indexNganh];
+        [lbNganh setTitle:item.name forState:UIControlStateNormal];
+    }
 }
 
 
@@ -250,18 +274,15 @@
 {
     if(indexDialog == 0)
     {
-        BranchObject *item = [metroListObject.data objectAtIndex:indexPath.row];
-        [lbBranchMetro setTitle:item.name forState:UIControlStateNormal];
+        indexBranchMetro = indexPath.row;
+        [self setNameLabelBranchMetro];
     }else
     {
-        NganhObject *item = [nganhListObject.data objectAtIndex:indexPath.row];
-        [lbNganh setTitle:item.name forState:UIControlStateNormal];
+        indexNganh = indexPath.row;
+        [self setNameLabelNganh];
     }
     [viewTable removeFromSuperview];
 }
-
-
-
 
 
 @end
