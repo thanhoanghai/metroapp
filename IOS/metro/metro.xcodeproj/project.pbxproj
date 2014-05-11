@@ -72,6 +72,7 @@
 		EBA30F29191AA28100D8A6FF /* copywright.png in Resources */ = {isa = PBXBuildFile; fileRef = EBA30F27191AA28100D8A6FF /* copywright.png */; };
 		EBA30F2A191AA28100D8A6FF /* copywright@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EBA30F28191AA28100D8A6FF /* copywright@2x.png */; };
 		EBA8F5ED191D3CC3001516DB /* bg_bnt_yellow.png in Resources */ = {isa = PBXBuildFile; fileRef = EBA8F5EC191D3CC3001516DB /* bg_bnt_yellow.png */; };
+		EBAA06F7191F485900849825 /* LogDebug.m in Sources */ = {isa = PBXBuildFile; fileRef = EBAA06F6191F485900849825 /* LogDebug.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -200,6 +201,8 @@
 		EBA30F27191AA28100D8A6FF /* copywright.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = copywright.png; sourceTree = "<group>"; };
 		EBA30F28191AA28100D8A6FF /* copywright@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "copywright@2x.png"; sourceTree = "<group>"; };
 		EBA8F5EC191D3CC3001516DB /* bg_bnt_yellow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_bnt_yellow.png; sourceTree = "<group>"; };
+		EBAA06F5191F485900849825 /* LogDebug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogDebug.h; sourceTree = "<group>"; };
+		EBAA06F6191F485900849825 /* LogDebug.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogDebug.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -239,6 +242,7 @@
 		EB3C1BB4191E0A9D00252AF1 /* Libs */ = {
 			isa = PBXGroup;
 			children = (
+				EBAA06F4191F485900849825 /* Debug */,
 				EB3C1BF7191E2B1D00252AF1 /* KeyValueObjectMapping */,
 				EB3C1BEC191E19DD00252AF1 /* AFClient */,
 				EB3C1BB5191E0AB300252AF1 /* AFNetworking */,
@@ -467,6 +471,15 @@
 			path = Resource;
 			sourceTree = "<group>";
 		};
+		EBAA06F4191F485900849825 /* Debug */ = {
+			isa = PBXGroup;
+			children = (
+				EBAA06F5191F485900849825 /* LogDebug.h */,
+				EBAA06F6191F485900849825 /* LogDebug.m */,
+			);
+			path = Debug;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -611,6 +624,7 @@
 				EB3C1BE2191E0AB300252AF1 /* AFURLResponseSerialization.m in Sources */,
 				EB3C1BEB191E0AB300252AF1 /* UIWebView+AFNetworking.m in Sources */,
 				EB3C1C25191E2B1D00252AF1 /* DCGenericConverter.m in Sources */,
+				EBAA06F7191F485900849825 /* LogDebug.m in Sources */,
 				EB3C1C24191E2B1D00252AF1 /* DCDynamicAttribute.m in Sources */,
 				EB3C1C28191E2B1D00252AF1 /* DCNSDateConverter.m in Sources */,
 				EB3C1BE3191E0AB300252AF1 /* AFURLSessionManager.m in Sources */,

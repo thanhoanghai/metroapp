@@ -16,6 +16,7 @@
 #import "NganhListObject.h"
 #import "BranchObject.h"
 #import "MenuCell.h"
+#import "LogDebug.h"
 
 @interface MTViewController ()
 
@@ -43,9 +44,6 @@
     indexDialog = 0;
     
     viewContent.hidden = YES;
-    [self getDataBranchMetro];
-    [self getDataNganh];
-    
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -90,9 +88,7 @@
                              [imgLogo setFrame:CGRectMake(imgLogo.frame.origin.x, 30, imgLogo.frame.size.width, imgLogo.frame.size.height)];
                          }
                          completion:^(BOOL finished){
-                             [loading stopAnimating];
-                             [self showContent];
-                             //[self showDisconectView];
+                             [self getDataBranchMetro];
                          }];
     }
 }
@@ -102,6 +98,7 @@
 -(void)showContent
 {
     loading.hidden = YES;
+    [loading stopAnimating];
     viewContent.hidden = NO;
 }
 
@@ -134,7 +131,7 @@
     NSString *link = [AFClient getLinkBranchMetro];
     [AFClient getLink:link success:^(id result)
     {
-        NSLog(@"%@",result);
+        [LogDebug logError:@"Debug data Branch Metro load = " withContent:@"Succedd"];
         DCArrayMapping *mapper = [DCArrayMapping mapperForClassElements:[BranchObject class] forAttribute:@"data" onClass:[NganhListObject class]] ;
         
         DCParserConfiguration *config = [DCParserConfiguration configuration];
@@ -142,8 +139,11 @@
         
         DCKeyValueObjectMapping *parser = [DCKeyValueObjectMapping mapperForClass:[NganhListObject class] andConfiguration:config];
          metroListObject = [parser parseDictionary:result];
+        ///continous get data nganh
+        [self getDataNganh];
     } failure:^(NSString *err){
-     
+        [self showDisconectView];
+        [LogDebug logError:@"Debug data Branch Metro load = " withContent:@"faith"];
     }];
 }
 -(void)getDataNganh
@@ -151,6 +151,7 @@
     NSString *link = [AFClient getLinkNganh];
     [AFClient getLink:link success:^(id result)
      {
+        [LogDebug logError:@"Debug data Nganh Metro load = " withContent:@"Succedd"];
         DCArrayMapping *mapper = [DCArrayMapping mapperForClassElements:[NganhObject class] forAttribute:@"data" onClass:[NganhListObject class]] ;
          
          DCParserConfiguration *config = [DCParserConfiguration configuration];
@@ -158,8 +159,11 @@
          
          DCKeyValueObjectMapping *parser = [DCKeyValueObjectMapping mapperForClass:[NganhListObject class] andConfiguration:config];
          nganhListObject = [parser parseDictionary:result];
+         
+         [self showContent];
      } failure:^(NSString *err){
-        
+         [self showDisconectView];
+         [LogDebug logError:@"Debug data Nganh Metro load = " withContent:@"faith"];
      }];
 }
 
@@ -194,6 +198,13 @@
 
 - (IBAction)doActionBntNganh:(id)sender {
     [self showViewTable:1];
+}
+
+- (IBAction)doActionBntDisconnet:(id)sender {
+    [viewDisconect removeFromSuperview];
+    loading.hidden = NO;
+    [loading startAnimating];
+    [self getDataBranchMetro];
 }
 
 #pragma mark TABLE_VIEW_LIST_METRO

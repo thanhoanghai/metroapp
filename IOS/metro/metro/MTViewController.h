@@ -36,5 +36,6 @@
 - (IBAction)doActionBntCloseTable:(id)sender;
 - (IBAction)doActionBntBranchMetro:(id)sender;
 - (IBAction)doActionBntNganh:(id)sender;
+- (IBAction)doActionBntDisconnet:(id)sender;
 
 @end
