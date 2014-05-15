@@ -202,9 +202,10 @@
     if ([[segue identifier] isEqualToString:@"goto-main-controller"])
     {
         // Get reference to the destination view controller
-        //MTMainController *vc = [segue destinationViewController];
-        //vc.itemMovie = [arrayListMovie objectAtIndex:indexClickItem];
-        // Pass any objects to the view controller here, like...
+        MTMainController *vc = [segue destinationViewController];
+        [vc setIndexBranchMetro:indexBranchMetro withIndexNganh:indexNganh];
+        [vc setDataBranchMetro:metroListObject withNganhlist:nganhListObject];
+
     }
 }
 

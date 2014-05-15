@@ -7,7 +7,20 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "NganhListObject.h"
 
 @interface MTMainController : UIViewController
+{
+    int indexBranchMetro;
+    int indexNganh;
+    NganhListObject *nganhListObject;
+    NganhListObject *metroListObject;
+}
+
+@property (weak, nonatomic) IBOutlet UIButton *bntMetro;
+@property (weak, nonatomic) IBOutlet UIButton *bntNganh;
+
+-(void)setIndexBranchMetro:(int)indexM withIndexNganh:(int)indexN;
+-(void)setDataBranchMetro:(NganhListObject*)metrolist withNganhlist:(NganhListObject*)nganhList;
 
 @end
