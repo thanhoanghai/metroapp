@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "NganhListObject.h"
 
-@interface MTMainController : UIViewController
+@interface MTMainController : UIViewController<UITableViewDataSource, UITabBarControllerDelegate> 
 {
     
     int page;
@@ -25,7 +25,7 @@
     BOOL isLoadMore;
     NSMutableArray *arrayListProduct;
 }
-
+@property (weak, nonatomic) IBOutlet UITableView *tableViewProduct;
 @property (weak, nonatomic) IBOutlet UIButton *bntMetro;
 @property (weak, nonatomic) IBOutlet UIButton *bntNganh;
 

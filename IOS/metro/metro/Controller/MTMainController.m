@@ -13,6 +13,7 @@
 #import "AFClient.h"
 #import "ProductObject.h"
 #import "LogDebug.h"
+#import "ProductCell.h"
 
 @interface MTMainController ()
 
@@ -21,6 +22,7 @@
 
 @implementation MTMainController
 
+@synthesize tableViewProduct;
 @synthesize bntMetro;
 @synthesize bntNganh;
 
@@ -77,6 +79,8 @@
     metroListObject = metrolist;
 }
 
+#pragma mark LOAD_DATA_PRODUCT
+
 -(void)loadDataProduct
 {
     NSString *link = [AFClient getLlinkProduct:page withPageSize:size withMetroID:sMetroID withNganhID:sNganhID];
@@ -97,6 +101,8 @@
                  {
                      [arrayListProduct addObject:[ProductObject itemWithDictionary:item]];
                  }
+                 
+                 [tableViewProduct reloadData];
                  [LogDebug logError:@"Debug data product = " withContent:@"succedd"];
              }
          }
@@ -104,5 +110,32 @@
          [LogDebug logError:@"Debug data Nganh Metro load = " withContent:@"faith"];
      }];
 }
+
+#pragma mark TABBLE_VIEW
+- (NSInteger)tableView:(UITableView *)tableviewDialog numberOfRowsInSection:(NSInteger)sectionIndex
+{
+    return [arrayListProduct count];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableviewDialog cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    //CUSTOME CELL
+    static NSString *CellIdentifier = @"ProductCell";
+    ProductCell *cell = (ProductCell*)[tableviewDialog dequeueReusableCellWithIdentifier:CellIdentifier];
+    if(cell==nil){
+        cell = [[ProductCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:@"ProductCell"];
+    }
+    
+    ProductObject *item = [arrayListProduct objectAtIndex:indexPath.row];
+    [cell.contentLabel setText:item.name];
+    
+    return cell;
+}
+
+- (void)tableView:(UITableView *)tableviewDialog didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+   
+}
+
 
 @end

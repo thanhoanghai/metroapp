@@ -74,6 +74,8 @@
 		EBA8F5ED191D3CC3001516DB /* bg_bnt_yellow.png in Resources */ = {isa = PBXBuildFile; fileRef = EBA8F5EC191D3CC3001516DB /* bg_bnt_yellow.png */; };
 		EBAA06F7191F485900849825 /* LogDebug.m in Sources */ = {isa = PBXBuildFile; fileRef = EBAA06F6191F485900849825 /* LogDebug.m */; };
 		EBB4F7CD19273CD10054E711 /* ProductObject.m in Sources */ = {isa = PBXBuildFile; fileRef = EBB4F7CC19273CD10054E711 /* ProductObject.m */; };
+		EBB4F7D2192746B60054E711 /* ProductCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EBB4F7D0192746B60054E711 /* ProductCell.m */; };
+		EBB4F7D3192746B60054E711 /* ProductCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EBB4F7D1192746B60054E711 /* ProductCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -206,6 +208,9 @@
 		EBAA06F6191F485900849825 /* LogDebug.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogDebug.m; sourceTree = "<group>"; };
 		EBB4F7CB19273CD10054E711 /* ProductObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductObject.h; sourceTree = "<group>"; };
 		EBB4F7CC19273CD10054E711 /* ProductObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductObject.m; sourceTree = "<group>"; };
+		EBB4F7CF192746B60054E711 /* ProductCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductCell.h; sourceTree = "<group>"; };
+		EBB4F7D0192746B60054E711 /* ProductCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductCell.m; sourceTree = "<group>"; };
+		EBB4F7D1192746B60054E711 /* ProductCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProductCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -452,9 +457,8 @@
 		EBA30F19191A9BD900D8A6FF /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				EBB4F7CE192746900054E711 /* SanphamController */,
 				EBB4F7CA192737D20054E711 /* DangnhapController */,
-				EB3C1BB0191DFA0B00252AF1 /* MTMainController.h */,
-				EB3C1BB1191DFA0B00252AF1 /* MTMainController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -491,6 +495,18 @@
 				EBA30EF8191A9ACA00D8A6FF /* MTViewController.m */,
 			);
 			name = DangnhapController;
+			sourceTree = "<group>";
+		};
+		EBB4F7CE192746900054E711 /* SanphamController */ = {
+			isa = PBXGroup;
+			children = (
+				EBB4F7CF192746B60054E711 /* ProductCell.h */,
+				EBB4F7D0192746B60054E711 /* ProductCell.m */,
+				EBB4F7D1192746B60054E711 /* ProductCell.xib */,
+				EB3C1BB0191DFA0B00252AF1 /* MTMainController.h */,
+				EB3C1BB1191DFA0B00252AF1 /* MTMainController.m */,
+			);
+			name = SanphamController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -572,6 +588,7 @@
 			files = (
 				EB3C1BAF191DF66F00252AF1 /* ic_blank_networkproblem.png in Resources */,
 				EBA30F26191AA1CD00D8A6FF /* copyright@2x.png in Resources */,
+				EBB4F7D3192746B60054E711 /* ProductCell.xib in Resources */,
 				EBA30F29191AA28100D8A6FF /* copywright.png in Resources */,
 				EBA30EFB191A9ACA00D8A6FF /* Images.xcassets in Resources */,
 				EBA8F5ED191D3CC3001516DB /* bg_bnt_yellow.png in Resources */,
@@ -647,6 +664,7 @@
 				EB3C1C2F191E2B1D00252AF1 /* DCReferenceKeyParser.m in Sources */,
 				EB3C1BE4191E0AB300252AF1 /* AFNetworkActivityIndicatorManager.m in Sources */,
 				EB3C1BB2191DFA0B00252AF1 /* MTMainController.m in Sources */,
+				EBB4F7D2192746B60054E711 /* ProductCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

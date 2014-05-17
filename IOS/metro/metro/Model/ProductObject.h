@@ -11,6 +11,7 @@
 @interface ProductObject : NSObject
 
 @property(nonatomic, strong) NSString *id;
+@property(nonatomic, strong) NSString *name;
 @property(nonatomic, strong) NSString *description;
 @property(nonatomic, strong) NSString *photo;
 @property(nonatomic, strong) NSString *price_1;

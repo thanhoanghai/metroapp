@@ -11,6 +11,7 @@
 @implementation ProductObject
 
 #define JSon_id @"id"
+#define JSon_name @"name"
 #define JSon_description @"description"
 #define JSon_photo @"photo"
 #define JSon_price_1 @"price_1"
@@ -20,6 +21,7 @@
 
 
 @synthesize id;
+@synthesize name;
 @synthesize description;
 @synthesize photo;
 @synthesize price_1;
@@ -38,6 +40,7 @@
     {
         self.id = nil;
         self.description = nil;
+        self.name = nil;
         self.photo = nil;
         self.price_1 = false;
         self.price_2 = false;
@@ -49,6 +52,9 @@
         }
         if([dictionary objectForKey:JSon_description] && [dictionary objectForKey:JSon_description]!= [NSNull null]){
             self.description = [dictionary objectForKey:JSon_description];
+        }
+        if([dictionary objectForKey:JSon_name] && [dictionary objectForKey:JSon_name]!= [NSNull null]){
+            self.name = [dictionary objectForKey:JSon_name];
         }
         if([dictionary objectForKey:JSon_photo] && [dictionary objectForKey:JSon_photo]!= [NSNull null]){
             self.photo = [dictionary objectForKey:JSon_photo];

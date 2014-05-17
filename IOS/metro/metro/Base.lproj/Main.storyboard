@@ -215,6 +215,10 @@
                                         <rect key="frame" x="0.0" y="62" width="320" height="369"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <outlet property="dataSource" destination="BTm-sS-239" id="amE-kn-kVG"/>
+                                            <outlet property="delegate" destination="BTm-sS-239" id="QmX-Ca-jkl"/>
+                                        </connections>
                                     </tableView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.81176477670669556" green="0.81176477670669556" blue="0.81176477670669556" alpha="1" colorSpace="deviceRGB"/>
@@ -235,6 +239,7 @@
                     <connections>
                         <outlet property="bntMetro" destination="DIw-Ed-W6l" id="F2g-MC-v8p"/>
                         <outlet property="bntNganh" destination="j0i-Sh-tzW" id="4hH-fH-CKh"/>
+                        <outlet property="tableViewProduct" destination="mkG-tU-KuM" id="vqe-xN-xSI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HVf-Bq-YLa" userLabel="First Responder" sceneMemberID="firstResponder"/>
