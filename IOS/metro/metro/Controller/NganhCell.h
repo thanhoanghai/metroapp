@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MenuCell : UITableViewCell
+@interface NganhCell : UITableViewCell
 
 @property(nonatomic,strong) IBOutlet UILabel *contentLabel;
 

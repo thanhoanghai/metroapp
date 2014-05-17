@@ -6,18 +6,18 @@
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
-#import "MenuCell.h"
+#import "NganhCell.h"
 
 
 #define COLOR_MENU_CELL_SELECTED [UIColor colorWithRed:0.15 green:0.17 blue:0.23 alpha:1]
-@implementation MenuCell
+@implementation NganhCell
 
 @synthesize contentLabel = _contentLabel;
 
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
-    self = [[[NSBundle mainBundle] loadNibNamed:@"MenuCell" owner:self options:nil] lastObject];
+    self = [[[NSBundle mainBundle] loadNibNamed:@"NganhCell" owner:self options:nil] lastObject];
     return self;
 }
 

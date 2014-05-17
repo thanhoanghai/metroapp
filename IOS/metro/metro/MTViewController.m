@@ -15,7 +15,7 @@
 #import "NganhObject.h"
 #import "NganhListObject.h"
 #import "BranchObject.h"
-#import "MenuCell.h"
+#import "NganhCell.h"
 #import "LogDebug.h"
 
 @interface MTViewController ()
@@ -252,10 +252,10 @@
 - (UITableViewCell *)tableView:(UITableView *)tableviewDialog cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     //CUSTOME CELL
-    static NSString *CellIdentifier = @"MenuCell";
-    MenuCell *cell = (MenuCell*)[tableviewDialog dequeueReusableCellWithIdentifier:CellIdentifier];
+    static NSString *CellIdentifier = @"NganhCell";
+    NganhCell *cell = (NganhCell*)[tableviewDialog dequeueReusableCellWithIdentifier:CellIdentifier];
     if(cell==nil){
-        cell = [[MenuCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:@"MenuCell"];
+        cell = [[NganhCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:@"NganhCell"];
     }
     
     if(indexDialog == 0)

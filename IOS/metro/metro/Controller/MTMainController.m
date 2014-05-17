@@ -10,6 +10,8 @@
 #import "NganhListObject.h"
 #import "BranchObject.h"
 #import "NganhObject.h"
+#import "AFClient.h"
+#import "LogDebug.h"
 
 @interface MTMainController ()
 
@@ -34,6 +36,8 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    page = 0;
+    size = 10;
 }
 
 -(void)viewWillAppear:(BOOL)animated
@@ -42,10 +46,14 @@
     BranchObject *item = nil;
     item = [metroListObject.data objectAtIndex:indexBranchMetro];
     [bntMetro setTitle:item.name forState:UIControlStateNormal];
+    sMetroID = item.id;
     
     NganhObject *nganhItem = nil;
     nganhItem = [nganhListObject.data objectAtIndex:indexNganh];
     [bntNganh setTitle:nganhItem.name forState:UIControlStateNormal];
+    sNganhID = nganhItem.id;
+    
+    [self loadDataProduct];
 }
 
 - (void)didReceiveMemoryWarning
@@ -63,6 +71,19 @@
 {
     nganhListObject = nganhList;
     metroListObject = metrolist;
+}
+
+-(void)loadDataProduct
+{
+    NSString *link = [AFClient getLlinkProduct:page withPageSize:size withMetroID:sMetroID withNganhID:sNganhID];
+    [AFClient getLink:link success:^(id result)
+     {
+         [LogDebug logError:@"Debug data Nganh Metro load = " withContent:result];
+         
+     } failure:^(NSString *err){
+         
+         [LogDebug logError:@"Debug data Nganh Metro load = " withContent:@"faith"];
+     }];
 }
 
 @end

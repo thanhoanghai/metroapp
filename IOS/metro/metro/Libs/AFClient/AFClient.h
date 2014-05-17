@@ -10,7 +10,7 @@
 
 @interface AFClient : NSObject
 
-
++(NSString*)getLlinkProduct:(int)page withPageSize:(int)size withMetroID:(NSString *)metroId withNganhID:(NSString*)nganhID;
 +(NSString*)getLinkBranchMetro;
 +(NSString*)getLinkNganh;
 

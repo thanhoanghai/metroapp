@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		EB16F90E191E9BF3008AD3FC /* MenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EB16F90C191E9BF3008AD3FC /* MenuCell.m */; };
-		EB16F90F191E9BF3008AD3FC /* MenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB16F90D191E9BF3008AD3FC /* MenuCell.xib */; };
+		EB16F90E191E9BF3008AD3FC /* NganhCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EB16F90C191E9BF3008AD3FC /* NganhCell.m */; };
+		EB16F90F191E9BF3008AD3FC /* NganhCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB16F90D191E9BF3008AD3FC /* NganhCell.xib */; };
 		EB3C1BAF191DF66F00252AF1 /* ic_blank_networkproblem.png in Resources */ = {isa = PBXBuildFile; fileRef = EB3C1BAE191DF66F00252AF1 /* ic_blank_networkproblem.png */; };
 		EB3C1BB2191DFA0B00252AF1 /* MTMainController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB3C1BB1191DFA0B00252AF1 /* MTMainController.m */; };
 		EB3C1BDB191E0AB300252AF1 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = EB3C1BB7191E0AB300252AF1 /* AFHTTPRequestOperation.m */; };
@@ -86,9 +86,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		EB16F90B191E9BF3008AD3FC /* MenuCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuCell.h; sourceTree = "<group>"; };
-		EB16F90C191E9BF3008AD3FC /* MenuCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuCell.m; sourceTree = "<group>"; };
-		EB16F90D191E9BF3008AD3FC /* MenuCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuCell.xib; sourceTree = "<group>"; };
+		EB16F90B191E9BF3008AD3FC /* NganhCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NganhCell.h; sourceTree = "<group>"; };
+		EB16F90C191E9BF3008AD3FC /* NganhCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NganhCell.m; sourceTree = "<group>"; };
+		EB16F90D191E9BF3008AD3FC /* NganhCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NganhCell.xib; sourceTree = "<group>"; };
 		EB3C1BAE191DF66F00252AF1 /* ic_blank_networkproblem.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_blank_networkproblem.png; sourceTree = "<group>"; };
 		EB3C1BB0191DFA0B00252AF1 /* MTMainController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTMainController.h; sourceTree = "<group>"; };
 		EB3C1BB1191DFA0B00252AF1 /* MTMainController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTMainController.m; sourceTree = "<group>"; };
@@ -232,9 +232,9 @@
 		EB16F90A191E9BCA008AD3FC /* CellBranchMetro */ = {
 			isa = PBXGroup;
 			children = (
-				EB16F90B191E9BF3008AD3FC /* MenuCell.h */,
-				EB16F90C191E9BF3008AD3FC /* MenuCell.m */,
-				EB16F90D191E9BF3008AD3FC /* MenuCell.xib */,
+				EB16F90B191E9BF3008AD3FC /* NganhCell.h */,
+				EB16F90C191E9BF3008AD3FC /* NganhCell.m */,
+				EB16F90D191E9BF3008AD3FC /* NganhCell.xib */,
 			);
 			name = CellBranchMetro;
 			sourceTree = "<group>";
@@ -447,9 +447,7 @@
 		EBA30F19191A9BD900D8A6FF /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				EB16F90A191E9BCA008AD3FC /* CellBranchMetro */,
-				EBA30EF7191A9ACA00D8A6FF /* MTViewController.h */,
-				EBA30EF8191A9ACA00D8A6FF /* MTViewController.m */,
+				EBB4F7CA192737D20054E711 /* DangnhapController */,
 				EB3C1BB0191DFA0B00252AF1 /* MTMainController.h */,
 				EB3C1BB1191DFA0B00252AF1 /* MTMainController.m */,
 			);
@@ -478,6 +476,16 @@
 				EBAA06F6191F485900849825 /* LogDebug.m */,
 			);
 			path = Debug;
+			sourceTree = "<group>";
+		};
+		EBB4F7CA192737D20054E711 /* DangnhapController */ = {
+			isa = PBXGroup;
+			children = (
+				EB16F90A191E9BCA008AD3FC /* CellBranchMetro */,
+				EBA30EF7191A9ACA00D8A6FF /* MTViewController.h */,
+				EBA30EF8191A9ACA00D8A6FF /* MTViewController.m */,
+			);
+			name = DangnhapController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -565,7 +573,7 @@
 				EBA30F25191AA1CD00D8A6FF /* copyright.png in Resources */,
 				EBA30F2A191AA28100D8A6FF /* copywright@2x.png in Resources */,
 				EBA30F1E191A9E1C00D8A6FF /* logo_splash@2x.png in Resources */,
-				EB16F90F191E9BF3008AD3FC /* MenuCell.xib in Resources */,
+				EB16F90F191E9BF3008AD3FC /* NganhCell.xib in Resources */,
 				EB3C1C31191E2B1D00252AF1 /* KeyValueObjectMapping-Info.plist in Resources */,
 				EBA30F1D191A9E1C00D8A6FF /* logo_splash.png in Resources */,
 				EBA30EED191A9ACA00D8A6FF /* InfoPlist.strings in Resources */,
@@ -614,7 +622,7 @@
 				EB3C1BE5191E0AB300252AF1 /* UIActivityIndicatorView+AFNetworking.m in Sources */,
 				EBA30EF3191A9ACA00D8A6FF /* MTAppDelegate.m in Sources */,
 				EB3C1BE1191E0AB300252AF1 /* AFURLRequestSerialization.m in Sources */,
-				EB16F90E191E9BF3008AD3FC /* MenuCell.m in Sources */,
+				EB16F90E191E9BF3008AD3FC /* NganhCell.m in Sources */,
 				EB3C1C30191E2B1D00252AF1 /* DCSimpleConverter.m in Sources */,
 				EB3C1C23191E2B1D00252AF1 /* DCDictionaryRearranger.m in Sources */,
 				EB3C1BDD191E0AB300252AF1 /* AFHTTPSessionManager.m in Sources */,

@@ -11,6 +11,12 @@
 
 @interface MTMainController : UIViewController
 {
+    
+    int page;
+    int size;
+    NSString *sMetroID;
+    NSString *sNganhID;
+    
     int indexBranchMetro;
     int indexNganh;
     NganhListObject *nganhListObject;

@@ -11,6 +11,11 @@
 
 @implementation AFClient
 
++(NSString*)getLlinkProduct:(int)page withPageSize:(int)size withMetroID:(NSString *)metroId withNganhID:(NSString*)nganhID
+{
+        return [NSString stringWithFormat:@"%sproducts?page=%d&per_page=%d&branch=%@&customer=%@",PROVIDER, page,size,metroId,nganhID ];
+}
+
 +(NSString*)getLinkBranchMetro
 {
     return [NSString stringWithFormat:@"%s%s", PROVIDER, BRANCH];
@@ -22,11 +27,11 @@
 
 
 
-+(void)getLink:(NSString *)link
-        success:(void (^)(id))successBlock
++(void)getLink:(NSString *)link success:(void (^)(id))successBlock
         failure:(void (^)(NSString *))failureBlock{
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     manager.responseSerializer.acceptableContentTypes = [manager.responseSerializer.acceptableContentTypes setByAddingObject:@"text/html"];
+    
     [manager GET:link parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         if(successBlock){
             successBlock(responseObject);
