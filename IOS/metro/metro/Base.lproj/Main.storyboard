@@ -175,7 +175,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" id="wYs-04-hIq">
+                            <view contentMode="scaleToFill" id="wYs-04-hIq" userLabel="View-product">
                                 <rect key="frame" x="0.0" y="49" width="320" height="431"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
@@ -231,7 +231,30 @@
                                     <segment title="HEALTHY"/>
                                 </segments>
                                 <color key="tintColor" red="0.0" green="0.23921570180000001" blue="0.49019610879999997" alpha="1" colorSpace="deviceRGB"/>
+                                <connections>
+                                    <action selector="segmentTopChange:" destination="BTm-sS-239" eventType="valueChanged" id="mBp-cZ-PFX"/>
+                                </connections>
                             </segmentedControl>
+                            <view contentMode="scaleToFill" id="V0h-Kh-3Ql" userLabel="View-healthy">
+                                <rect key="frame" x="0.0" y="49" width="320" height="432"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <subviews>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="MHL-c7-ZUc">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="29"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <segments>
+                                            <segment title="First"/>
+                                            <segment title="Second"/>
+                                        </segments>
+                                    </segmentedControl>
+                                    <webView contentMode="scaleToFill" id="zDu-TD-VEh">
+                                        <rect key="frame" x="0.0" y="29" width="320" height="403"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    </webView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -240,6 +263,7 @@
                         <outlet property="bntMetro" destination="DIw-Ed-W6l" id="F2g-MC-v8p"/>
                         <outlet property="bntNganh" destination="j0i-Sh-tzW" id="4hH-fH-CKh"/>
                         <outlet property="tableViewProduct" destination="mkG-tU-KuM" id="vqe-xN-xSI"/>
+                        <outlet property="viewHealthy" destination="V0h-Kh-3Ql" id="dIK-a9-wFj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HVf-Bq-YLa" userLabel="First Responder" sceneMemberID="firstResponder"/>

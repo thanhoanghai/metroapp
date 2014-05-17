@@ -25,11 +25,14 @@
     BOOL isLoadMore;
     NSMutableArray *arrayListProduct;
 }
+
+@property (weak, nonatomic) IBOutlet UIView *viewHealthy;
 @property (weak, nonatomic) IBOutlet UITableView *tableViewProduct;
 @property (weak, nonatomic) IBOutlet UIButton *bntMetro;
 @property (weak, nonatomic) IBOutlet UIButton *bntNganh;
 
 -(void)setIndexBranchMetro:(int)indexM withIndexNganh:(int)indexN;
 -(void)setDataBranchMetro:(NganhListObject*)metrolist withNganhlist:(NganhListObject*)nganhList;
+- (IBAction)segmentTopChange:(id)sender;
 
 @end

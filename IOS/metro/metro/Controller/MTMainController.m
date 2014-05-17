@@ -22,6 +22,7 @@
 
 @implementation MTMainController
 
+@synthesize viewHealthy;
 @synthesize tableViewProduct;
 @synthesize bntMetro;
 @synthesize bntNganh;
@@ -42,6 +43,8 @@
     page = 0;
     size = 10;
     isLoadMore = YES;
+    
+    viewHealthy.hidden = YES;
     
     arrayListProduct = [[NSMutableArray alloc] init ];
 }
@@ -77,6 +80,17 @@
 {
     nganhListObject = nganhList;
     metroListObject = metrolist;
+}
+
+- (IBAction)segmentTopChange:(id)sender {
+    UISegmentedControl *segmentedControl = (UISegmentedControl *) sender;
+    NSInteger selectedSegment = segmentedControl.selectedSegmentIndex;
+    if (selectedSegment == 0) {
+        viewHealthy.hidden = YES;
+    }
+    else{
+        viewHealthy.hidden = NO;
+    }
 }
 
 #pragma mark LOAD_DATA_PRODUCT
