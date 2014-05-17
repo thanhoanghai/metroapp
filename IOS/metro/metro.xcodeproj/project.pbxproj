@@ -73,6 +73,7 @@
 		EBA30F2A191AA28100D8A6FF /* copywright@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EBA30F28191AA28100D8A6FF /* copywright@2x.png */; };
 		EBA8F5ED191D3CC3001516DB /* bg_bnt_yellow.png in Resources */ = {isa = PBXBuildFile; fileRef = EBA8F5EC191D3CC3001516DB /* bg_bnt_yellow.png */; };
 		EBAA06F7191F485900849825 /* LogDebug.m in Sources */ = {isa = PBXBuildFile; fileRef = EBAA06F6191F485900849825 /* LogDebug.m */; };
+		EBB4F7CD19273CD10054E711 /* ProductObject.m in Sources */ = {isa = PBXBuildFile; fileRef = EBB4F7CC19273CD10054E711 /* ProductObject.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -203,6 +204,8 @@
 		EBA8F5EC191D3CC3001516DB /* bg_bnt_yellow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_bnt_yellow.png; sourceTree = "<group>"; };
 		EBAA06F5191F485900849825 /* LogDebug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogDebug.h; sourceTree = "<group>"; };
 		EBAA06F6191F485900849825 /* LogDebug.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogDebug.m; sourceTree = "<group>"; };
+		EBB4F7CB19273CD10054E711 /* ProductObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductObject.h; sourceTree = "<group>"; };
+		EBB4F7CC19273CD10054E711 /* ProductObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductObject.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -319,6 +322,8 @@
 				EB3C1BF5191E292C00252AF1 /* NganhListObject.m */,
 				EB3C1C32191E2DC800252AF1 /* BranchObject.h */,
 				EB3C1C33191E2DC800252AF1 /* BranchObject.m */,
+				EBB4F7CB19273CD10054E711 /* ProductObject.h */,
+				EBB4F7CC19273CD10054E711 /* ProductObject.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -634,6 +639,7 @@
 				EB3C1C25191E2B1D00252AF1 /* DCGenericConverter.m in Sources */,
 				EBAA06F7191F485900849825 /* LogDebug.m in Sources */,
 				EB3C1C24191E2B1D00252AF1 /* DCDynamicAttribute.m in Sources */,
+				EBB4F7CD19273CD10054E711 /* ProductObject.m in Sources */,
 				EB3C1C28191E2B1D00252AF1 /* DCNSDateConverter.m in Sources */,
 				EB3C1BE3191E0AB300252AF1 /* AFURLSessionManager.m in Sources */,
 				EB3C1C27191E2B1D00252AF1 /* DCNSArrayConverter.m in Sources */,

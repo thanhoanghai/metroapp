@@ -21,6 +21,9 @@
     int indexNganh;
     NganhListObject *nganhListObject;
     NganhListObject *metroListObject;
+    
+    BOOL isLoadMore;
+    NSMutableArray *arrayListProduct;
 }
 
 @property (weak, nonatomic) IBOutlet UIButton *bntMetro;

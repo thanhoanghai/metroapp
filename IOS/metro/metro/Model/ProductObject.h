@@ -10,4 +10,14 @@
 
 @interface ProductObject : NSObject
 
+@property(nonatomic, strong) NSString *id;
+@property(nonatomic, strong) NSString *description;
+@property(nonatomic, strong) NSString *photo;
+@property(nonatomic, strong) NSString *price_1;
+@property(nonatomic, strong) NSString *price_2;
+@property(nonatomic, strong) NSString *price_vat;
+@property(nonatomic, strong) NSString *sale_off;
+
++ (id)itemWithDictionary:(NSDictionary*) dictionary;
+
 @end

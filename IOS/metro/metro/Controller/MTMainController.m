@@ -11,6 +11,7 @@
 #import "BranchObject.h"
 #import "NganhObject.h"
 #import "AFClient.h"
+#import "ProductObject.h"
 #import "LogDebug.h"
 
 @interface MTMainController ()
@@ -38,6 +39,9 @@
 	// Do any additional setup after loading the view.
     page = 0;
     size = 10;
+    isLoadMore = YES;
+    
+    arrayListProduct = [[NSMutableArray alloc] init ];
 }
 
 -(void)viewWillAppear:(BOOL)animated
@@ -78,10 +82,25 @@
     NSString *link = [AFClient getLlinkProduct:page withPageSize:size withMetroID:sMetroID withNganhID:sNganhID];
     [AFClient getLink:link success:^(id result)
      {
-         [LogDebug logError:@"Debug data Nganh Metro load = " withContent:result];
-         
+         if(result)
+         {
+             id data = [result objectForKey:@"data"];
+             if(data)
+             {
+                 int total_pages = [[data objectForKey:data] integerValue];
+                 if(total_pages <= page+1)
+                 {
+                     isLoadMore = NO;
+                 }
+                 id listProduct = [data objectForKey:@"product"];
+                 for (NSDictionary *item in listProduct)
+                 {
+                     [arrayListProduct addObject:[ProductObject itemWithDictionary:item]];
+                 }
+                 [LogDebug logError:@"Debug data product = " withContent:@"succedd"];
+             }
+         }
      } failure:^(NSString *err){
-         
          [LogDebug logError:@"Debug data Nganh Metro load = " withContent:@"faith"];
      }];
 }
