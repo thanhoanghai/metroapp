@@ -58,8 +58,8 @@
                                 <color key="textColor" red="0.96078437566757202" green="0.0" blue="0.086274512112140656" alpha="1" colorSpace="deviceRGB"/>
                                 <color key="highlightedColor" red="0.88478685459999995" green="0.8475536924" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="I4Z-yt-hlc">
-                                <rect key="frame" x="0.0" y="1" width="114" height="119"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="I4Z-yt-hlc" customClass="AsyncImageView">
+                                <rect key="frame" x="0.0" y="0.0" width="114" height="120"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
@@ -76,6 +76,7 @@
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <connections>
                 <outlet property="contentLabel" destination="6" id="8"/>
+                <outlet property="imgProduct" destination="I4Z-yt-hlc" id="2Uv-sr-F9H"/>
             </connections>
         </tableViewCell>
     </objects>

@@ -14,6 +14,7 @@
 #import "ProductObject.h"
 #import "LogDebug.h"
 #import "ProductCell.h"
+#import "AsyncImageView.h"
 
 @interface MTMainController ()
 
@@ -179,6 +180,9 @@
     
     ProductObject *item = [arrayListProduct objectAtIndex:indexPath.row];
     [cell.contentLabel setText:item.name];
+    
+    [[AsyncImageLoader sharedLoader] cancelLoadingImagesForTarget:cell.imgProduct];
+    [cell setlinkImage:item.photo];
     
     return cell;
 }

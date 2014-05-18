@@ -7,12 +7,14 @@
 //
 
 #import "ProductCell.h"
+#import "AsyncImageView.h"
 
 
 #define COLOR_MENU_CELL_SELECTED [UIColor colorWithRed:0.15 green:0.17 blue:0.23 alpha:1]
 @implementation ProductCell
 
 @synthesize contentLabel = _contentLabel;
+@synthesize imgProduct;
 
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
@@ -23,6 +25,11 @@
     {
     }
     return self;
+}
+
+- (void) setlinkImage:(NSString *)url
+{
+    imgProduct.imageURL = [NSURL URLWithString:url];
 }
 
 @end

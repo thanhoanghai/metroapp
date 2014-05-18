@@ -7,10 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AsyncImageView.h"
 
 @interface ProductCell : UITableViewCell
 
 @property(nonatomic,strong) IBOutlet UILabel *contentLabel;
+@property (weak, nonatomic) IBOutlet AsyncImageView *imgProduct;
 
+- (void) setlinkImage:(NSString *)url;
 
 @end
