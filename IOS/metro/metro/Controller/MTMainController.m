@@ -26,6 +26,7 @@
 @synthesize tableViewProduct;
 @synthesize bntMetro;
 @synthesize bntNganh;
+@synthesize webViewHealthy;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -47,6 +48,15 @@
     viewHealthy.hidden = YES;
     
     arrayListProduct = [[NSMutableArray alloc] init ];
+    
+    listLinkHealthy = [NSArray arrayWithObjects:
+             @"http://metro.qptek.com/healthy/info",
+             @"http://metro.qptek.com/healthy/partners",
+             @"http://metro.qptek.com/healthy/activity",
+             @"http://metro.qptek.com/healthy/documents",
+             @"http://metro.qptek.com/healthy/contact",
+             nil];
+    indexSegmentHealthy = 0;
 }
 
 -(void)viewWillAppear:(BOOL)animated
@@ -63,6 +73,7 @@
     sNganhID = nganhItem.id;
     
     [self loadDataProduct];
+    [self loadLinkWebView:indexSegmentHealthy];
 }
 
 - (void)didReceiveMemoryWarning
@@ -82,6 +93,8 @@
     metroListObject = metrolist;
 }
 
+#pragma mark SEAGMENT_CHANGE
+
 - (IBAction)segmentTopChange:(id)sender {
     UISegmentedControl *segmentedControl = (UISegmentedControl *) sender;
     NSInteger selectedSegment = segmentedControl.selectedSegmentIndex;
@@ -91,6 +104,20 @@
     else{
         viewHealthy.hidden = NO;
     }
+}
+
+- (IBAction)segmentHealthyChange:(id)sender {
+    UISegmentedControl *segmentedControl = (UISegmentedControl *) sender;
+    indexSegmentHealthy = segmentedControl.selectedSegmentIndex;
+    [self loadLinkWebView:indexSegmentHealthy];
+}
+
+-(void)loadLinkWebView:(int)index
+{
+    NSString *fullURL = [listLinkHealthy objectAtIndex:index];
+    NSURL *url = [NSURL URLWithString:fullURL];
+    NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
+    [webViewHealthy loadRequest:requestObj];
 }
 
 #pragma mark LOAD_DATA_PRODUCT

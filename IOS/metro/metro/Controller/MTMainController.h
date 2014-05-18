@@ -24,15 +24,20 @@
     
     BOOL isLoadMore;
     NSMutableArray *arrayListProduct;
+    
+    NSArray *listLinkHealthy;
+    int indexSegmentHealthy;
 }
 
 @property (weak, nonatomic) IBOutlet UIView *viewHealthy;
 @property (weak, nonatomic) IBOutlet UITableView *tableViewProduct;
 @property (weak, nonatomic) IBOutlet UIButton *bntMetro;
 @property (weak, nonatomic) IBOutlet UIButton *bntNganh;
+@property (weak, nonatomic) IBOutlet UIWebView *webViewHealthy;
 
 -(void)setIndexBranchMetro:(int)indexM withIndexNganh:(int)indexN;
 -(void)setDataBranchMetro:(NganhListObject*)metrolist withNganhlist:(NganhListObject*)nganhList;
 - (IBAction)segmentTopChange:(id)sender;
+- (IBAction)segmentHealthyChange:(id)sender;
 
 @end

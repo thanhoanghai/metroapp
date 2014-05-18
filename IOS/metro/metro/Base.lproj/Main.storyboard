@@ -243,9 +243,15 @@
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="29"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <segments>
-                                            <segment title="First"/>
-                                            <segment title="Second"/>
+                                            <segment title="Thông tin dự án"/>
+                                            <segment title="Đối tác"/>
+                                            <segment title="Hoạt động"/>
+                                            <segment title="Tài liệu"/>
+                                            <segment title="Liên hệ"/>
                                         </segments>
+                                        <connections>
+                                            <action selector="segmentHealthyChange:" destination="BTm-sS-239" eventType="valueChanged" id="N3O-ZU-Edt"/>
+                                        </connections>
                                     </segmentedControl>
                                     <webView contentMode="scaleToFill" id="zDu-TD-VEh">
                                         <rect key="frame" x="0.0" y="29" width="320" height="403"/>
@@ -264,6 +270,7 @@
                         <outlet property="bntNganh" destination="j0i-Sh-tzW" id="4hH-fH-CKh"/>
                         <outlet property="tableViewProduct" destination="mkG-tU-KuM" id="vqe-xN-xSI"/>
                         <outlet property="viewHealthy" destination="V0h-Kh-3Ql" id="dIK-a9-wFj"/>
+                        <outlet property="webViewHealthy" destination="zDu-TD-VEh" id="j6T-xZ-GIL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HVf-Bq-YLa" userLabel="First Responder" sceneMemberID="firstResponder"/>
