@@ -262,6 +262,7 @@
                                 <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="MHL-c7-ZUc">
                                     <rect key="frame" x="0.0" y="0.0" width="550" height="29"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <segments>
                                         <segment title="Thông tin dự án"/>
                                         <segment title="Đối tác"/>
@@ -274,14 +275,15 @@
                                     </connections>
                                 </segmentedControl>
                             </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </scrollView>
                         <webView contentMode="scaleToFill" id="zDu-TD-VEh">
                             <rect key="frame" x="0.0" y="29" width="320" height="403"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="backgroundColor" red="0.81176477670000002" green="0.81176477670000002" blue="0.81176477670000002" alpha="1" colorSpace="deviceRGB"/>
                         </webView>
                     </subviews>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 </view>
             </objects>
             <point key="canvasLocation" x="560" y="-60"/>

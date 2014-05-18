@@ -63,7 +63,12 @@
     [scrollviewSegment setScrollEnabled:YES];
     [scrollviewSegment setShowsHorizontalScrollIndicator:NO];
     
+    [self setDefaultHightOfHealthy];
     
+}
+
+-(void)setDefaultHightOfHealthy
+{
     CGRect r = [viewHealthy frame];
     r.size.height = self.view.frame.size.height - HIGHT_TOP;;
     [viewHealthy setFrame:r];
