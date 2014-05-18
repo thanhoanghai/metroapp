@@ -30,6 +30,8 @@
 @synthesize webViewHealthy;
 @synthesize scrollviewSegment;
 
+#define HIGHT_TOP 48
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -60,6 +62,11 @@
     [scrollviewSegment setContentSize:CGSizeMake(550, 28)];
     [scrollviewSegment setScrollEnabled:YES];
     [scrollviewSegment setShowsHorizontalScrollIndicator:NO];
+    
+    
+    CGRect r = [viewHealthy frame];
+    r.size.height = self.view.frame.size.height - HIGHT_TOP;;
+    [viewHealthy setFrame:r];
 }
 
 -(void)viewWillAppear:(BOOL)animated
@@ -113,7 +120,7 @@
 {
     [self.view addSubview:viewHealthy];
     CGRect r = [viewHealthy frame];
-    r.origin.y = 48;
+    r.origin.y = HIGHT_TOP;
     [viewHealthy setFrame:r];
 }
 
