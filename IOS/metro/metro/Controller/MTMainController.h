@@ -34,6 +34,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *bntMetro;
 @property (weak, nonatomic) IBOutlet UIButton *bntNganh;
 @property (weak, nonatomic) IBOutlet UIWebView *webViewHealthy;
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollviewSegment;
 
 -(void)setIndexBranchMetro:(int)indexM withIndexNganh:(int)indexN;
 -(void)setDataBranchMetro:(NganhListObject*)metrolist withNganhlist:(NganhListObject*)nganhList;

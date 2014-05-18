@@ -27,6 +27,7 @@
 @synthesize bntMetro;
 @synthesize bntNganh;
 @synthesize webViewHealthy;
+@synthesize scrollviewSegment;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -45,8 +46,6 @@
     size = 10;
     isLoadMore = YES;
     
-    viewHealthy.hidden = YES;
-    
     arrayListProduct = [[NSMutableArray alloc] init ];
     
     listLinkHealthy = [NSArray arrayWithObjects:
@@ -57,6 +56,9 @@
              @"http://metro.qptek.com/healthy/contact",
              nil];
     indexSegmentHealthy = 0;
+    [scrollviewSegment setContentSize:CGSizeMake(550, 28)];
+    [scrollviewSegment setScrollEnabled:YES];
+    [scrollviewSegment setShowsHorizontalScrollIndicator:NO];
 }
 
 -(void)viewWillAppear:(BOOL)animated
@@ -99,11 +101,19 @@
     UISegmentedControl *segmentedControl = (UISegmentedControl *) sender;
     NSInteger selectedSegment = segmentedControl.selectedSegmentIndex;
     if (selectedSegment == 0) {
-        viewHealthy.hidden = YES;
+        [viewHealthy removeFromSuperview];
     }
     else{
-        viewHealthy.hidden = NO;
+        [self showViewHealthy];
     }
+}
+
+-(void)showViewHealthy
+{
+    [self.view addSubview:viewHealthy];
+    CGRect r = [viewHealthy frame];
+    r.origin.y = 48;
+    [viewHealthy setFrame:r];
 }
 
 - (IBAction)segmentHealthyChange:(id)sender {
