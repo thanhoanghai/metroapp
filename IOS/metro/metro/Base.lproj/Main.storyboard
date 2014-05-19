@@ -58,7 +58,8 @@
                                         <rect key="frame" x="4" y="25" width="203" height="25"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        <state key="normal" title="Metro">
+                                        <inset key="contentEdgeInsets" minX="5" minY="0.0" maxX="17" maxY="0.0"/>
+                                        <state key="normal" title="Metro" backgroundImage="contactus_textfield_image.png">
                                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -70,7 +71,8 @@
                                         <rect key="frame" x="2" y="95" width="207" height="25"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        <state key="normal" title="Nganh">
+                                        <inset key="contentEdgeInsets" minX="5" minY="0.0" maxX="17" maxY="0.0"/>
+                                        <state key="normal" title="Nganh" backgroundImage="contactus_textfield_image.png">
                                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -78,6 +80,14 @@
                                             <action selector="doActionBntNganh:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="F37-TM-Evc"/>
                                         </connections>
                                     </button>
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="arrow_down.png" id="Hjb-DD-jCe">
+                                        <rect key="frame" x="193" y="33" width="12" height="10"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                    </imageView>
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="arrow_down.png" id="TZC-KW-ttB">
+                                        <rect key="frame" x="194" y="103" width="12" height="10"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
@@ -192,7 +202,7 @@
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                        <inset key="contentEdgeInsets" minX="5" minY="0.0" maxX="15" maxY="0.0"/>
+                                        <inset key="contentEdgeInsets" minX="5" minY="0.0" maxX="17" maxY="0.0"/>
                                         <state key="normal" title="Metro" backgroundImage="contactus_textfield_image.png">
                                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -206,7 +216,7 @@
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                        <inset key="contentEdgeInsets" minX="5" minY="0.0" maxX="15" maxY="0.0"/>
+                                        <inset key="contentEdgeInsets" minX="5" minY="0.0" maxX="17" maxY="0.0"/>
                                         <state key="normal" title="Metro" backgroundImage="contactus_textfield_image.png">
                                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -226,6 +236,14 @@
                                             <outlet property="delegate" destination="BTm-sS-239" id="QmX-Ca-jkl"/>
                                         </connections>
                                     </tableView>
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="arrow_down.png" id="BN2-WH-u4D">
+                                        <rect key="frame" x="141" y="37" width="12" height="10"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                    </imageView>
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="arrow_down.png" id="Mvy-Qa-ZXV">
+                                        <rect key="frame" x="298" y="37" width="12" height="10"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.81176477670669556" green="0.81176477670669556" blue="0.81176477670669556" alpha="1" colorSpace="deviceRGB"/>
                             </view>
@@ -294,7 +312,13 @@
         </scene>
     </scenes>
     <resources>
+        <image name="arrow_down.png" width="12" height="10"/>
+        <image name="arrow_down.png" width="12" height="10"/>
+        <image name="arrow_down.png" width="12" height="10"/>
+        <image name="arrow_down.png" width="12" height="10"/>
         <image name="bg_bnt_yellow.png" width="141" height="37"/>
+        <image name="contactus_textfield_image.png" width="114" height="23"/>
+        <image name="contactus_textfield_image.png" width="114" height="23"/>
         <image name="contactus_textfield_image.png" width="114" height="23"/>
         <image name="contactus_textfield_image.png" width="114" height="23"/>
         <image name="copywright.png" width="203" height="13"/>

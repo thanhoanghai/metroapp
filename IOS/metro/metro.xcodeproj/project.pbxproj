@@ -72,6 +72,7 @@
 		EBA30F29191AA28100D8A6FF /* copywright.png in Resources */ = {isa = PBXBuildFile; fileRef = EBA30F27191AA28100D8A6FF /* copywright.png */; };
 		EBA30F2A191AA28100D8A6FF /* copywright@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EBA30F28191AA28100D8A6FF /* copywright@2x.png */; };
 		EBA78E6F192A3C38008EE9A7 /* contactus_textfield_image.png in Resources */ = {isa = PBXBuildFile; fileRef = EBA78E6E192A3C38008EE9A7 /* contactus_textfield_image.png */; };
+		EBA78E71192A3E9A008EE9A7 /* arrow_down.png in Resources */ = {isa = PBXBuildFile; fileRef = EBA78E70192A3E9A008EE9A7 /* arrow_down.png */; };
 		EBA802C219288807000D889C /* AsyncImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = EBA802C119288807000D889C /* AsyncImageView.m */; };
 		EBA802C4192893D9000D889C /* icon_giam.png in Resources */ = {isa = PBXBuildFile; fileRef = EBA802C3192893D9000D889C /* icon_giam.png */; };
 		EBA8F5ED191D3CC3001516DB /* bg_bnt_yellow.png in Resources */ = {isa = PBXBuildFile; fileRef = EBA8F5EC191D3CC3001516DB /* bg_bnt_yellow.png */; };
@@ -207,6 +208,7 @@
 		EBA30F27191AA28100D8A6FF /* copywright.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = copywright.png; sourceTree = "<group>"; };
 		EBA30F28191AA28100D8A6FF /* copywright@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "copywright@2x.png"; sourceTree = "<group>"; };
 		EBA78E6E192A3C38008EE9A7 /* contactus_textfield_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = contactus_textfield_image.png; sourceTree = "<group>"; };
+		EBA78E70192A3E9A008EE9A7 /* arrow_down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow_down.png; sourceTree = "<group>"; };
 		EBA802C019288807000D889C /* AsyncImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsyncImageView.h; sourceTree = "<group>"; };
 		EBA802C119288807000D889C /* AsyncImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsyncImageView.m; sourceTree = "<group>"; };
 		EBA802C3192893D9000D889C /* icon_giam.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_giam.png; sourceTree = "<group>"; };
@@ -474,6 +476,7 @@
 		EBA30F1A191A9BD900D8A6FF /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				EBA78E70192A3E9A008EE9A7 /* arrow_down.png */,
 				EBA78E6E192A3C38008EE9A7 /* contactus_textfield_image.png */,
 				EBA802C3192893D9000D889C /* icon_giam.png */,
 				EB3C1BAE191DF66F00252AF1 /* ic_blank_networkproblem.png */,
@@ -610,6 +613,7 @@
 				EBB4F7D3192746B60054E711 /* ProductCell.xib in Resources */,
 				EBA30F29191AA28100D8A6FF /* copywright.png in Resources */,
 				EBA30EFB191A9ACA00D8A6FF /* Images.xcassets in Resources */,
+				EBA78E71192A3E9A008EE9A7 /* arrow_down.png in Resources */,
 				EBA8F5ED191D3CC3001516DB /* bg_bnt_yellow.png in Resources */,
 				EBA802C4192893D9000D889C /* icon_giam.png in Resources */,
 				EBA30F25191AA1CD00D8A6FF /* copyright.png in Resources */,
