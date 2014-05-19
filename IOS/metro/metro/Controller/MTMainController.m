@@ -16,6 +16,7 @@
 #import "ProductCell.h"
 #import "AsyncImageView.h"
 #import "MarqueeLabel.h"
+#import "HMSegmentedControl.h"
 
 @interface MTMainController ()
 
@@ -32,7 +33,7 @@
 @synthesize webViewHealthy;
 @synthesize scrollviewSegment;
 
-#define HIGHT_TOP 48
+#define HIGHT_TOP 50
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -66,6 +67,9 @@
     [scrollviewSegment setShowsHorizontalScrollIndicator:NO];
     
     [self setDefaultHightOfHealthy];
+    
+    [self addCustomeSegmentTop];
+    [self addCustomeSegmentHealthy];
     
 }
 
@@ -242,6 +246,40 @@
     continuousLabel2.text = @"This is another long label that scrolls continuously with a custom space between labels! You can also tap it to pause and unpause it!";
 
     [self.viewProduct addSubview:continuousLabel2];
+}
+
+#pragma mark ADD_CUSTOM_SEGMENT_TOP
+-(void)addCustomeSegmentTop
+{
+    HMSegmentedControl *segmentedControl4 = [[HMSegmentedControl alloc] initWithFrame:CGRectMake(0, 20, self.view.frame.size.width, 28)];
+    //[segmentedControl4 setStatusBorder:NO];
+    segmentedControl4.sectionTitles = @[@"METRO", @"HEALTHY"];
+    segmentedControl4.selectedSegmentIndex = 0;
+
+    segmentedControl4.backgroundColor = [UIColor colorWithRed:1 green:1 blue:1 alpha:1];
+    segmentedControl4.textColor = [UIColor colorWithRed:0.1 green:0.4 blue:0.8 alpha:1];
+    segmentedControl4.selectedTextColor = [UIColor colorWithRed:250.0f/255.0f green:235.0f/255.0f blue:55.0f/255.0f alpha:1];
+    segmentedControl4.selectionIndicatorColor = [UIColor colorWithRed:0.1 green:0.4 blue:0.8 alpha:1];
+    segmentedControl4.selectionStyle = HMSegmentedControlSelectionStyleBox;
+    segmentedControl4.selectionIndicatorLocation = HMSegmentedControlSelectionIndicatorLocationUp;
+    [segmentedControl4 addTarget:self action:@selector(segmentTopChange:) forControlEvents:UIControlEventValueChanged];
+
+    
+    [self.view addSubview:segmentedControl4];
+}
+
+-(void)addCustomeSegmentHealthy
+{
+    HMSegmentedControl *segmentedControl1 = [[HMSegmentedControl alloc] initWithSectionTitles:@[@"Thông tin dự án", @"Đối tác", @"Hoạt động", @"Tài liệu", @"Liên hệ"]];
+    segmentedControl1.autoresizingMask = UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleWidth;
+    [segmentedControl1 addLineGrey:YES];
+    segmentedControl1.frame = CGRectMake(0, 0, self.view.frame.size.width, 28);
+    segmentedControl1.segmentEdgeInset = UIEdgeInsetsMake(0, 10, 0, 10);
+    segmentedControl1.selectionStyle = HMSegmentedControlSelectionStyleFullWidthStripe;
+    segmentedControl1.selectionIndicatorLocation = HMSegmentedControlSelectionIndicatorLocationDown;
+    segmentedControl1.scrollEnabled = YES;
+    [segmentedControl1 addTarget:self action:@selector(segmentedControlChangedValue:) forControlEvents:UIControlEventValueChanged];
+    [self.viewHealthy addSubview:segmentedControl1];
 }
 
 
