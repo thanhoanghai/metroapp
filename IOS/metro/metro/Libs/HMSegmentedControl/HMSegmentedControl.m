@@ -150,7 +150,7 @@
     self.selectedTextColor = [UIColor blackColor];
     self.backgroundColor = [UIColor whiteColor];
     self.opaque = NO;
-    self.selectionIndicatorColor = [UIColor colorWithRed:52.0f/255.0f green:181.0f/255.0f blue:229.0f/255.0f alpha:1.0f];
+    self.selectionIndicatorColor = [UIColor colorWithRed:35.0f/255.0f green:52.0f/255.0f blue:126.0f/255.0f alpha:0.8f];
     
     self.selectedSegmentIndex = 0;
     self.segmentEdgeInset = UIEdgeInsetsMake(0, 5, 0, 5);

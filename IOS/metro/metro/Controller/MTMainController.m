@@ -31,7 +31,7 @@
 @synthesize bntMetro;
 @synthesize bntNganh;
 @synthesize webViewHealthy;
-@synthesize scrollviewSegment;
+
 
 #define HIGHT_TOP 50
 
@@ -62,9 +62,6 @@
              @"http://metro.qptek.com/healthy/contact",
              nil];
     indexSegmentHealthy = 0;
-    [scrollviewSegment setContentSize:CGSizeMake(550, 28)];
-    [scrollviewSegment setScrollEnabled:YES];
-    [scrollviewSegment setShowsHorizontalScrollIndicator:NO];
     
     [self setDefaultHightOfHealthy];
     
@@ -278,7 +275,7 @@
     segmentedControl1.selectionStyle = HMSegmentedControlSelectionStyleFullWidthStripe;
     segmentedControl1.selectionIndicatorLocation = HMSegmentedControlSelectionIndicatorLocationDown;
     segmentedControl1.scrollEnabled = YES;
-    [segmentedControl1 addTarget:self action:@selector(segmentedControlChangedValue:) forControlEvents:UIControlEventValueChanged];
+    [segmentedControl1 addTarget:self action:@selector(segmentHealthyChange:) forControlEvents:UIControlEventValueChanged];
     [self.viewHealthy addSubview:segmentedControl1];
 }
 
