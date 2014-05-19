@@ -188,10 +188,12 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="DIw-Ed-W6l">
-                                        <rect key="frame" x="20" y="29" width="123" height="25"/>
+                                        <rect key="frame" x="6" y="29" width="151" height="25"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        <state key="normal" title="Metro">
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <inset key="contentEdgeInsets" minX="5" minY="0.0" maxX="15" maxY="0.0"/>
+                                        <state key="normal" title="Metro" backgroundImage="contactus_textfield_image.png">
                                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -200,10 +202,12 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="j0i-Sh-tzW" userLabel="Button - Nganh">
-                                        <rect key="frame" x="177" y="29" width="123" height="25"/>
+                                        <rect key="frame" x="165" y="29" width="149" height="25"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        <state key="normal" title="Metro">
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <inset key="contentEdgeInsets" minX="5" minY="0.0" maxX="15" maxY="0.0"/>
+                                        <state key="normal" title="Metro" backgroundImage="contactus_textfield_image.png">
                                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -291,6 +295,8 @@
     </scenes>
     <resources>
         <image name="bg_bnt_yellow.png" width="141" height="37"/>
+        <image name="contactus_textfield_image.png" width="114" height="23"/>
+        <image name="contactus_textfield_image.png" width="114" height="23"/>
         <image name="copywright.png" width="203" height="13"/>
         <image name="ic_blank_networkproblem.png" width="168" height="120"/>
         <image name="logo_splash.png" width="243" height="37"/>

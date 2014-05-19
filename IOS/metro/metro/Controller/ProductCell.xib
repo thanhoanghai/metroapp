@@ -83,6 +83,7 @@
                 <outlet property="description" destination="f0W-XE-OYr" id="JSY-Fp-A1F"/>
                 <outlet property="giam" destination="BO0-Oa-AQd" id="WuO-xx-jej"/>
                 <outlet property="imgProduct" destination="I4Z-yt-hlc" id="2Uv-sr-F9H"/>
+                <outlet property="imggiam" destination="hse-z8-GYP" id="HkS-eE-HCW"/>
                 <outlet property="price1" destination="QSy-cB-Hzq" id="cIB-m7-ovf"/>
                 <outlet property="price2" destination="EkC-be-e8x" id="MJa-Ys-LsI"/>
                 <outlet property="vat" destination="Fvd-pU-gLh" id="Cpc-ag-XXA"/>

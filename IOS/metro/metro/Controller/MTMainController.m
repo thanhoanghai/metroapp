@@ -197,10 +197,12 @@
     {
         [cell.giam setText:[NSString stringWithFormat:@"GIẢM %@",item.sale_off]];
         [cell.price1 setText:item.price_1];
+        cell.imggiam.hidden = NO;
     }else
     {
         [cell.giam setText:@""];
         [cell.price1 setText:@""];
+        cell.imggiam.hidden = YES;
     }
    
     [cell.price2 setText:item.price_2];

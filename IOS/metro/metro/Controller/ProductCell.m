@@ -20,6 +20,7 @@
 @synthesize price2;
 @synthesize vat;
 @synthesize imgProduct;
+@synthesize imggiam;
 
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier

@@ -17,6 +17,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *price1;
 @property (weak, nonatomic) IBOutlet UILabel *price2;
 @property (weak, nonatomic) IBOutlet UILabel *vat;
+@property (weak, nonatomic) IBOutlet UIImageView *imggiam;
 @property (weak, nonatomic) IBOutlet AsyncImageView *imgProduct;
 
 - (void) setlinkImage:(NSString *)url;
