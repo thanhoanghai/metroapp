@@ -192,6 +192,19 @@
     
     ProductObject *item = [arrayListProduct objectAtIndex:indexPath.row];
     [cell.contentLabel setText:item.name];
+    [cell.description setText:item.description];
+    if(item.price_1 !=NULL && item.price_1.length > 3)
+    {
+        [cell.giam setText:[NSString stringWithFormat:@"GIẢM %@",item.sale_off]];
+        [cell.price1 setText:item.price_1];
+    }else
+    {
+        [cell.giam setText:@""];
+        [cell.price1 setText:@""];
+    }
+   
+    [cell.price2 setText:item.price_2];
+    [cell.vat setText:[NSString stringWithFormat:@"-GTGT %@",item.price_vat]];
     
     [[AsyncImageLoader sharedLoader] cancelLoadingImagesForTarget:cell.imgProduct];
     [cell setlinkImage:item.photo];

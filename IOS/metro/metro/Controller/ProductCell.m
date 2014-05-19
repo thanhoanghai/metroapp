@@ -14,6 +14,11 @@
 @implementation ProductCell
 
 @synthesize contentLabel = _contentLabel;
+@synthesize description;
+@synthesize giam;
+@synthesize price1;
+@synthesize price2;
+@synthesize vat;
 @synthesize imgProduct;
 
 
