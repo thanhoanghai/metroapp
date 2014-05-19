@@ -150,11 +150,11 @@
     self.selectedTextColor = [UIColor blackColor];
     self.backgroundColor = [UIColor whiteColor];
     self.opaque = NO;
-    self.selectionIndicatorColor = [UIColor colorWithRed:35.0f/255.0f green:52.0f/255.0f blue:126.0f/255.0f alpha:0.8f];
+    self.selectionIndicatorColor = [UIColor colorWithRed:35.0f/255.0f green:62.0f/255.0f blue:126.0f/255.0f alpha:0.8f];
     
     self.selectedSegmentIndex = 0;
     self.segmentEdgeInset = UIEdgeInsetsMake(0, 5, 0, 5);
-    self.selectionIndicatorHeight = 5.0f;
+    self.selectionIndicatorHeight = 4.0f;
     self.selectionStyle = HMSegmentedControlSelectionStyleTextWidthStripe;
     self.selectionIndicatorLocation = HMSegmentedControlSelectionIndicatorLocationDown;
     self.segmentWidthStyle = HMSegmentedControlSegmentWidthStyleFixed;

@@ -163,4 +163,5 @@ typedef enum {
 - (void)setIndexChangeBlock:(IndexChangeBlock)indexChangeBlock;
 -(void)setStatusBorder:(BOOL)status;
 -(void)addLineGrey:(BOOL)status;
+
 @end
