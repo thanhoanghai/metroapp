@@ -30,6 +30,7 @@
 }
 
 @property (weak, nonatomic) IBOutlet UIView *viewHealthy;
+@property (weak, nonatomic) IBOutlet UIView *viewProduct;
 @property (weak, nonatomic) IBOutlet UITableView *tableViewProduct;
 @property (weak, nonatomic) IBOutlet UIButton *bntMetro;
 @property (weak, nonatomic) IBOutlet UIButton *bntNganh;

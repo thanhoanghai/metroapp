@@ -58,6 +58,7 @@
                                         <rect key="frame" x="4" y="25" width="203" height="25"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <inset key="contentEdgeInsets" minX="5" minY="0.0" maxX="17" maxY="0.0"/>
                                         <state key="normal" title="Metro" backgroundImage="contactus_textfield_image.png">
                                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -71,6 +72,7 @@
                                         <rect key="frame" x="2" y="95" width="207" height="25"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <inset key="contentEdgeInsets" minX="5" minY="0.0" maxX="17" maxY="0.0"/>
                                         <state key="normal" title="Nganh" backgroundImage="contactus_textfield_image.png">
                                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -269,6 +271,7 @@
                         <outlet property="scrollviewSegment" destination="a4Q-xm-JPx" id="YmL-HC-xx4"/>
                         <outlet property="tableViewProduct" destination="mkG-tU-KuM" id="vqe-xN-xSI"/>
                         <outlet property="viewHealthy" destination="V0h-Kh-3Ql" id="dIK-a9-wFj"/>
+                        <outlet property="viewProduct" destination="wYs-04-hIq" id="L1b-3F-IAw"/>
                         <outlet property="webViewHealthy" destination="zDu-TD-VEh" id="j6T-xZ-GIL"/>
                     </connections>
                 </viewController>
@@ -313,13 +316,7 @@
     </scenes>
     <resources>
         <image name="arrow_down.png" width="12" height="10"/>
-        <image name="arrow_down.png" width="12" height="10"/>
-        <image name="arrow_down.png" width="12" height="10"/>
-        <image name="arrow_down.png" width="12" height="10"/>
         <image name="bg_bnt_yellow.png" width="141" height="37"/>
-        <image name="contactus_textfield_image.png" width="114" height="23"/>
-        <image name="contactus_textfield_image.png" width="114" height="23"/>
-        <image name="contactus_textfield_image.png" width="114" height="23"/>
         <image name="contactus_textfield_image.png" width="114" height="23"/>
         <image name="copywright.png" width="203" height="13"/>
         <image name="ic_blank_networkproblem.png" width="168" height="120"/>

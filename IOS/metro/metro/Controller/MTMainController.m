@@ -15,6 +15,7 @@
 #import "LogDebug.h"
 #import "ProductCell.h"
 #import "AsyncImageView.h"
+#import "MarqueeLabel.h"
 
 @interface MTMainController ()
 
@@ -23,6 +24,7 @@
 
 @implementation MTMainController
 
+@synthesize viewProduct;
 @synthesize viewHealthy;
 @synthesize tableViewProduct;
 @synthesize bntMetro;
@@ -89,6 +91,8 @@
     
     [self loadDataProduct];
     [self loadLinkWebView:indexSegmentHealthy];
+    
+    [self addRunningText];
 }
 
 - (void)didReceiveMemoryWarning
@@ -217,6 +221,27 @@
 - (void)tableView:(UITableView *)tableviewDialog didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
    
+}
+
+#pragma mark ADD_RUNNING_TEXT
+-(void)addRunningText
+{
+    //Second continuous label example
+    MarqueeLabel *continuousLabel2 = [[MarqueeLabel alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 21) rate:100.0f andFadeLength:10.0f];
+    continuousLabel2.marqueeType = MLContinuous;
+    continuousLabel2.animationCurve = UIViewAnimationOptionCurveLinear;
+    continuousLabel2.continuousMarqueeExtraBuffer = 50.0f;
+    continuousLabel2.numberOfLines = 1;
+    continuousLabel2.opaque = NO;
+    continuousLabel2.enabled = YES;
+    continuousLabel2.shadowOffset = CGSizeMake(0.0, -1.0);
+    continuousLabel2.textAlignment = NSTextAlignmentLeft;
+    continuousLabel2.textColor = [UIColor colorWithRed:0.234 green:0.234 blue:0.234 alpha:1.000];
+    continuousLabel2.backgroundColor = [UIColor clearColor];
+    continuousLabel2.font = [UIFont fontWithName:@"Helvetica" size:14.000];
+    continuousLabel2.text = @"This is another long label that scrolls continuously with a custom space between labels! You can also tap it to pause and unpause it!";
+
+    [self.viewProduct addSubview:continuousLabel2];
 }
 
 

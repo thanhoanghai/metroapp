@@ -73,6 +73,7 @@
 		EBA30F2A191AA28100D8A6FF /* copywright@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EBA30F28191AA28100D8A6FF /* copywright@2x.png */; };
 		EBA78E6F192A3C38008EE9A7 /* contactus_textfield_image.png in Resources */ = {isa = PBXBuildFile; fileRef = EBA78E6E192A3C38008EE9A7 /* contactus_textfield_image.png */; };
 		EBA78E71192A3E9A008EE9A7 /* arrow_down.png in Resources */ = {isa = PBXBuildFile; fileRef = EBA78E70192A3E9A008EE9A7 /* arrow_down.png */; };
+		EBA78E75192A4257008EE9A7 /* MarqueeLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = EBA78E74192A4257008EE9A7 /* MarqueeLabel.m */; };
 		EBA802C219288807000D889C /* AsyncImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = EBA802C119288807000D889C /* AsyncImageView.m */; };
 		EBA802C4192893D9000D889C /* icon_giam.png in Resources */ = {isa = PBXBuildFile; fileRef = EBA802C3192893D9000D889C /* icon_giam.png */; };
 		EBA8F5ED191D3CC3001516DB /* bg_bnt_yellow.png in Resources */ = {isa = PBXBuildFile; fileRef = EBA8F5EC191D3CC3001516DB /* bg_bnt_yellow.png */; };
@@ -209,6 +210,8 @@
 		EBA30F28191AA28100D8A6FF /* copywright@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "copywright@2x.png"; sourceTree = "<group>"; };
 		EBA78E6E192A3C38008EE9A7 /* contactus_textfield_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = contactus_textfield_image.png; sourceTree = "<group>"; };
 		EBA78E70192A3E9A008EE9A7 /* arrow_down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow_down.png; sourceTree = "<group>"; };
+		EBA78E73192A4257008EE9A7 /* MarqueeLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MarqueeLabel.h; sourceTree = "<group>"; };
+		EBA78E74192A4257008EE9A7 /* MarqueeLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MarqueeLabel.m; sourceTree = "<group>"; };
 		EBA802C019288807000D889C /* AsyncImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsyncImageView.h; sourceTree = "<group>"; };
 		EBA802C119288807000D889C /* AsyncImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsyncImageView.m; sourceTree = "<group>"; };
 		EBA802C3192893D9000D889C /* icon_giam.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_giam.png; sourceTree = "<group>"; };
@@ -259,6 +262,7 @@
 		EB3C1BB4191E0A9D00252AF1 /* Libs */ = {
 			isa = PBXGroup;
 			children = (
+				EBA78E72192A4257008EE9A7 /* MarqueeLabel */,
 				EBA802BF19288807000D889C /* AsyncImageView */,
 				EBAA06F4191F485900849825 /* Debug */,
 				EB3C1BF7191E2B1D00252AF1 /* KeyValueObjectMapping */,
@@ -491,6 +495,15 @@
 			path = Resource;
 			sourceTree = "<group>";
 		};
+		EBA78E72192A4257008EE9A7 /* MarqueeLabel */ = {
+			isa = PBXGroup;
+			children = (
+				EBA78E73192A4257008EE9A7 /* MarqueeLabel.h */,
+				EBA78E74192A4257008EE9A7 /* MarqueeLabel.m */,
+			);
+			path = MarqueeLabel;
+			sourceTree = "<group>";
+		};
 		EBA802BF19288807000D889C /* AsyncImageView */ = {
 			isa = PBXGroup;
 			children = (
@@ -688,6 +701,7 @@
 				EB3C1C27191E2B1D00252AF1 /* DCNSArrayConverter.m in Sources */,
 				EB3C1C1F191E2B1D00252AF1 /* DCArrayMapping.m in Sources */,
 				EB3C1C2F191E2B1D00252AF1 /* DCReferenceKeyParser.m in Sources */,
+				EBA78E75192A4257008EE9A7 /* MarqueeLabel.m in Sources */,
 				EB3C1BE4191E0AB300252AF1 /* AFNetworkActivityIndicatorManager.m in Sources */,
 				EB3C1BB2191DFA0B00252AF1 /* MTMainController.m in Sources */,
 				EBB4F7D2192746B60054E711 /* ProductCell.m in Sources */,
