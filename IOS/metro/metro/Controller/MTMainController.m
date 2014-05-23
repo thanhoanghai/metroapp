@@ -17,7 +17,7 @@
 #import "AsyncImageView.h"
 #import "MarqueeLabel.h"
 #import "HMSegmentedControl.h"
-#import "DialogViewController.h"
+#import "DialogController.h"
 
 @interface MTMainController ()
 
@@ -69,8 +69,6 @@
     [self addCustomeSegmentTop];
     [self addCustomeSegmentHealthy];
     
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    dialogView = [storyboard instantiateViewControllerWithIdentifier:@"DialogViewController"];
 }
 
 -(void)setDefaultHightOfHealthy
@@ -97,6 +95,13 @@
     [self loadLinkWebView:indexSegmentHealthy];
     
     [self addRunningText];
+    
+    if(dialogView==nil)
+    {
+        dialogView = [[DialogController alloc] initWithNibName:@"DialogController" bundle:nil];
+        [dialogView setDelegate:self];
+        [dialogView setDataBranchMetro:metroListObject withNganhlist:nganhListObject];
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -116,11 +121,17 @@
     metroListObject = metrolist;
 }
 
+#pragma mark DelegateDialogCLose
+-(void)delegateDongDialog
+{
+    [dialogView.view removeFromSuperview];
+}
+
 #pragma mark ACTION_BUTTON_METRO_NGHANH
 
 - (IBAction)doActionBntMetro:(id)sender {
-    [dialogView setIndexDialog:0];
-    [self.view addSubview: dialogView.view];
+        [dialogView setIndexDialog:0];
+        [self.view addSubview:dialogView.view];
 }
 
 
@@ -152,7 +163,7 @@
 
 - (IBAction)segmentHealthyChange:(id)sender {
     UISegmentedControl *segmentedControl = (UISegmentedControl *) sender;
-    indexSegmentHealthy = segmentedControl.selectedSegmentIndex;
+    indexSegmentHealthy = [segmentedControl selectedSegmentIndex];
     [self loadLinkWebView:indexSegmentHealthy];
 }
 
@@ -299,3 +310,9 @@
 
 
 @end
+
+
+
+//        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+//        dialogView = [storyboard instantiateViewControllerWithIdentifier:@"DialogViewController"];
+

@@ -7,7 +7,26 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "NganhListObject.h"
 
-@interface DialogController : UIViewController
+@protocol DialogDelegate <NSObject>
+- (void) delegateDongDialog;
+@end
+
+@interface DialogController : UIViewController<UITableViewDataSource, UITabBarControllerDelegate>
+{
+    int indexDialog;
+    NganhListObject *nganhListObject;
+    NganhListObject *metroListObject;
+}
+
+@property (assign) id<DialogDelegate> delegate;
+
+- (IBAction)doActionDongLai:(id)sender;
+@property (weak, nonatomic) IBOutlet UILabel *labelTitle;
+@property (weak, nonatomic) IBOutlet UITableView *tableViewData;
+-(void)setIndexDialog:(int)index;
+-(void)setDataBranchMetro:(NganhListObject*)metrolist withNganhlist:(NganhListObject*)nganhList;
+
 
 @end

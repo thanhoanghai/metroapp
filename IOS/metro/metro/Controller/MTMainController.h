@@ -8,9 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "NganhListObject.h"
-#import "DialogViewController.h"
+#import "DialogController.h"
 
-@interface MTMainController : UIViewController<UITableViewDataSource, UITabBarControllerDelegate> 
+@interface MTMainController : UIViewController<UITableViewDataSource, UITabBarControllerDelegate,DialogDelegate>
 {
     
     int page;
@@ -29,7 +29,7 @@
     NSArray *listLinkHealthy;
     int indexSegmentHealthy;
     
-    DialogViewController *dialogView;
+    DialogController *dialogView;
 }
 
 @property (weak, nonatomic) IBOutlet UIView *viewHealthy;
