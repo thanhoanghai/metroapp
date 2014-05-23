@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "NganhListObject.h"
+#import "DialogController.h"
 
-@interface MTViewController : UIViewController<UITableViewDataSource, UITabBarControllerDelegate>
+@interface MTViewController : UIViewController<DialogDelegate>
 {
     NSTimer *nsTimerUp;
     int countTime;
@@ -18,14 +19,14 @@
     int indexDialog;
     int indexBranchMetro;
     int indexNganh;
+    
+    DialogController *dialogView;
 }
 
 
 
 @property (weak, nonatomic) IBOutlet UIButton *bntChon;
-@property (weak, nonatomic) IBOutlet UIView *viewTable;
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property (weak, nonatomic) IBOutlet UILabel *lbTitleListTable;
+
 
 @property (weak, nonatomic) IBOutlet UIView *viewDisconect;
 @property (weak, nonatomic) IBOutlet UIView *viewContent;
@@ -35,7 +36,6 @@
 @property (weak, nonatomic) IBOutlet UIImageView *imgLogo;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *loading;
 - (IBAction)doActionBntChon:(id)sender;
-- (IBAction)doActionBntCloseTable:(id)sender;
 - (IBAction)doActionBntBranchMetro:(id)sender;
 - (IBAction)doActionBntNganh:(id)sender;
 - (IBAction)doActionBntDisconnet:(id)sender;

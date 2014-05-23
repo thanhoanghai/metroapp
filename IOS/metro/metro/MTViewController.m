@@ -31,9 +31,7 @@
 @synthesize loading;
 @synthesize viewDisconect;
 @synthesize bntChon;
-@synthesize viewTable;
-@synthesize tableView;
-@synthesize lbTitleListTable;
+
 
 - (void)viewDidLoad
 {
@@ -46,6 +44,12 @@
     indexNganh = 0;
     
     viewContent.hidden = YES;
+    
+    if(dialogView==nil)
+    {
+        dialogView = [[DialogController alloc] initWithNibName:@"DialogController" bundle:nil];
+        [dialogView setDelegate:self];
+    }
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -61,6 +65,20 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark DELEGATE_DIALOG
+-(void)delegateDongDialog:(NSString *)idItem withName:(NSString *)name withIndex:(int)index
+{
+    if(indexDialog==0)
+    {
+        [lbBranchMetro setTitle:name forState:UIControlStateNormal];
+        indexBranchMetro = index;
+    }else{
+        [lbNganh setTitle:name forState:UIControlStateNormal];
+        indexNganh = index;
+    }
+    [dialogView.view removeFromSuperview];
 }
 
 #pragma mark COUNT_TIME_RUN_LOGO
@@ -102,21 +120,6 @@
     loading.hidden = YES;
     [loading stopAnimating];
     viewContent.hidden = NO;
-}
-
--(void)showViewTable:(int)index
-{
-    indexDialog = index;
-    [self.view addSubview:viewTable];
-    CGRect r = [viewTable frame];
-    r.origin.y = self.view.frame.size.height - r.size.height;
-    [viewTable setFrame:r];
-    if(index == 0)
-    {
-        [lbTitleListTable setText:TRUNG_TAM_METRO];
-    }else
-        [lbTitleListTable setText:NGANH_HANG_KINH_DOANH];
-    [tableView reloadData];
 }
 
 -(void)showDisconectView
@@ -174,6 +177,11 @@
          DCKeyValueObjectMapping *parser = [DCKeyValueObjectMapping mapperForClass:[NganhListObject class] andConfiguration:config];
          nganhListObject = [parser parseDictionary:result];
          
+         if(dialogView!=NULL)
+         {
+             [dialogView setDataBranchMetro:metroListObject withNganhlist:nganhListObject];
+         }
+         
          [self setNameLabelNganh];
          
          [self showContent];
@@ -213,16 +221,16 @@
     [self gotoMainController];
 }
 
-- (IBAction)doActionBntCloseTable:(id)sender {
-    [viewTable removeFromSuperview];
-}
-
 - (IBAction)doActionBntBranchMetro:(id)sender {
-    [self showViewTable:0];
+    indexDialog = 0;
+    [dialogView setIndexDialog:indexDialog];
+    [self.view addSubview:dialogView.view];
 }
 
 - (IBAction)doActionBntNganh:(id)sender {
-    [self showViewTable:1];
+    indexDialog= 1;
+    [dialogView setIndexDialog:indexDialog];
+    [self.view addSubview:dialogView.view];
 }
 
 - (IBAction)doActionBntDisconnet:(id)sender {
@@ -231,59 +239,5 @@
     [loading startAnimating];
     [self getDataBranchMetro];
 }
-
-#pragma mark TABLE_VIEW_LIST_METRO
-#pragma mark TABBLE_VIEW
-- (NSInteger)tableView:(UITableView *)tableviewDialog numberOfRowsInSection:(NSInteger)sectionIndex
-{
-    if(indexDialog == 1)
-    {
-        if(nganhListObject!=NULL)
-        { return [nganhListObject.data count];}
-        else {return 0;}
-    }else
-    {
-        if(metroListObject!=NULL)
-        {   return [metroListObject.data count];}
-        else{ return 0;}
-    }
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableviewDialog cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    //CUSTOME CELL
-    static NSString *CellIdentifier = @"NganhCell";
-    NganhCell *cell = (NganhCell*)[tableviewDialog dequeueReusableCellWithIdentifier:CellIdentifier];
-    if(cell==nil){
-        cell = [[NganhCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:@"NganhCell"];
-    }
-    
-    if(indexDialog == 0)
-    {
-        BranchObject *item = [metroListObject.data objectAtIndex:indexPath.row];
-        [cell.contentLabel setText:item.name];
-    }else
-    {
-        NganhObject *item = [nganhListObject.data objectAtIndex:indexPath.row];
-        [cell.contentLabel setText:item.name];
-    }
-    
-    return cell;
-}
-
-- (void)tableView:(UITableView *)tableviewDialog didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if(indexDialog == 0)
-    {
-        indexBranchMetro = indexPath.row;
-        [self setNameLabelBranchMetro];
-    }else
-    {
-        indexNganh = indexPath.row;
-        [self setNameLabelNganh];
-    }
-    [viewTable removeFromSuperview];
-}
-
 
 @end

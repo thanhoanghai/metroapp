@@ -123,7 +123,7 @@
 }
 
 #pragma mark DelegateDialogCLose
--(void)delegateDongDialog:(NSString*)idItem withName:(NSString *)name
+-(void)delegateDongDialog:(NSString*)idItem withName:(NSString *)name withIndex:(int)index
 {
     if(idItem!=nil && idItem.length > 0)
     {

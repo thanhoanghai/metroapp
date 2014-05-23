@@ -257,14 +257,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		EB01A12D192BB87F00F87C30 /* DialogViewController */ = {
+		EB01A12D192BB87F00F87C30 /* DialogController */ = {
 			isa = PBXGroup;
 			children = (
+				EB16F90A191E9BCA008AD3FC /* CellBranchMetro */,
 				EBA981EA192E60F000962305 /* DialogController.h */,
 				EBA981EB192E60F000962305 /* DialogController.m */,
 				EBA981EC192E60F000962305 /* DialogController.xib */,
 			);
-			name = DialogViewController;
+			name = DialogController;
 			sourceTree = "<group>";
 		};
 		EB16F90A191E9BCA008AD3FC /* CellBranchMetro */ = {
@@ -490,7 +491,7 @@
 		EBA30F19191A9BD900D8A6FF /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				EB01A12D192BB87F00F87C30 /* DialogViewController */,
+				EB01A12D192BB87F00F87C30 /* DialogController */,
 				EBB4F7CE192746900054E711 /* SanphamController */,
 				EBB4F7CA192737D20054E711 /* DangnhapController */,
 			);
@@ -554,7 +555,6 @@
 		EBB4F7CA192737D20054E711 /* DangnhapController */ = {
 			isa = PBXGroup;
 			children = (
-				EB16F90A191E9BCA008AD3FC /* CellBranchMetro */,
 				EBA30EF7191A9ACA00D8A6FF /* MTViewController.h */,
 				EBA30EF8191A9ACA00D8A6FF /* MTViewController.m */,
 			);

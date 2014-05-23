@@ -71,7 +71,7 @@
 
 - (IBAction)doActionDongLai:(id)sender {
     if (self.delegate ) {
-        [self.delegate delegateDongDialog:@"" withName:@""];
+        [self.delegate delegateDongDialog:@"" withName:@"" withIndex:-1];
     }
 }
 
@@ -120,11 +120,11 @@
     if(indexDialog == 0 && metroListObject!=NULL)
     {
         BranchObject *item = [metroListObject.data objectAtIndex:indexPath.row];
-        [self.delegate delegateDongDialog:item.id withName:item.name];
+        [self.delegate delegateDongDialog:item.id withName:item.name withIndex:indexPath.row];
     }else if(nganhListObject!=NULL)
     {
         NganhObject *item = [nganhListObject.data objectAtIndex:indexPath.row];
-        [self.delegate delegateDongDialog:item.id withName:item.name];
+        [self.delegate delegateDongDialog:item.id withName:item.name withIndex:indexPath.row];
     }
 }
 
