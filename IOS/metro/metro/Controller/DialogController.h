@@ -10,7 +10,7 @@
 #import "NganhListObject.h"
 
 @protocol DialogDelegate <NSObject>
-- (void) delegateDongDialog;
+- (void) delegateDongDialog:(NSString*) idItem withName:(NSString*)name;
 @end
 
 @interface DialogController : UIViewController<UITableViewDataSource, UITabBarControllerDelegate>

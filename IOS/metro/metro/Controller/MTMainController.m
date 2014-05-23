@@ -63,6 +63,7 @@
              @"http://metro.qptek.com/healthy/contact",
              nil];
     indexSegmentHealthy = 0;
+    indexDialog = 0;
     
     [self setDefaultHightOfHealthy];
     
@@ -122,20 +123,37 @@
 }
 
 #pragma mark DelegateDialogCLose
--(void)delegateDongDialog
+-(void)delegateDongDialog:(NSString*)idItem withName:(NSString *)name
 {
+    if(idItem!=nil && idItem.length > 0)
+    {
+        if(indexDialog==0)
+        {
+            sMetroID = idItem;
+            [bntMetro setTitle:name forState:UIControlStateNormal];
+        }else
+        {    sNganhID = idItem;
+            [bntNganh setTitle:name forState:UIControlStateNormal];
+        }
+        page = 0;
+        [arrayListProduct removeAllObjects];
+        [tableViewProduct reloadData];
+        [self loadDataProduct];
+    }
     [dialogView.view removeFromSuperview];
 }
 
 #pragma mark ACTION_BUTTON_METRO_NGHANH
 
 - (IBAction)doActionBntMetro:(id)sender {
+        indexDialog = 0;
         [dialogView setIndexDialog:0];
         [self.view addSubview:dialogView.view];
 }
 
 
 - (IBAction)doActionBntNganh:(id)sender {
+    indexDialog = 1;
     [dialogView setIndexDialog:1];
     [self.view addSubview: dialogView.view];
 }

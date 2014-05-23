@@ -63,16 +63,16 @@
     
 }
 
-- (IBAction)doActionDongLai:(id)sender {    
-    if (self.delegate ) {
-        [self.delegate delegateDongDialog];
-    }
-}
-
 -(void)setDataBranchMetro:(NganhListObject*)metrolist withNganhlist:(NganhListObject*)nganhList
 {
     nganhListObject = nganhList;
     metroListObject = metrolist;
+}
+
+- (IBAction)doActionDongLai:(id)sender {
+    if (self.delegate ) {
+        [self.delegate delegateDongDialog:@"" withName:@""];
+    }
 }
 
 
@@ -116,7 +116,16 @@
 
 - (void)tableView:(UITableView *)tableviewDialog didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-   
+    
+    if(indexDialog == 0 && metroListObject!=NULL)
+    {
+        BranchObject *item = [metroListObject.data objectAtIndex:indexPath.row];
+        [self.delegate delegateDongDialog:item.id withName:item.name];
+    }else if(nganhListObject!=NULL)
+    {
+        NganhObject *item = [nganhListObject.data objectAtIndex:indexPath.row];
+        [self.delegate delegateDongDialog:item.id withName:item.name];
+    }
 }
 
 

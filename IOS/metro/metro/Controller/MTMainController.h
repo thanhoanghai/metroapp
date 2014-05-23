@@ -18,6 +18,8 @@
     NSString *sMetroID;
     NSString *sNganhID;
     
+    
+    int indexDialog;
     int indexBranchMetro;
     int indexNganh;
     NganhListObject *nganhListObject;
