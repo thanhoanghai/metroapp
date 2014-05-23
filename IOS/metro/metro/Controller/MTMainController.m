@@ -17,6 +17,7 @@
 #import "AsyncImageView.h"
 #import "MarqueeLabel.h"
 #import "HMSegmentedControl.h"
+#import "DialogViewController.h"
 
 @interface MTMainController ()
 
@@ -68,6 +69,8 @@
     [self addCustomeSegmentTop];
     [self addCustomeSegmentHealthy];
     
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    dialogView = [storyboard instantiateViewControllerWithIdentifier:@"DialogViewController"];
 }
 
 -(void)setDefaultHightOfHealthy
@@ -113,6 +116,19 @@
     metroListObject = metrolist;
 }
 
+#pragma mark ACTION_BUTTON_METRO_NGHANH
+
+- (IBAction)doActionBntMetro:(id)sender {
+    [dialogView setIndexDialog:0];
+    [self.view addSubview: dialogView.view];
+}
+
+
+- (IBAction)doActionBntNganh:(id)sender {
+    [dialogView setIndexDialog:1];
+    [self.view addSubview: dialogView.view];
+}
+
 #pragma mark SEAGMENT_CHANGE
 
 - (IBAction)segmentTopChange:(id)sender {
@@ -139,6 +155,7 @@
     indexSegmentHealthy = segmentedControl.selectedSegmentIndex;
     [self loadLinkWebView:indexSegmentHealthy];
 }
+
 
 -(void)loadLinkWebView:(int)index
 {

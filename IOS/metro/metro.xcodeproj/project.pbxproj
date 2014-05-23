@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EB01A130192BB8AC00F87C30 /* DialogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB01A12F192BB8AC00F87C30 /* DialogViewController.m */; };
 		EB16F90E191E9BF3008AD3FC /* NganhCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EB16F90C191E9BF3008AD3FC /* NganhCell.m */; };
 		EB16F90F191E9BF3008AD3FC /* NganhCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB16F90D191E9BF3008AD3FC /* NganhCell.xib */; };
 		EB3C1BAF191DF66F00252AF1 /* ic_blank_networkproblem.png in Resources */ = {isa = PBXBuildFile; fileRef = EB3C1BAE191DF66F00252AF1 /* ic_blank_networkproblem.png */; };
@@ -95,6 +96,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EB01A12E192BB8AC00F87C30 /* DialogViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DialogViewController.h; sourceTree = "<group>"; };
+		EB01A12F192BB8AC00F87C30 /* DialogViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DialogViewController.m; sourceTree = "<group>"; };
 		EB16F90B191E9BF3008AD3FC /* NganhCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NganhCell.h; sourceTree = "<group>"; };
 		EB16F90C191E9BF3008AD3FC /* NganhCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NganhCell.m; sourceTree = "<group>"; };
 		EB16F90D191E9BF3008AD3FC /* NganhCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NganhCell.xib; sourceTree = "<group>"; };
@@ -252,6 +255,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EB01A12D192BB87F00F87C30 /* DialogViewController */ = {
+			isa = PBXGroup;
+			children = (
+				EB01A12E192BB8AC00F87C30 /* DialogViewController.h */,
+				EB01A12F192BB8AC00F87C30 /* DialogViewController.m */,
+			);
+			name = DialogViewController;
+			sourceTree = "<group>";
+		};
 		EB16F90A191E9BCA008AD3FC /* CellBranchMetro */ = {
 			isa = PBXGroup;
 			children = (
@@ -475,6 +487,7 @@
 		EBA30F19191A9BD900D8A6FF /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				EB01A12D192BB87F00F87C30 /* DialogViewController */,
 				EBB4F7CE192746900054E711 /* SanphamController */,
 				EBB4F7CA192737D20054E711 /* DangnhapController */,
 			);
@@ -678,6 +691,7 @@
 				EB3C1BE6191E0AB300252AF1 /* UIAlertView+AFNetworking.m in Sources */,
 				EBA802C219288807000D889C /* AsyncImageView.m in Sources */,
 				EBA30EEF191A9ACA00D8A6FF /* main.m in Sources */,
+				EB01A130192BB8AC00F87C30 /* DialogViewController.m in Sources */,
 				EB3C1BDF191E0AB300252AF1 /* AFSecurityPolicy.m in Sources */,
 				EB3C1C2E191E2B1D00252AF1 /* DCPropertyFinder.m in Sources */,
 				EBA30EF9191A9ACA00D8A6FF /* MTViewController.m in Sources */,

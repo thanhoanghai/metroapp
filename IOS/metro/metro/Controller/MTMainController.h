@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "NganhListObject.h"
+#import "DialogViewController.h"
 
 @interface MTMainController : UIViewController<UITableViewDataSource, UITabBarControllerDelegate> 
 {
@@ -27,6 +28,8 @@
     
     NSArray *listLinkHealthy;
     int indexSegmentHealthy;
+    
+    DialogViewController *dialogView;
 }
 
 @property (weak, nonatomic) IBOutlet UIView *viewHealthy;
@@ -39,7 +42,9 @@
 
 -(void)setIndexBranchMetro:(int)indexM withIndexNganh:(int)indexN;
 -(void)setDataBranchMetro:(NganhListObject*)metrolist withNganhlist:(NganhListObject*)nganhList;
+
 - (IBAction)segmentTopChange:(id)sender;
 - (IBAction)segmentHealthyChange:(id)sender;
-
+- (IBAction)doActionBntMetro:(id)sender;
+- (IBAction)doActionBntNganh:(id)sender;
 @end
