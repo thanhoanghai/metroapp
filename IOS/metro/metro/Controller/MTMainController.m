@@ -141,7 +141,7 @@
         [tableViewProduct reloadData];
         [self loadDataProduct];
     }
-    [dialogView.view removeFromSuperview];
+    [dialogView hideDialogWithAnimation];
 }
 
 #pragma mark ACTION_BUTTON_METRO_NGHANH
@@ -150,13 +150,14 @@
         indexDialog = 0;
         [dialogView setIndexDialog:0];
         [self.view addSubview:dialogView.view];
+        [dialogView showDialogWithAnimation:self.view];
 }
 
 
 - (IBAction)doActionBntNganh:(id)sender {
     indexDialog = 1;
     [dialogView setIndexDialog:1];
-    [self.view addSubview: dialogView.view];
+    [dialogView showDialogWithAnimation:self.view];
 }
 
 #pragma mark SEAGMENT_CHANGE

@@ -21,12 +21,14 @@
 }
 
 @property (assign) id<DialogDelegate> delegate;
-
-- (IBAction)doActionDongLai:(id)sender;
 @property (weak, nonatomic) IBOutlet UILabel *labelTitle;
 @property (weak, nonatomic) IBOutlet UITableView *tableViewData;
+
+- (IBAction)doActionDongLai:(id)sender;
+
 -(void)setIndexDialog:(int)index;
 -(void)setDataBranchMetro:(NganhListObject*)metrolist withNganhlist:(NganhListObject*)nganhList;
-
+-(void)hideDialogWithAnimation;
+-(void)showDialogWithAnimation:(UIView*)viewSuper;
 
 @end

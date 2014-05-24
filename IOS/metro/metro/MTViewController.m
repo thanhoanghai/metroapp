@@ -81,7 +81,7 @@
             indexNganh = index;
         }
     }    
-    [dialogView.view removeFromSuperview];
+    [dialogView hideDialogWithAnimation];
 }
 
 #pragma mark COUNT_TIME_RUN_LOGO
@@ -227,13 +227,13 @@
 - (IBAction)doActionBntBranchMetro:(id)sender {
     indexDialog = 0;
     [dialogView setIndexDialog:indexDialog];
-    [self.view addSubview:dialogView.view];
+    [dialogView showDialogWithAnimation:self.view];
 }
 
 - (IBAction)doActionBntNganh:(id)sender {
     indexDialog= 1;
     [dialogView setIndexDialog:indexDialog];
-    [self.view addSubview:dialogView.view];
+    [dialogView showDialogWithAnimation:self.view];
 }
 
 - (IBAction)doActionBntDisconnet:(id)sender {

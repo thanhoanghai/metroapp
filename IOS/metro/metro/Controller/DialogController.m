@@ -37,6 +37,7 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    self.view.alpha = 0.1f;
 }
 
 - (void)didReceiveMemoryWarning
@@ -79,6 +80,23 @@
     }
 }
 
+-(void)showDialogWithAnimation:(UIView*)viewSuper;
+{
+    [viewSuper addSubview:self.view];
+    [UIView animateWithDuration:0.5 animations:^{
+        self.view.alpha = 1.0f;
+    } completion:^(BOOL finished) {
+    }];
+}
+
+-(void)hideDialogWithAnimation
+{
+    [UIView animateWithDuration:0.5 animations:^{
+        self.view.alpha = 0.1f;
+    } completion:^(BOOL finished) {
+        [self.view removeFromSuperview];
+    }];
+}
 
 #pragma mark TABBLE_VIEW
 - (NSInteger)tableView:(UITableView *)tableviewDialog numberOfRowsInSection:(NSInteger)sectionIndex
