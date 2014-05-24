@@ -10,6 +10,10 @@
 #import "NganhCell.h"
 #import "BranchObject.h"
 #import "NganhObject.h"
+#import "MetroCell.h"
+
+#define CELL_METRO_HEIGHT 60
+#define CELL_NGANH_HEIGHT 45
 
 @interface DialogController ()
 
@@ -96,22 +100,30 @@
 {
     //CUSTOME CELL
     static NSString *CellIdentifier = @"NganhCell";
-    NganhCell *cell = (NganhCell*)[tableviewDialog dequeueReusableCellWithIdentifier:CellIdentifier];
-    if(cell==nil){
-        cell = [[NganhCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:@"NganhCell"];
-    }
+    static NSString *CellMetro = @"MetroCell";
+   
     
     if(indexDialog == 0 && metroListObject!=NULL)
     {
+        MetroCell *cell = (MetroCell*)[tableviewDialog dequeueReusableCellWithIdentifier:CellMetro];
+        if(cell==nil){
+            cell = [[MetroCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:@"MetroCell"];
+        }
         BranchObject *item = [metroListObject.data objectAtIndex:indexPath.row];
-        [cell.contentLabel setText:item.name];
-    }else if(nganhListObject!=NULL)
+        [cell.lbTitle setText:item.name];
+        [cell.lbDescription setText:item.address];
+        return cell;
+    }else
     {
+        NganhCell *cell = (NganhCell*)[tableviewDialog dequeueReusableCellWithIdentifier:CellIdentifier];
+        if(cell==nil){
+            cell = [[NganhCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:@"NganhCell"];
+        }
         NganhObject *item = [nganhListObject.data objectAtIndex:indexPath.row];
         [cell.contentLabel setText:item.name];
+        
+        return cell;
     }
-    
-    return cell;
 }
 
 - (void)tableView:(UITableView *)tableviewDialog didSelectRowAtIndexPath:(NSIndexPath *)indexPath
@@ -128,7 +140,12 @@
     }
 }
 
-
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    if(indexDialog==0)
+        return CELL_METRO_HEIGHT;
+    else
+        return CELL_NGANH_HEIGHT;
+}
 
 
 @end

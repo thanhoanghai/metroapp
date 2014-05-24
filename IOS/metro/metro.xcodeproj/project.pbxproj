@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		EB16F90E191E9BF3008AD3FC /* NganhCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EB16F90C191E9BF3008AD3FC /* NganhCell.m */; };
 		EB16F90F191E9BF3008AD3FC /* NganhCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB16F90D191E9BF3008AD3FC /* NganhCell.xib */; };
+		EB3329691930335E00DDEDC0 /* MetroCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EB3329671930335E00DDEDC0 /* MetroCell.m */; };
+		EB33296A1930335E00DDEDC0 /* MetroCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB3329681930335E00DDEDC0 /* MetroCell.xib */; };
 		EB3C1BAF191DF66F00252AF1 /* ic_blank_networkproblem.png in Resources */ = {isa = PBXBuildFile; fileRef = EB3C1BAE191DF66F00252AF1 /* ic_blank_networkproblem.png */; };
 		EB3C1BB2191DFA0B00252AF1 /* MTMainController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB3C1BB1191DFA0B00252AF1 /* MTMainController.m */; };
 		EB3C1BDB191E0AB300252AF1 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = EB3C1BB7191E0AB300252AF1 /* AFHTTPRequestOperation.m */; };
@@ -100,6 +102,9 @@
 		EB16F90B191E9BF3008AD3FC /* NganhCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NganhCell.h; sourceTree = "<group>"; };
 		EB16F90C191E9BF3008AD3FC /* NganhCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NganhCell.m; sourceTree = "<group>"; };
 		EB16F90D191E9BF3008AD3FC /* NganhCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NganhCell.xib; sourceTree = "<group>"; };
+		EB3329661930335E00DDEDC0 /* MetroCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MetroCell.h; sourceTree = "<group>"; };
+		EB3329671930335E00DDEDC0 /* MetroCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MetroCell.m; sourceTree = "<group>"; };
+		EB3329681930335E00DDEDC0 /* MetroCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MetroCell.xib; sourceTree = "<group>"; };
 		EB3C1BAE191DF66F00252AF1 /* ic_blank_networkproblem.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_blank_networkproblem.png; sourceTree = "<group>"; };
 		EB3C1BB0191DFA0B00252AF1 /* MTMainController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTMainController.h; sourceTree = "<group>"; };
 		EB3C1BB1191DFA0B00252AF1 /* MTMainController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTMainController.m; sourceTree = "<group>"; };
@@ -274,6 +279,9 @@
 				EB16F90B191E9BF3008AD3FC /* NganhCell.h */,
 				EB16F90C191E9BF3008AD3FC /* NganhCell.m */,
 				EB16F90D191E9BF3008AD3FC /* NganhCell.xib */,
+				EB3329661930335E00DDEDC0 /* MetroCell.h */,
+				EB3329671930335E00DDEDC0 /* MetroCell.m */,
+				EB3329681930335E00DDEDC0 /* MetroCell.xib */,
 			);
 			name = CellBranchMetro;
 			sourceTree = "<group>";
@@ -651,6 +659,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EB3C1BAF191DF66F00252AF1 /* ic_blank_networkproblem.png in Resources */,
+				EB33296A1930335E00DDEDC0 /* MetroCell.xib in Resources */,
 				EBA981EE192E60F000962305 /* DialogController.xib in Resources */,
 				EBA30F26191AA1CD00D8A6FF /* copyright@2x.png in Resources */,
 				EBB4F7D3192746B60054E711 /* ProductCell.xib in Resources */,
@@ -719,6 +728,7 @@
 				EB3C1C23191E2B1D00252AF1 /* DCDictionaryRearranger.m in Sources */,
 				EB3C1BDD191E0AB300252AF1 /* AFHTTPSessionManager.m in Sources */,
 				EBA981ED192E60F000962305 /* DialogController.m in Sources */,
+				EB3329691930335E00DDEDC0 /* MetroCell.m in Sources */,
 				EB3C1BDE191E0AB300252AF1 /* AFNetworkReachabilityManager.m in Sources */,
 				EB3C1C2A191E2B1D00252AF1 /* DCNSURLConverter.m in Sources */,
 				EB3C1C21191E2B1D00252AF1 /* DCCustomInitialize.m in Sources */,

@@ -70,14 +70,17 @@
 #pragma mark DELEGATE_DIALOG
 -(void)delegateDongDialog:(NSString *)idItem withName:(NSString *)name withIndex:(int)index
 {
-    if(indexDialog==0)
+    if(idItem!=nil && idItem.length>0)
     {
-        [lbBranchMetro setTitle:name forState:UIControlStateNormal];
-        indexBranchMetro = index;
-    }else{
-        [lbNganh setTitle:name forState:UIControlStateNormal];
-        indexNganh = index;
-    }
+        if(indexDialog==0)
+        {
+            [lbBranchMetro setTitle:name forState:UIControlStateNormal];
+            indexBranchMetro = index;
+        }else{
+            [lbNganh setTitle:name forState:UIControlStateNormal];
+            indexNganh = index;
+        }
+    }    
     [dialogView.view removeFromSuperview];
 }
 
