@@ -37,7 +37,7 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    self.view.alpha = 0.1f;
+    self.view.alpha = 0.0f;
 }
 
 - (void)didReceiveMemoryWarning
@@ -92,7 +92,7 @@
 -(void)hideDialogWithAnimation
 {
     [UIView animateWithDuration:0.5 animations:^{
-        self.view.alpha = 0.1f;
+        self.view.alpha = 0.0f;
     } completion:^(BOOL finished) {
         [self.view removeFromSuperview];
     }];
