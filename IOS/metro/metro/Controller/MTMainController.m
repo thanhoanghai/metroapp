@@ -19,6 +19,7 @@
 #import "HMSegmentedControl.h"
 #import "DialogController.h"
 #import "MBProgressHUD.h"
+#import "SVPullToRefresh.h"
 
 @interface MTMainController ()
 
@@ -70,6 +71,14 @@
     
     [self addCustomeSegmentTop];
     [self addCustomeSegmentHealthy];
+    
+    //////init loadmore tableview
+    __weak MTMainController *weakSelf = self;
+    // setup infinite scrolling
+    [self.tableViewProduct addInfiniteScrollingWithActionHandler:^{
+        [weakSelf insertRowAtBottom];
+    }];
+
     
 }
 
@@ -148,6 +157,8 @@
 
 - (IBAction)doActionBntMetro:(id)sender {
         indexDialog = 0;
+        page = 0;
+        isLoadMore = YES;
         [dialogView setIndexDialog:0];
         [self.view addSubview:dialogView.view];
         [dialogView showDialogWithAnimation:self.view];
@@ -156,6 +167,8 @@
 
 - (IBAction)doActionBntNganh:(id)sender {
     indexDialog = 1;
+    page=0;
+    isLoadMore = YES;
     [dialogView setIndexDialog:1];
     [dialogView showDialogWithAnimation:self.view];
 }
@@ -220,8 +233,8 @@
                  {
                      [arrayListProduct addObject:[ProductObject itemWithDictionary:item]];
                  }
-                 
                  [tableViewProduct reloadData];
+                 [tableViewProduct.infiniteScrollingView stopAnimating];
                  [LogDebug logError:@"Debug data product = " withContent:@"succedd"];
              }
          }
@@ -233,6 +246,20 @@
              [MBProgressHUD hideHUDForView:self.view animated:YES];
      }];
 }
+
+#pragma mark - LOAD MORE TABLEVIEW
+- (void)insertRowAtBottom {
+    __weak MTMainController *weakSelf = self;
+    if(isLoadMore)
+    {
+        page = page + 1;
+        [self loadDataProduct];
+    }else
+    {
+        [weakSelf.tableViewProduct.infiniteScrollingView stopAnimating];
+    }
+}
+
 
 #pragma mark TABBLE_VIEW
 - (NSInteger)tableView:(UITableView *)tableviewDialog numberOfRowsInSection:(NSInteger)sectionIndex

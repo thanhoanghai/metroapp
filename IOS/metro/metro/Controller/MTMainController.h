@@ -10,7 +10,7 @@
 #import "NganhListObject.h"
 #import "DialogController.h"
 
-@interface MTMainController : UIViewController<UITableViewDataSource, UITabBarControllerDelegate,DialogDelegate>
+@interface MTMainController : UIViewController<UITableViewDataSource, UITableViewDelegate,UITabBarControllerDelegate,DialogDelegate>
 {
     
     int page;

@@ -54,6 +54,8 @@
 		EB3C1C30191E2B1D00252AF1 /* DCSimpleConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = EB3C1C1B191E2B1D00252AF1 /* DCSimpleConverter.m */; };
 		EB3C1C31191E2B1D00252AF1 /* KeyValueObjectMapping-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EB3C1C1D191E2B1D00252AF1 /* KeyValueObjectMapping-Info.plist */; };
 		EB3C1C34191E2DC800252AF1 /* BranchObject.m in Sources */ = {isa = PBXBuildFile; fileRef = EB3C1C33191E2DC800252AF1 /* BranchObject.m */; };
+		EBA107BE193104FB0064934F /* UIScrollView+SVInfiniteScrolling.m in Sources */ = {isa = PBXBuildFile; fileRef = EBA107BB193104FB0064934F /* UIScrollView+SVInfiniteScrolling.m */; };
+		EBA107BF193104FB0064934F /* UIScrollView+SVPullToRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = EBA107BD193104FB0064934F /* UIScrollView+SVPullToRefresh.m */; };
 		EBA30EE3191A9ACA00D8A6FF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBA30EE2191A9ACA00D8A6FF /* Foundation.framework */; };
 		EBA30EE5191A9ACA00D8A6FF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBA30EE4191A9ACA00D8A6FF /* CoreGraphics.framework */; };
 		EBA30EE7191A9ACA00D8A6FF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBA30EE6191A9ACA00D8A6FF /* UIKit.framework */; };
@@ -194,6 +196,11 @@
 		EB3C1C1E191E2B1D00252AF1 /* KeyValueObjectMapping-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "KeyValueObjectMapping-Prefix.pch"; sourceTree = "<group>"; };
 		EB3C1C32191E2DC800252AF1 /* BranchObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BranchObject.h; sourceTree = "<group>"; };
 		EB3C1C33191E2DC800252AF1 /* BranchObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BranchObject.m; sourceTree = "<group>"; };
+		EBA107B9193104FB0064934F /* SVPullToRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVPullToRefresh.h; sourceTree = "<group>"; };
+		EBA107BA193104FB0064934F /* UIScrollView+SVInfiniteScrolling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+SVInfiniteScrolling.h"; sourceTree = "<group>"; };
+		EBA107BB193104FB0064934F /* UIScrollView+SVInfiniteScrolling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+SVInfiniteScrolling.m"; sourceTree = "<group>"; };
+		EBA107BC193104FB0064934F /* UIScrollView+SVPullToRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+SVPullToRefresh.h"; sourceTree = "<group>"; };
+		EBA107BD193104FB0064934F /* UIScrollView+SVPullToRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+SVPullToRefresh.m"; sourceTree = "<group>"; };
 		EBA30EDF191A9ACA00D8A6FF /* metro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = metro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBA30EE2191A9ACA00D8A6FF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		EBA30EE4191A9ACA00D8A6FF /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -301,6 +308,7 @@
 		EB3C1BB4191E0A9D00252AF1 /* Libs */ = {
 			isa = PBXGroup;
 			children = (
+				EBA107B8193104FB0064934F /* SVPullToRefresh */,
 				EB33296F19303B9000DDEDC0 /* MBProgressHub */,
 				EBA78E76192A6D4E008EE9A7 /* HMSegmentedControl */,
 				EBA78E72192A4257008EE9A7 /* MarqueeLabel */,
@@ -432,6 +440,18 @@
 				EB3C1C1E191E2B1D00252AF1 /* KeyValueObjectMapping-Prefix.pch */,
 			);
 			path = KeyValueObjectMapping;
+			sourceTree = "<group>";
+		};
+		EBA107B8193104FB0064934F /* SVPullToRefresh */ = {
+			isa = PBXGroup;
+			children = (
+				EBA107B9193104FB0064934F /* SVPullToRefresh.h */,
+				EBA107BA193104FB0064934F /* UIScrollView+SVInfiniteScrolling.h */,
+				EBA107BB193104FB0064934F /* UIScrollView+SVInfiniteScrolling.m */,
+				EBA107BC193104FB0064934F /* UIScrollView+SVPullToRefresh.h */,
+				EBA107BD193104FB0064934F /* UIScrollView+SVPullToRefresh.m */,
+			);
+			path = SVPullToRefresh;
 			sourceTree = "<group>";
 		};
 		EBA30ED6191A9ACA00D8A6FF = {
@@ -742,10 +762,12 @@
 				EB3C1C23191E2B1D00252AF1 /* DCDictionaryRearranger.m in Sources */,
 				EB3C1BDD191E0AB300252AF1 /* AFHTTPSessionManager.m in Sources */,
 				EBA981ED192E60F000962305 /* DialogController.m in Sources */,
+				EBA107BF193104FB0064934F /* UIScrollView+SVPullToRefresh.m in Sources */,
 				EB3329691930335E00DDEDC0 /* MetroCell.m in Sources */,
 				EB3C1BDE191E0AB300252AF1 /* AFNetworkReachabilityManager.m in Sources */,
 				EB3C1C2A191E2B1D00252AF1 /* DCNSURLConverter.m in Sources */,
 				EB3C1C21191E2B1D00252AF1 /* DCCustomInitialize.m in Sources */,
+				EBA107BE193104FB0064934F /* UIScrollView+SVInfiniteScrolling.m in Sources */,
 				EB3C1BE2191E0AB300252AF1 /* AFURLResponseSerialization.m in Sources */,
 				EB3C1BEB191E0AB300252AF1 /* UIWebView+AFNetworking.m in Sources */,
 				EB3C1C25191E2B1D00252AF1 /* DCGenericConverter.m in Sources */,
