@@ -18,6 +18,7 @@
 #import "MarqueeLabel.h"
 #import "HMSegmentedControl.h"
 #import "DialogController.h"
+#import "MBProgressHUD.h"
 
 @interface MTMainController ()
 
@@ -198,6 +199,8 @@
 
 -(void)loadDataProduct
 {
+    if(page==0)
+        [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     NSString *link = [AFClient getLlinkProduct:page withPageSize:size withMetroID:sMetroID withNganhID:sNganhID];
     [AFClient getLink:link success:^(id result)
      {
@@ -221,8 +224,12 @@
                  [LogDebug logError:@"Debug data product = " withContent:@"succedd"];
              }
          }
+         if(page==0)
+             [MBProgressHUD hideHUDForView:self.view animated:YES];
      } failure:^(NSString *err){
          [LogDebug logError:@"Debug data Nganh Metro load = " withContent:@"faith"];
+         if(page==0)
+             [MBProgressHUD hideHUDForView:self.view animated:YES];
      }];
 }
 

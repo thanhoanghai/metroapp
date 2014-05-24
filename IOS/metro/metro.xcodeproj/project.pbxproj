@@ -11,6 +11,7 @@
 		EB16F90F191E9BF3008AD3FC /* NganhCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB16F90D191E9BF3008AD3FC /* NganhCell.xib */; };
 		EB3329691930335E00DDEDC0 /* MetroCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EB3329671930335E00DDEDC0 /* MetroCell.m */; };
 		EB33296A1930335E00DDEDC0 /* MetroCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB3329681930335E00DDEDC0 /* MetroCell.xib */; };
+		EB33297219303B9000DDEDC0 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = EB33297119303B9000DDEDC0 /* MBProgressHUD.m */; };
 		EB3C1BAF191DF66F00252AF1 /* ic_blank_networkproblem.png in Resources */ = {isa = PBXBuildFile; fileRef = EB3C1BAE191DF66F00252AF1 /* ic_blank_networkproblem.png */; };
 		EB3C1BB2191DFA0B00252AF1 /* MTMainController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB3C1BB1191DFA0B00252AF1 /* MTMainController.m */; };
 		EB3C1BDB191E0AB300252AF1 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = EB3C1BB7191E0AB300252AF1 /* AFHTTPRequestOperation.m */; };
@@ -105,6 +106,8 @@
 		EB3329661930335E00DDEDC0 /* MetroCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MetroCell.h; sourceTree = "<group>"; };
 		EB3329671930335E00DDEDC0 /* MetroCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MetroCell.m; sourceTree = "<group>"; };
 		EB3329681930335E00DDEDC0 /* MetroCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MetroCell.xib; sourceTree = "<group>"; };
+		EB33297019303B9000DDEDC0 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		EB33297119303B9000DDEDC0 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		EB3C1BAE191DF66F00252AF1 /* ic_blank_networkproblem.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_blank_networkproblem.png; sourceTree = "<group>"; };
 		EB3C1BB0191DFA0B00252AF1 /* MTMainController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTMainController.h; sourceTree = "<group>"; };
 		EB3C1BB1191DFA0B00252AF1 /* MTMainController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTMainController.m; sourceTree = "<group>"; };
@@ -286,9 +289,19 @@
 			name = CellBranchMetro;
 			sourceTree = "<group>";
 		};
+		EB33296F19303B9000DDEDC0 /* MBProgressHub */ = {
+			isa = PBXGroup;
+			children = (
+				EB33297019303B9000DDEDC0 /* MBProgressHUD.h */,
+				EB33297119303B9000DDEDC0 /* MBProgressHUD.m */,
+			);
+			path = MBProgressHub;
+			sourceTree = "<group>";
+		};
 		EB3C1BB4191E0A9D00252AF1 /* Libs */ = {
 			isa = PBXGroup;
 			children = (
+				EB33296F19303B9000DDEDC0 /* MBProgressHub */,
 				EBA78E76192A6D4E008EE9A7 /* HMSegmentedControl */,
 				EBA78E72192A4257008EE9A7 /* MarqueeLabel */,
 				EBA802BF19288807000D889C /* AsyncImageView */,
@@ -719,6 +732,7 @@
 				EB3C1C2D191E2B1D00252AF1 /* DCPropertyAggregator.m in Sources */,
 				EB3C1BEF191E19F600252AF1 /* AFClient.m in Sources */,
 				EB3C1C29191E2B1D00252AF1 /* DCNSSetConverter.m in Sources */,
+				EB33297219303B9000DDEDC0 /* MBProgressHUD.m in Sources */,
 				EB3C1BE5191E0AB300252AF1 /* UIActivityIndicatorView+AFNetworking.m in Sources */,
 				EBA30EF3191A9ACA00D8A6FF /* MTAppDelegate.m in Sources */,
 				EB3C1BE1191E0AB300252AF1 /* AFURLRequestSerialization.m in Sources */,
