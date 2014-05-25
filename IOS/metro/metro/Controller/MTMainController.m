@@ -325,6 +325,13 @@
    
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    if(IDIOM==IPAD)
+        return 192;
+    else
+        return 132;
+}
+
 #pragma mark ADD_RUNNING_TEXT
 -(void)addRunningText
 {

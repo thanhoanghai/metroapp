@@ -21,7 +21,7 @@
                         <color key="highlightedColor" red="0.0" green="0.23921570180000001" blue="0.49019610879999997" alpha="1" colorSpace="deviceRGB"/>
                     </label>
                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="6yF-ZO-TUi">
-                        <rect key="frame" x="0.0" y="44" width="320" height="1"/>
+                        <rect key="frame" x="0.0" y="43" width="320" height="1"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                         <color key="backgroundColor" red="0.81176477670000002" green="0.81176477670000002" blue="0.81176477670000002" alpha="1" colorSpace="deviceRGB"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>

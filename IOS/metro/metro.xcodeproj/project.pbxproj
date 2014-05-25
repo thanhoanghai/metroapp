@@ -57,6 +57,7 @@
 		EBA107BE193104FB0064934F /* UIScrollView+SVInfiniteScrolling.m in Sources */ = {isa = PBXBuildFile; fileRef = EBA107BB193104FB0064934F /* UIScrollView+SVInfiniteScrolling.m */; };
 		EBA107BF193104FB0064934F /* UIScrollView+SVPullToRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = EBA107BD193104FB0064934F /* UIScrollView+SVPullToRefresh.m */; };
 		EBA107C519310CB50064934F /* Main-iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBA107C319310CB50064934F /* Main-iPad.storyboard */; };
+		EBA1D7741931C2B400FF496C /* ProductCell-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = EBA1D7731931C2B400FF496C /* ProductCell-iPad.xib */; };
 		EBA30EE3191A9ACA00D8A6FF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBA30EE2191A9ACA00D8A6FF /* Foundation.framework */; };
 		EBA30EE5191A9ACA00D8A6FF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBA30EE4191A9ACA00D8A6FF /* CoreGraphics.framework */; };
 		EBA30EE7191A9ACA00D8A6FF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBA30EE6191A9ACA00D8A6FF /* UIKit.framework */; };
@@ -202,6 +203,7 @@
 		EBA107BC193104FB0064934F /* UIScrollView+SVPullToRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+SVPullToRefresh.h"; sourceTree = "<group>"; };
 		EBA107BD193104FB0064934F /* UIScrollView+SVPullToRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+SVPullToRefresh.m"; sourceTree = "<group>"; };
 		EBA107C419310CB50064934F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "Base.lproj/Main-iPad.storyboard"; sourceTree = "<group>"; };
+		EBA1D7731931C2B400FF496C /* ProductCell-iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "ProductCell-iPad.xib"; sourceTree = "<group>"; };
 		EBA30EDF191A9ACA00D8A6FF /* metro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = metro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBA30EE2191A9ACA00D8A6FF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		EBA30EE4191A9ACA00D8A6FF /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -607,6 +609,7 @@
 			children = (
 				EBB4F7CF192746B60054E711 /* ProductCell.h */,
 				EBB4F7D0192746B60054E711 /* ProductCell.m */,
+				EBA1D7731931C2B400FF496C /* ProductCell-iPad.xib */,
 				EBB4F7D1192746B60054E711 /* ProductCell.xib */,
 				EB3C1BB0191DFA0B00252AF1 /* MTMainController.h */,
 				EB3C1BB1191DFA0B00252AF1 /* MTMainController.m */,
@@ -708,6 +711,7 @@
 				EB3C1C31191E2B1D00252AF1 /* KeyValueObjectMapping-Info.plist in Resources */,
 				EBA30F1D191A9E1C00D8A6FF /* logo_splash.png in Resources */,
 				EBA30EED191A9ACA00D8A6FF /* InfoPlist.strings in Resources */,
+				EBA1D7741931C2B400FF496C /* ProductCell-iPad.xib in Resources */,
 				EBA78E6F192A3C38008EE9A7 /* contactus_textfield_image.png in Resources */,
 				EBA30EF6191A9ACA00D8A6FF /* Main.storyboard in Resources */,
 			);

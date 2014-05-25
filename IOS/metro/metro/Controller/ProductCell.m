@@ -25,7 +25,10 @@
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
-    self = [[[NSBundle mainBundle] loadNibNamed:@"ProductCell" owner:self options:nil] lastObject];
+    if(IDIOM==IPAD)
+        self = [[[NSBundle mainBundle] loadNibNamed:@"ProductCell-iPad" owner:self options:nil] lastObject];
+    else
+        self = [[[NSBundle mainBundle] loadNibNamed:@"ProductCell" owner:self options:nil] lastObject];
     
     if (self) 
     {
