@@ -417,7 +417,7 @@
     segmentedControl1.selectionStyle = HMSegmentedControlSelectionStyleFullWidthStripe;
     segmentedControl1.selectionIndicatorLocation = HMSegmentedControlSelectionIndicatorLocationDown;
     segmentedControl1.scrollEnabled = YES;
-    [segmentedControl1 setFont:[UIFont fontWithName:@"Helvetica-Bold" size:fontsize]];
+    [segmentedControl1 setFont:[UIFont fontWithName:@"Helvetica" size:fontsize]];
     [segmentedControl1 addTarget:self action:@selector(segmentHealthyChange:) forControlEvents:UIControlEventValueChanged];
     [self.viewHealthy addSubview:segmentedControl1];
 }
