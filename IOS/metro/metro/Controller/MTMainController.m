@@ -36,7 +36,10 @@
 @synthesize webViewHealthy;
 
 
-#define HIGHT_TOP 50
+#define HIGHT_TOP_IPHONE 50
+#define HIGHT_TOP_IPAD 60
+#define RUNNING_TEXT_HEIGHT_IPHONE 20
+#define RUNNING_TEXT_HEIGHT_IPAD 30
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -84,8 +87,13 @@
 
 -(void)setDefaultHightOfHealthy
 {
+    int height = 0;
+    if(IDIOM == IPAD)
+        height = HIGHT_TOP_IPAD;
+    else
+        height = HIGHT_TOP_IPHONE;
     CGRect r = [viewHealthy frame];
-    r.size.height = self.view.frame.size.height - HIGHT_TOP;;
+    r.size.height = self.view.frame.size.height - height;;
     [viewHealthy setFrame:r];
 }
 
@@ -195,9 +203,14 @@
 
 -(void)showViewHealthy
 {
+    int height = 0;
+    if(IDIOM == IPAD)
+        height = HIGHT_TOP_IPAD;
+    else
+        height = HIGHT_TOP_IPHONE;
     [self.view addSubview:viewHealthy];
     CGRect r = [viewHealthy frame];
-    r.origin.y = HIGHT_TOP;
+    r.origin.y = height;
     [viewHealthy setFrame:r];
 }
 
@@ -315,8 +328,17 @@
 #pragma mark ADD_RUNNING_TEXT
 -(void)addRunningText
 {
+    int height = 0;
+    int fontsize = 0;
+    if(IDIOM == IPAD)
+    {    height = RUNNING_TEXT_HEIGHT_IPAD;
+        fontsize = 17;
+    }else
+    {   height = RUNNING_TEXT_HEIGHT_IPHONE;
+        fontsize = 14;
+    }
     //Second continuous label example
-    MarqueeLabel *continuousLabel2 = [[MarqueeLabel alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 21) rate:100.0f andFadeLength:10.0f];
+    MarqueeLabel *continuousLabel2 = [[MarqueeLabel alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width,height) rate:100.0f andFadeLength:10.0f];
     continuousLabel2.marqueeType = MLContinuous;
     continuousLabel2.animationCurve = UIViewAnimationOptionCurveLinear;
     continuousLabel2.continuousMarqueeExtraBuffer = 50.0f;
@@ -327,7 +349,7 @@
     continuousLabel2.textAlignment = NSTextAlignmentLeft;
     continuousLabel2.textColor = [UIColor colorWithRed:0.234 green:0.234 blue:0.234 alpha:1.000];
     continuousLabel2.backgroundColor = [UIColor clearColor];
-    continuousLabel2.font = [UIFont fontWithName:@"Helvetica" size:14.000];
+    continuousLabel2.font = [UIFont fontWithName:@"Helvetica" size:fontsize];
     continuousLabel2.text = @"This is another long label that scrolls continuously with a custom space between labels! You can also tap it to pause and unpause it!";
 
     [self.viewProduct addSubview:continuousLabel2];
@@ -336,11 +358,24 @@
 #pragma mark ADD_CUSTOM_SEGMENT_TOP
 -(void)addCustomeSegmentTop
 {
-    HMSegmentedControl *segmentedControl4 = [[HMSegmentedControl alloc] initWithFrame:CGRectMake(0, 20, self.view.frame.size.width, 28)];
+    int height = 0;
+    int fontsize = 0;
+    if(IDIOM == IPAD)
+    {
+        fontsize = 18;
+        height = 38;
+        
+    }else
+    {    height = 28;
+         fontsize = 13;
+    }
+    
+    HMSegmentedControl *segmentedControl4 = [[HMSegmentedControl alloc] initWithFrame:CGRectMake(0, 20, self.view.frame.size.width, height)];
     //[segmentedControl4 setStatusBorder:NO];
     segmentedControl4.sectionTitles = @[@"METRO", @"HEALTHY"];
     segmentedControl4.selectedSegmentIndex = 0;
 
+    [segmentedControl4 setFont:[UIFont fontWithName:@"Helvetica-Bold" size:fontsize]];
     segmentedControl4.backgroundColor = [UIColor colorWithRed:1 green:1 blue:1 alpha:1];
     segmentedControl4.textColor = [UIColor colorWithRed:0.1 green:0.4 blue:0.8 alpha:1];
     segmentedControl4.selectedTextColor = [UIColor colorWithRed:250.0f/255.0f green:235.0f/255.0f blue:55.0f/255.0f alpha:1];
@@ -355,15 +390,27 @@
 
 -(void)addCustomeSegmentHealthy
 {
+    int height = 0;
+    int fontsize = 0;
+    if(IDIOM == IPAD)
+    {
+        fontsize = 18;
+        height = 38;
+        
+    }else
+    {    height = 28;
+        fontsize = 13;
+    }
+
     HMSegmentedControl *segmentedControl1 = [[HMSegmentedControl alloc] initWithSectionTitles:@[@"Thông tin dự án", @"Đối tác", @"Hoạt động", @"Tài liệu", @"Liên hệ"]];
     segmentedControl1.autoresizingMask = UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleWidth;
     [segmentedControl1 addLineGrey:YES];
-    segmentedControl1.frame = CGRectMake(0, 0, self.view.frame.size.width, 28);
+    segmentedControl1.frame = CGRectMake(0, 0, self.view.frame.size.width, height);
     segmentedControl1.segmentEdgeInset = UIEdgeInsetsMake(0, 10, 0, 10);
     segmentedControl1.selectionStyle = HMSegmentedControlSelectionStyleFullWidthStripe;
     segmentedControl1.selectionIndicatorLocation = HMSegmentedControlSelectionIndicatorLocationDown;
     segmentedControl1.scrollEnabled = YES;
-    [segmentedControl1 setFont:[UIFont fontWithName:@"Helvetica-Bold" size:13.000]];
+    [segmentedControl1 setFont:[UIFont fontWithName:@"Helvetica-Bold" size:fontsize]];
     [segmentedControl1 addTarget:self action:@selector(segmentHealthyChange:) forControlEvents:UIControlEventValueChanged];
     [self.viewHealthy addSubview:segmentedControl1];
 }
