@@ -109,8 +109,15 @@
     
     if(dialogView==nil)
     {
-        dialogView = [[DialogController alloc] initWithNibName:@"DialogController" bundle:nil];
-        [dialogView setDelegate:self];
+        UIStoryboard *storyboard ;
+        if(IDIOM==IPAD)
+        {
+            storyboard = [UIStoryboard storyboardWithName:@"Main-iPad" bundle:nil];
+        }else
+            storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        dialogView = [storyboard instantiateViewControllerWithIdentifier:@"DialogController"];
+        //dialogView = [[DialogController alloc] initWithNibName:@"DialogController" bundle:nil];
+        [dialogView setDelegate:self];                
         [dialogView setDataBranchMetro:metroListObject withNganhlist:nganhListObject];
     }
 }

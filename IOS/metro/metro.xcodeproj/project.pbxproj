@@ -56,6 +56,7 @@
 		EB3C1C34191E2DC800252AF1 /* BranchObject.m in Sources */ = {isa = PBXBuildFile; fileRef = EB3C1C33191E2DC800252AF1 /* BranchObject.m */; };
 		EBA107BE193104FB0064934F /* UIScrollView+SVInfiniteScrolling.m in Sources */ = {isa = PBXBuildFile; fileRef = EBA107BB193104FB0064934F /* UIScrollView+SVInfiniteScrolling.m */; };
 		EBA107BF193104FB0064934F /* UIScrollView+SVPullToRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = EBA107BD193104FB0064934F /* UIScrollView+SVPullToRefresh.m */; };
+		EBA107C519310CB50064934F /* Main-iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBA107C319310CB50064934F /* Main-iPad.storyboard */; };
 		EBA30EE3191A9ACA00D8A6FF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBA30EE2191A9ACA00D8A6FF /* Foundation.framework */; };
 		EBA30EE5191A9ACA00D8A6FF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBA30EE4191A9ACA00D8A6FF /* CoreGraphics.framework */; };
 		EBA30EE7191A9ACA00D8A6FF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBA30EE6191A9ACA00D8A6FF /* UIKit.framework */; };
@@ -84,7 +85,6 @@
 		EBA802C4192893D9000D889C /* icon_giam.png in Resources */ = {isa = PBXBuildFile; fileRef = EBA802C3192893D9000D889C /* icon_giam.png */; };
 		EBA8F5ED191D3CC3001516DB /* bg_bnt_yellow.png in Resources */ = {isa = PBXBuildFile; fileRef = EBA8F5EC191D3CC3001516DB /* bg_bnt_yellow.png */; };
 		EBA981ED192E60F000962305 /* DialogController.m in Sources */ = {isa = PBXBuildFile; fileRef = EBA981EB192E60F000962305 /* DialogController.m */; };
-		EBA981EE192E60F000962305 /* DialogController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EBA981EC192E60F000962305 /* DialogController.xib */; };
 		EBAA06F7191F485900849825 /* LogDebug.m in Sources */ = {isa = PBXBuildFile; fileRef = EBAA06F6191F485900849825 /* LogDebug.m */; };
 		EBB4F7CD19273CD10054E711 /* ProductObject.m in Sources */ = {isa = PBXBuildFile; fileRef = EBB4F7CC19273CD10054E711 /* ProductObject.m */; };
 		EBB4F7D2192746B60054E711 /* ProductCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EBB4F7D0192746B60054E711 /* ProductCell.m */; };
@@ -201,6 +201,7 @@
 		EBA107BB193104FB0064934F /* UIScrollView+SVInfiniteScrolling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+SVInfiniteScrolling.m"; sourceTree = "<group>"; };
 		EBA107BC193104FB0064934F /* UIScrollView+SVPullToRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+SVPullToRefresh.h"; sourceTree = "<group>"; };
 		EBA107BD193104FB0064934F /* UIScrollView+SVPullToRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+SVPullToRefresh.m"; sourceTree = "<group>"; };
+		EBA107C419310CB50064934F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "Base.lproj/Main-iPad.storyboard"; sourceTree = "<group>"; };
 		EBA30EDF191A9ACA00D8A6FF /* metro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = metro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBA30EE2191A9ACA00D8A6FF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		EBA30EE4191A9ACA00D8A6FF /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -238,7 +239,6 @@
 		EBA8F5EC191D3CC3001516DB /* bg_bnt_yellow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_bnt_yellow.png; sourceTree = "<group>"; };
 		EBA981EA192E60F000962305 /* DialogController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DialogController.h; sourceTree = "<group>"; };
 		EBA981EB192E60F000962305 /* DialogController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DialogController.m; sourceTree = "<group>"; };
-		EBA981EC192E60F000962305 /* DialogController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DialogController.xib; sourceTree = "<group>"; };
 		EBAA06F5191F485900849825 /* LogDebug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogDebug.h; sourceTree = "<group>"; };
 		EBAA06F6191F485900849825 /* LogDebug.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogDebug.m; sourceTree = "<group>"; };
 		EBB4F7CB19273CD10054E711 /* ProductObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductObject.h; sourceTree = "<group>"; };
@@ -278,7 +278,6 @@
 				EB16F90A191E9BCA008AD3FC /* CellBranchMetro */,
 				EBA981EA192E60F000962305 /* DialogController.h */,
 				EBA981EB192E60F000962305 /* DialogController.m */,
-				EBA981EC192E60F000962305 /* DialogController.xib */,
 			);
 			name = DialogController;
 			sourceTree = "<group>";
@@ -492,6 +491,7 @@
 				EBA30F19191A9BD900D8A6FF /* Controller */,
 				EBA30F1A191A9BD900D8A6FF /* Resource */,
 				EBA30EF4191A9ACA00D8A6FF /* Main.storyboard */,
+				EBA107C319310CB50064934F /* Main-iPad.storyboard */,
 				EBA30EF1191A9ACA00D8A6FF /* MTAppDelegate.h */,
 				EBA30EF2191A9ACA00D8A6FF /* MTAppDelegate.m */,
 				EBA30EFA191A9ACA00D8A6FF /* Images.xcassets */,
@@ -693,11 +693,11 @@
 			files = (
 				EB3C1BAF191DF66F00252AF1 /* ic_blank_networkproblem.png in Resources */,
 				EB33296A1930335E00DDEDC0 /* MetroCell.xib in Resources */,
-				EBA981EE192E60F000962305 /* DialogController.xib in Resources */,
 				EBA30F26191AA1CD00D8A6FF /* copyright@2x.png in Resources */,
 				EBB4F7D3192746B60054E711 /* ProductCell.xib in Resources */,
 				EBA30F29191AA28100D8A6FF /* copywright.png in Resources */,
 				EBA30EFB191A9ACA00D8A6FF /* Images.xcassets in Resources */,
+				EBA107C519310CB50064934F /* Main-iPad.storyboard in Resources */,
 				EBA78E71192A3E9A008EE9A7 /* arrow_down.png in Resources */,
 				EBA8F5ED191D3CC3001516DB /* bg_bnt_yellow.png in Resources */,
 				EBA802C4192893D9000D889C /* icon_giam.png in Resources */,
@@ -805,6 +805,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		EBA107C319310CB50064934F /* Main-iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EBA107C419310CB50064934F /* Base */,
+			);
+			name = "Main-iPad.storyboard";
+			sourceTree = "<group>";
+		};
 		EBA30EEB191A9ACA00D8A6FF /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -912,9 +920,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "metro/metro-Prefix.pch";
 				INFOPLIST_FILE = "metro/metro-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = 2;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -927,9 +935,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "metro/metro-Prefix.pch";
 				INFOPLIST_FILE = "metro/metro-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = 2;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
