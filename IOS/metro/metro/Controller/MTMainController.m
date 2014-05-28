@@ -110,9 +110,7 @@
     [bntNganh setTitle:nganhItem.name forState:UIControlStateNormal];
     sNganhID = nganhItem.id;
     
-    [self loadDataProduct];
     [self loadLinkWebView:indexSegmentHealthy];
-    
     [self addRunningText];
     
     if(dialogView==nil)
@@ -128,6 +126,7 @@
         [dialogView setDelegate:self];                
         [dialogView setDataBranchMetro:metroListObject withNganhlist:nganhListObject];
     }
+    [self loadDataProduct];
 }
 
 - (void)didReceiveMemoryWarning
@@ -238,9 +237,10 @@
     NSString *link = [AFClient getLlinkProduct:page withPageSize:size withMetroID:sMetroID withNganhID:sNganhID];
     [AFClient getLink:link success:^(id result)
      {
+         id data;
          if(result)
          {
-             id data = [result objectForKey:@"data"];
+             data = [result objectForKey:@"data"];
              if(data)
              {
                  int total_pages = [[data objectForKey:@"total_pages"] integerValue];
@@ -259,7 +259,13 @@
              }
          }
          if(page==1)
-             [MBProgressHUD hideHUDForView:self.view animated:YES];
+         {    [MBProgressHUD hideHUDForView:self.view animated:YES];
+               NSString *textTitle = [data objectForKey:@"branch_promotion"];
+              if([textTitle class] != [NSNull class])
+              {
+                 [continuousLabel2 setText:textTitle];
+              }
+         }
      } failure:^(NSString *err){
          [LogDebug logError:@"Debug data Nganh Metro load = " withContent:@"faith"];
          if(page==1)
@@ -345,7 +351,7 @@
         fontsize = 14;
     }
     //Second continuous label example
-    MarqueeLabel *continuousLabel2 = [[MarqueeLabel alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width,height) rate:100.0f andFadeLength:10.0f];
+    continuousLabel2 = [[MarqueeLabel alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width,height) rate:100.0f andFadeLength:10.0f];
     continuousLabel2.marqueeType = MLContinuous;
     continuousLabel2.animationCurve = UIViewAnimationOptionCurveLinear;
     continuousLabel2.continuousMarqueeExtraBuffer = 50.0f;

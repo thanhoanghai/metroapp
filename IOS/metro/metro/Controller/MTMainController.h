@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "NganhListObject.h"
 #import "DialogController.h"
+#import "MarqueeLabel.h"
 
 @interface MTMainController : UIViewController<UITableViewDataSource, UITableViewDelegate,UITabBarControllerDelegate,DialogDelegate>
 {
@@ -32,6 +33,8 @@
     int indexSegmentHealthy;
     
     DialogController *dialogView;
+    
+    MarqueeLabel *continuousLabel2;
 }
 
 @property (weak, nonatomic) IBOutlet UIView *viewHealthy;
