@@ -17,6 +17,7 @@ import com.app.customui.DialogFilterGenre.FinishDialogListener;
 import com.app.customui.DialogListNganh;
 import com.app.customui.DialogListNganh.FinishDialogNganhListener;
 import com.app.customui.LoadMoreListView;
+import com.app.customui.LoadMoreListView.OnLoadMoreListener;
 import com.app.metro.R;
 import com.app.model.BranchListObject;
 import com.app.model.NganhListObject;
@@ -46,6 +47,7 @@ public class SanphamFragment extends Fragment {
 	private BranchListObject branchListObject;
 	private DialogListNganh dialogNganh;
 	private NganhListObject nganhListObject;
+	private boolean statusLoadMore = true;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -67,10 +69,15 @@ public class SanphamFragment extends Fragment {
 				R.string.ex_anphu));
 		listview = (LoadMoreListView) view
 				.findViewById(R.id.sanpham_fragment_listview);
-		View header = inflater.inflate(R.layout.sanpham_fragment_top, null);
-		listview.addHeaderView(header);
+		listview.setOnLoadMoreListener(new OnLoadMoreListener() {
+			@Override
+			public void onLoadMore() {
+				// TODO Auto-generated method stub
+				loadMoreData();
+			}
+		});
 
-		tvMetro = (TextView) header
+		tvMetro = (TextView) view
 				.findViewById(R.id.sanpham_fragment_top_tv_metro);
 		tvMetro.setOnClickListener(new OnClickListener() {
 			@Override
@@ -79,7 +86,7 @@ public class SanphamFragment extends Fragment {
 					dialogBranch.show();
 			}
 		});
-		tvNganh = (TextView) header
+		tvNganh = (TextView) view
 				.findViewById(R.id.sanpham_fragment_top_tv_nganh);
 		tvNganh.setOnClickListener(new OnClickListener() {
 			@Override
@@ -101,6 +108,16 @@ public class SanphamFragment extends Fragment {
 
 		return view;
 	}
+	
+	
+	private void loadMoreData()
+	{
+		if(statusLoadMore)
+		{
+			//page = page + 1;
+			loadProduct();
+		}
+	}
 
 	private void loadProduct() {
 		imgLoading.setVisibility(View.VISIBLE);
@@ -120,7 +137,15 @@ public class SanphamFragment extends Fragment {
 					}
 					adapter.notifyDataSetChanged();
 					if (page == 1)
-						imgLoading.setVisibility(View.INVISIBLE);
+					{	imgLoading.setVisibility(View.INVISIBLE);
+						textTitle.setText(object.data.branch_promotion);
+					}
+					if(page >= object.data.current_page)
+					{
+						statusLoadMore = false;
+						listview.setVisibleFooterView(View.INVISIBLE);
+					}
+					listview.onLoadMoreComplete();
 				} catch (Exception ex) {
 				}
 			}
@@ -180,6 +205,8 @@ public class SanphamFragment extends Fragment {
 	
 	private void resetLoadcontent()
 	{
+		statusLoadMore = true;
+		listview.setVisibleFooterView(View.VISIBLE);
 		page = 1;
 		adapter.clearData();
 		loadProduct();

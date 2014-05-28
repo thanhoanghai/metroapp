@@ -10,7 +10,7 @@
     <string name="boqua">Bỏ qua</string>
     <string name="dangnhap">ĐĂNG NHẬP</string>
     <string name="chongtrungtammetro">Chọn trung tâm Metro</string>
-    <string name="chonnganhkinhdoanh">Nhập mã ngành kinh doanh của bạn</string>
+    <string name="chonnganhkinhdoanh">Chọn ngành hàng kinh doanh</string>
     <string name="trungtammetro">Trung Tâm METRO</string>
     <string name="nganhhang">Ngành Hàng</string>
     
@@ -39,4 +39,5 @@
     <string name="gtgt">-GTGT   13.500 Đ/Lốc</string>
     <string name="donvidong">Đ</string>
 
+    <string name="matketnoi">Mất kết nối, vui lòng thử lại</string>
 </resources>

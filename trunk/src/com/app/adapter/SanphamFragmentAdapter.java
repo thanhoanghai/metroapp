@@ -3,6 +3,7 @@ package com.app.adapter;
 import java.util.ArrayList;
 
 import android.content.Context;
+import android.graphics.Bitmap;
 import android.graphics.Paint;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,13 +16,16 @@ import android.widget.TextView;
 import com.app.metro.MetroApplication;
 import com.app.metro.R;
 import com.app.model.SanphamObject;
+import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;
 
 public class SanphamFragmentAdapter extends BaseAdapter implements ListAdapter {
 
 	private LayoutInflater mInflater;
 	private ArrayList<SanphamObject> listObject;
+	
 
+	private DisplayImageOptions options;
 	private ImageLoader mImageLoader;
 	private Context mContext;
 
@@ -33,6 +37,9 @@ public class SanphamFragmentAdapter extends BaseAdapter implements ListAdapter {
 		mContext = context;
 		
 		mImageLoader = MetroApplication.getInstance().getImageLoader();
+		options = new  DisplayImageOptions.Builder()
+				.bitmapConfig(Bitmap.Config.RGB_565).cacheInMemory(true)
+				.cacheOnDisc(true).build();
 	}
 
 	public void addItem(SanphamObject item) {
@@ -107,7 +114,7 @@ public class SanphamFragmentAdapter extends BaseAdapter implements ListAdapter {
 		
 		holder.price2.setText(item.price_2 );
 		holder.priceVat.setText("-GTGT " + item.price_vat);
-		mImageLoader.displayImage(item.photo, holder.img);
+		mImageLoader.displayImage(item.photo, holder.img,options);
 
 		return view;
 	}

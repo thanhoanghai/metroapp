@@ -28,6 +28,8 @@
             android:layout_height="4.0dip"
             android:background="@drawable/shadow_online_tab" />
     </RelativeLayout>
+    
+    <include layout="@layout/sanpham_fragment_top"/>
 
     <RelativeLayout
         android:layout_width="match_parent"
