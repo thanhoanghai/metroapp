@@ -54,7 +54,7 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    page = 0;
+    page = 1;
     size = 10;
     isLoadMore = YES;
     
@@ -160,7 +160,7 @@
         {    sNganhID = idItem;
             [bntNganh setTitle:name forState:UIControlStateNormal];
         }
-        page = 0;
+        page = 1;
         [arrayListProduct removeAllObjects];
         [tableViewProduct reloadData];
         [self loadDataProduct];
@@ -172,7 +172,7 @@
 
 - (IBAction)doActionBntMetro:(id)sender {
         indexDialog = 0;
-        page = 0;
+        page = 1;
         isLoadMore = YES;
         [dialogView setIndexDialog:0];
         [self.view addSubview:dialogView.view];
@@ -182,7 +182,7 @@
 
 - (IBAction)doActionBntNganh:(id)sender {
     indexDialog = 1;
-    page=0;
+    page=1;
     isLoadMore = YES;
     [dialogView setIndexDialog:1];
     [dialogView showDialogWithAnimation:self.view];
@@ -233,7 +233,7 @@
 
 -(void)loadDataProduct
 {
-    if(page==0)
+    if(page==1)
         [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     NSString *link = [AFClient getLlinkProduct:page withPageSize:size withMetroID:sMetroID withNganhID:sNganhID];
     [AFClient getLink:link success:^(id result)
@@ -243,8 +243,8 @@
              id data = [result objectForKey:@"data"];
              if(data)
              {
-                 int total_pages = [[data objectForKey:data] integerValue];
-                 if(total_pages <= page+1)
+                 int total_pages = [[data objectForKey:@"total_pages"] integerValue];
+                 if(total_pages <= page)
                  {
                      isLoadMore = NO;
                  }
@@ -258,11 +258,11 @@
                  [LogDebug logError:@"Debug data product = " withContent:@"succedd"];
              }
          }
-         if(page==0)
+         if(page==1)
              [MBProgressHUD hideHUDForView:self.view animated:YES];
      } failure:^(NSString *err){
          [LogDebug logError:@"Debug data Nganh Metro load = " withContent:@"faith"];
-         if(page==0)
+         if(page==1)
              [MBProgressHUD hideHUDForView:self.view animated:YES];
      }];
 }
@@ -338,7 +338,7 @@
     int height = 0;
     int fontsize = 0;
     if(IDIOM == IPAD)
-    {    height = RUNNING_TEXT_HEIGHT_IPAD;
+    {   height = RUNNING_TEXT_HEIGHT_IPAD;
         fontsize = 17;
     }else
     {   height = RUNNING_TEXT_HEIGHT_IPHONE;
